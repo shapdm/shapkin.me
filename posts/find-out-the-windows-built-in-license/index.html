@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="Поиск ключа лицензии Windows">
+<meta itemprop="description" content="На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
+Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
+Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
+wmic path softwarelicensingservice get OA3xOriginalProductKey
+Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено)."><meta itemprop="datePublished" content="2015-12-10T08:46:09+03:00" />
+<meta itemprop="dateModified" content="2015-12-10T08:46:09+03:00" />
+<meta itemprop="wordCount" content="283">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Поиск ключа лицензии Windows" />
+<meta property="og:description" content="На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
+Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
+Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
+wmic path softwarelicensingservice get OA3xOriginalProductKey
+Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/find-out-the-windows-built-in-license/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-12-10T08:46:09+03:00" />
+<meta property="article:modified_time" content="2015-12-10T08:46:09+03:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Поиск ключа лицензии Windows"/>
+<meta name="twitter:description" content="На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
+Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
+Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
+wmic path softwarelicensingservice get OA3xOriginalProductKey
+Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено)."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Поиск ключа лицензии Windows</title>
+	<link rel="stylesheet" href="https://example.com/css/style.min.037b6ee8f8c1baab6a3d0a9da11c3ff18a7552471f16c59fd98538d5ce99208b.css" integrity="sha256-A3tu6PjBuqtqPQqdoRw/8Yp1UkcfFsWf2YU41c6ZIIs=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://example.com">Заметки на полях</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://example.com/posts/">Посты</a>
+				<a href="https://example.com/about/">Обо мне</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/shapdm" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://example.com/posts/">Посты</a></li>
+			<li><a href="https://example.com/about/">Обо мне</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>10 Dec 2015</span></div>
+				<h1>Поиск ключа лицензии Windows</h1>
+			</header>
+			<div class="content">
+				<p>На новом ноутбуке стояла Windows 8.1, обновили до 10.
+После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.</p>
+<p>Встал вопрос с активацией. Нашел способы, как узнать ключ системы.</p>
+<h2 id="получаем-oem-ключ-из-uefi">Получаем OEM ключ из UEFI<a href="#получаем-oem-ключ-из-uefi" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):</p>
+<p><code>wmic path softwarelicensingservice get OA3xOriginalProductKey</code></p>
+<h2 id="получаем-ключ-установленной-системы">Получаем ключ установленной системы<a href="#получаем-ключ-установленной-системы" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).</p>
+<p>Сохраняем текст в <code>filename.ps1</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">function</span> <span class="nb">Get-WindowsKey</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span><span class="nv">$targets</span> <span class="p">=</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$hklm</span> <span class="p">=</span> <span class="n">2147483650</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$regPath</span> <span class="p">=</span> <span class="s2">&#34;Software\Microsoft\Windows NT\CurrentVersion&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$regValue</span> <span class="p">=</span> <span class="s2">&#34;DigitalProductId&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$target</span> <span class="k">in</span> <span class="nv">$targets</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$productKey</span> <span class="p">=</span> <span class="nv">$null</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$win32os</span> <span class="p">=</span> <span class="nv">$null</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$wmi</span> <span class="p">=</span> <span class="no">[WMIClass]</span><span class="s2">&#34;\\$target\root\default:stdRegProv&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="p">=</span> <span class="nv">$wmi</span><span class="p">.</span><span class="n">GetBinaryValue</span><span class="p">(</span><span class="nv">$hklm</span><span class="p">,</span><span class="nv">$regPath</span><span class="p">,</span><span class="nv">$regValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$binArray</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$data</span><span class="p">.</span><span class="n">uValue</span><span class="p">)[</span><span class="n">52</span><span class="p">..</span><span class="n">66</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$charsArray</span> <span class="p">=</span> <span class="s2">&#34;B&#34;</span><span class="p">,</span><span class="s2">&#34;C&#34;</span><span class="p">,</span><span class="s2">&#34;D&#34;</span><span class="p">,</span><span class="s2">&#34;F&#34;</span><span class="p">,</span><span class="s2">&#34;G&#34;</span><span class="p">,</span><span class="s2">&#34;H&#34;</span><span class="p">,</span><span class="s2">&#34;J&#34;</span><span class="p">,</span><span class="s2">&#34;K&#34;</span><span class="p">,</span><span class="s2">&#34;M&#34;</span><span class="p">,</span><span class="s2">&#34;P&#34;</span><span class="p">,</span><span class="s2">&#34;Q&#34;</span><span class="p">,</span><span class="s2">&#34;R&#34;</span><span class="p">,</span><span class="s2">&#34;T&#34;</span><span class="p">,</span><span class="s2">&#34;V&#34;</span><span class="p">,</span><span class="s2">&#34;W&#34;</span><span class="p">,</span><span class="s2">&#34;X&#34;</span><span class="p">,</span><span class="s2">&#34;Y&#34;</span><span class="p">,</span><span class="s2">&#34;2&#34;</span><span class="p">,</span><span class="s2">&#34;3&#34;</span><span class="p">,</span><span class="s2">&#34;4&#34;</span><span class="p">,</span><span class="s2">&#34;6&#34;</span><span class="p">,</span><span class="s2">&#34;7&#34;</span><span class="p">,</span><span class="s2">&#34;8&#34;</span><span class="p">,</span><span class="s2">&#34;9&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">## decrypt base24 encoded binary data</span>
+</span></span><span class="line"><span class="cl">        <span class="k">For</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">24</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-ge</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span><span class="p">--)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$k</span> <span class="p">=</span> <span class="n">0</span>
+</span></span><span class="line"><span class="cl">            <span class="k">For</span> <span class="p">(</span><span class="nv">$j</span> <span class="p">=</span> <span class="n">14</span><span class="p">;</span> <span class="nv">$j</span> <span class="o">-ge</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$j</span><span class="p">--)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$k</span> <span class="p">=</span> <span class="nv">$k</span> <span class="p">*</span> <span class="n">256</span> <span class="o">-bxor</span> <span class="nv">$binArray</span><span class="p">[</span><span class="nv">$j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$binArray</span><span class="p">[</span><span class="nv">$j</span><span class="p">]</span> <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">truncate</span><span class="p">(</span><span class="nv">$k</span> <span class="p">/</span> <span class="n">24</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$k</span> <span class="p">=</span> <span class="nv">$k</span> <span class="p">%</span> <span class="n">24</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$productKey</span> <span class="p">=</span> <span class="nv">$charsArray</span><span class="p">[</span><span class="nv">$k</span><span class="p">]</span> <span class="p">+</span> <span class="nv">$productKey</span>
+</span></span><span class="line"><span class="cl">            <span class="k">If</span> <span class="p">((</span><span class="nv">$i</span> <span class="p">%</span> <span class="n">5</span> <span class="o">-eq</span> <span class="n">0</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$productKey</span> <span class="p">=</span> <span class="s2">&#34;-&#34;</span> <span class="p">+</span> <span class="nv">$productKey</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$win32os</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">Win32_OperatingSystem</span> <span class="n">-computer</span> <span class="nv">$target</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">Object</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">Computer</span> <span class="n">-value</span> <span class="nv">$target</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">Caption</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">Caption</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">CSDVersion</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">CSDVersion</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">OSArch</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">OSArchitecture</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">BuildNumber</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">BuildNumber</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">RegisteredTo</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">RegisteredUser</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">ProductID</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">SerialNumber</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">ProductKey</span> <span class="n">-value</span> <span class="nv">$productkey</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Открываем PowerShell с правами админа.
+Выполняем команду <code>Set-ExecutionPolicy RemoteSigned</code> (и подтверждаем ее выполнение - Y)
+Далее выполняем команду <code>Import-Module path/to/filename.ps1</code>
+Вводим <code>Get-WindowsKey</code> и смотрим наш <code>ProductKey</code>.</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>283 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>10-12-2015 08:46 &#43;0300</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://example.com/posts/activate-ssd-storage-in-esxi/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Как заставить ESXi увидеть SSD хранилище</span>
+			</a>
+			<a class="prev-post" href="https://example.com/posts/delete-plugin-in-vcenter/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Удаление плагина в vCenter</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2022 <a href="https://example.com">ShDm</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://example.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://example.com/js/bundle.min.580988ed2982bcbb74a1773c7abea97b43e4c43b9324e10cda0813ec6ec4bb67.js" integrity="sha256-WAmI7SmCvLt0oXc8er6pe0PkxDuTJOEM2ggT7G7Eu2c=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>
