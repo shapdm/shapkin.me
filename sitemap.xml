@@ -26,6 +26,12 @@
     <loc>https://shapkin.me/posts/watch-the-process/</loc>
     <lastmod>2016-03-20T09:43:33+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/</loc>
+    <lastmod>2016-03-05T13:44:26+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/vmware/</loc>
+    <lastmod>2016-03-05T13:44:26+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</loc>
     <lastmod>2016-03-05T13:44:26+03:00</lastmod>
   </url><url>
@@ -52,7 +58,5 @@
   </url><url>
     <loc>https://shapkin.me/posts/check-servers-by-ping/</loc>
     <lastmod>2013-02-06T01:01:00+03:00</lastmod>
-  </url><url>
-    <loc>https://shapkin.me/tags/</loc>
   </url>
 </urlset>
