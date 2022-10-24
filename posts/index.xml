@@ -6,8 +6,77 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Wed, 03 Feb 2021 17:44:25 +0300</lastBuildDate>
+		<lastBuildDate>Mon, 24 Oct 2022 22:55:36 +0300</lastBuildDate>
 		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>VMware VCSA Certificates Expired</title>
+			<link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
+			<pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
+			
+			<guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
+			<description>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:
+503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)
+Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:
+2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&amp;gt; ExpectedThumbprint: --&amp;gt; ExpectedPeerName: vcsa.</description>
+			<content type="html"><![CDATA[<p>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.
+После перезагрузки в web интерфейсе постоянно висела 503 ошибка:</p>
+<blockquote>
+<p>503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)</p>
+</blockquote>
+<p>Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:</p>
+<pre tabindex="0"><code>2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters:
+--&gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B
+--&gt; ExpectedThumbprint: 
+--&gt; ExpectedPeerName: vcsa.domain.com
+--&gt; The remote host certificate has these problems:
+--&gt; 
+--&gt; * certificate has expired)
+--&gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context]
+</code></pre><p>Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:</p>
+<pre tabindex="0"><code>Действителен с	Thu, 22 Oct 2020 16:17:37 GMT
+Действителен по	Sun, 23 Oct 2022 04:17:37 GMT
+</code></pre><p>Запускаем команду в shell (для linux версии) для получения списка сроков действия всех сертификатов:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> store in <span class="k">$(</span>/usr/lib/vmware-vmafd/bin/vecs-cli store list <span class="p">|</span> grep -v TRUSTED_ROOT_CRLS<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&#34;[*] Store :&#34;</span> <span class="nv">$store</span><span class="p">;</span> /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store <span class="nv">$store</span> --text <span class="p">|</span> grep -ie <span class="s2">&#34;Alias&#34;</span> -ie <span class="s2">&#34;Not After&#34;</span><span class="p">;</span><span class="k">done</span><span class="p">;</span>
+</span></span></code></pre></div><pre tabindex="0"><code>[*] Store : MACHINE_SSL_CERT
+Alias :	__MACHINE_CERT
+            Not After : Oct 23 04:17:37 2022 GMT
+[*] Store : TRUSTED_ROOTS
+Alias :	520b4889e71ea0ba9aa2fa5c9ca93131188bbcf5
+            Not After : Oct 17 16:17:36 2030 GMT
+[*] Store : machine
+Alias :	machine
+            Not After : Oct 22 16:08:37 2022 GMT
+[*] Store : vsphere-webclient
+Alias :	vsphere-webclient
+            Not After : Oct 22 16:08:38 2022 GMT
+[*] Store : vpxd
+Alias :	vpxd
+            Not After : Oct 22 16:08:39 2022 GMT
+[*] Store : vpxd-extension
+Alias :	vpxd-extension
+            Not After : Oct 22 16:08:39 2022 GMT
+[*] Store : APPLMGMT_PASSWORD
+[*] Store : data-encipherment
+Alias :	data-encipherment
+            Not After : Oct 22 16:11:21 2022 GMT
+[*] Store : SMS
+Alias :	sms_self_signed
+            Not After : Oct 22 16:24:58 2030 GMT
+</code></pre><h3 id="решение-проблемы">Решение проблемы:</h3>
+<ul>
+<li>запускаем менеджер сертификатов /usr/lib/vmware-vmca/bin/certificate-manager</li>
+<li>выбираем нужный нам пункт</li>
+<li>вводим логин от локального администратора (дефолтное значение будет указано в скобках)</li>
+<li>вводим пароль от этого пользователя</li>
+<li>далее отвечаем на вопросы для генерации нового сертификата</li>
+<li>ждем выполнения процесса, пока не отобразится сообщение &ldquo;Status : 100% Completed [All tasks completed successfully]&rdquo;</li>
+</ul>
+<h3 id="источники">Источники:</h3>
+<p><a href="https://kb.vmware.com/s/article/82332" target="_blank">https://kb.vmware.com/s/article/82332</a></p>
+<p><a href="https://kb.vmware.com/s/article/2112283" target="_blank">https://kb.vmware.com/s/article/2112283</a></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Отключение IPv6 в CentOS 8</title>

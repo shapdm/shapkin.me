@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 05 Mar 2016 13:44:26 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Oct 2022 22:55:36 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware VCSA Certificates Expired</title>
+      <link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
+      <pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
+      <description>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:
+503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)
+Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:
+2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&amp;gt; ExpectedThumbprint: --&amp;gt; ExpectedPeerName: vcsa.</description>
+    </item>
+    
     <item>
       <title>Как заставить ESXi увидеть SSD хранилище</title>
       <link>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</link>
