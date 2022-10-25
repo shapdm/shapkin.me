@@ -21,6 +21,20 @@
     </item>
     
     <item>
+      <title>Блокировка исходящего трафика в Windows</title>
+      <link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
+      <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
+      <description>Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
+Решение: Блокировка исходящего трафика для браузера
+New-NetFirewallRule -Program &amp;#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&amp;#34; -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Блокировка всего исходящего трафика
+New-NetFirewallRule -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Удаление правила
+Remove-NetFirewallRule -DisplayName &amp;#34;block traffic&amp;#34; Включение и отключение правила
+Disable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Enable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Написал скрипт для удобства пользования</description>
+    </item>
+    
+    <item>
       <title>Обо мне</title>
       <link>https://shapkin.me/about/</link>
       <pubDate>Sat, 27 Feb 2021 22:52:31 +0300</pubDate>
@@ -109,18 +123,6 @@ WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, er
 Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
 wmic path softwarelicensingservice get OA3xOriginalProductKey
 Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).</description>
-    </item>
-    
-    <item>
-      <title>Удаление плагина в vCenter</title>
-      <link>https://shapkin.me/posts/delete-plugin-in-vcenter/</link>
-      <pubDate>Mon, 02 Nov 2015 18:53:22 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/delete-plugin-in-vcenter/</guid>
-      <description>Появилась необходимость удалить неиспользуемый плагин в vCenter.
-Для этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob
-Жмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.
-Обновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -&amp;gt; Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.</description>
     </item>
     
   </channel>

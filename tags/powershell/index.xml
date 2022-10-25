@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>powershell on Заметки на полях</title>
+    <link>https://shapkin.me/tags/powershell/</link>
+    <description>Recent content in powershell on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 12 Sep 2022 12:18:47 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Блокировка исходящего трафика в Windows</title>
+      <link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
+      <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
+      <description>Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
+Решение: Блокировка исходящего трафика для браузера
+New-NetFirewallRule -Program &amp;#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&amp;#34; -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Блокировка всего исходящего трафика
+New-NetFirewallRule -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Удаление правила
+Remove-NetFirewallRule -DisplayName &amp;#34;block traffic&amp;#34; Включение и отключение правила
+Disable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Enable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Написал скрипт для удобства пользования</description>
+    </item>
+    
+    <item>
+      <title>Поиск ключа лицензии Windows</title>
+      <link>https://shapkin.me/posts/find-out-the-windows-built-in-license/</link>
+      <pubDate>Thu, 10 Dec 2015 08:46:09 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/find-out-the-windows-built-in-license/</guid>
+      <description>На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
+Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
+Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
+wmic path softwarelicensingservice get OA3xOriginalProductKey
+Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).</description>
+    </item>
+    
+  </channel>
+</rss>

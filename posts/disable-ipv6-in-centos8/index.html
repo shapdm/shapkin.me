@@ -16,7 +16,7 @@ GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34; Сохраняе
 grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов."><meta itemprop="datePublished" content="2021-02-03T17:44:25+03:00" />
 <meta itemprop="dateModified" content="2021-02-03T17:44:25+03:00" />
 <meta itemprop="wordCount" content="109">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Отключение IPv6 в CentOS 8" />
+<meta itemprop="keywords" content="linux,ipv6," /><meta property="og:title" content="Отключение IPv6 в CentOS 8" />
 <meta property="og:description" content="Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.
 Открываем /etc/default/grub и добавляем новой строкой следующее:
 GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34; Сохраняем и закрываем файл.
@@ -104,15 +104,35 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
 
 			</div>
 
+<div class="related-posts thin">
+	<h2>Похожие посты</h2>
+	<ul>
+	
+	<li><a href="/posts/openvpn-certificate-verify-failed/">Openvpn Certificate Verify Failed</a></li>
+	
+	<li><a href="/posts/redmine-update-and-migrate/">Обновление и миграция Redmine между двумя серверами</a></li>
+	
+	<li><a href="/posts/acronis-corrupts-linux-loader/">Acronis ломает загрузчик</a></li>
+	
+	<li><a href="/posts/watch-the-process/">Следим за процессом выполнения задачи</a></li>
+	
+	<li><a href="/posts/remove-blank-lines/">Удаление пустых строк при просмотре файла</a></li>
+	
+	</ul>
+</div>
+
 			<hr class="post-end">
 			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://shapkin.me/tags/linux">linux</a></span><span class="tag"><a href="https://shapkin.me/tags/ipv6">ipv6</a></span>
+				</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>109 слов(а)</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>03-02-2021 17:44 &#43;0300</p>
 			</footer>
 		</article>
 		<div class="post-nav thin">
-			<a class="next-post" href="https://shapkin.me/posts/vcsa-certificate-expired/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Вперед</span><br><span>VMware VCSA Certificates Expired</span>
+			<a class="next-post" href="https://shapkin.me/posts/block-traffic-by-powershell/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Вперед</span><br><span>Блокировка исходящего трафика в Windows</span>
 			</a>
 			<a class="prev-post" href="https://shapkin.me/posts/openvpn-certificate-verify-failed/">
 				<span class="post-nav-label">Назад&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Openvpn Certificate Verify Failed</span>

@@ -20,5 +20,16 @@
 2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&amp;gt; ExpectedThumbprint: --&amp;gt; ExpectedPeerName: vcsa.</description>
     </item>
     
+    <item>
+      <title>Openvpn Certificate Verify Failed</title>
+      <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
+      <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
+      <description>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
+В логе openvpn.log обнаружил следующее:
+WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&amp;gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.</description>
+    </item>
+    
   </channel>
 </rss>

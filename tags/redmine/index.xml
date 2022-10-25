@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redmine on Заметки на полях</title>
+    <link>https://shapkin.me/tags/redmine/</link>
+    <description>Recent content in redmine on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 08 Dec 2020 19:41:15 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Обновление и миграция Redmine между двумя серверами</title>
+      <link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
+      <pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
+      <description>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
+Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).
+Установка нужной версии Redmine по инструкциям с сайта https://redmine.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openvpn on Заметки на полях</title>
+    <link>https://shapkin.me/tags/openvpn/</link>
+    <description>Recent content in openvpn on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 25 Jan 2021 16:39:22 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openvpn Certificate Verify Failed</title>
+      <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
+      <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
+      <description>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
+В логе openvpn.log обнаружил следующее:
+WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&amp;gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.</description>
+    </item>
+    
+  </channel>
+</rss>

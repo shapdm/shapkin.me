@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Заметки на полях</title>
+    <link>https://shapkin.me/tags/linux/</link>
+    <description>Recent content in linux on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 03 Feb 2021 17:44:25 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Отключение IPv6 в CentOS 8</title>
+      <link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
+      <pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
+      <description>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.
+Открываем /etc/default/grub и добавляем новой строкой следующее:
+GRUB_CMDLINE_LINUX=&amp;#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&amp;#34; Сохраняем и закрываем файл.
+Теперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:
+/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:
+grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.</description>
+    </item>
+    
+    <item>
+      <title>Openvpn Certificate Verify Failed</title>
+      <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
+      <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
+      <description>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
+В логе openvpn.log обнаружил следующее:
+WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&amp;gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.</description>
+    </item>
+    
+    <item>
+      <title>Обновление и миграция Redmine между двумя серверами</title>
+      <link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
+      <pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
+      <description>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
+Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).
+Установка нужной версии Redmine по инструкциям с сайта https://redmine.</description>
+    </item>
+    
+    <item>
+      <title>Acronis ломает загрузчик</title>
+      <link>https://shapkin.me/posts/acronis-corrupts-linux-loader/</link>
+      <pubDate>Tue, 22 Sep 2020 10:42:35 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/acronis-corrupts-linux-loader/</guid>
+      <description>Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.
+Восстановливаем загрузчик таким образом:
+1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).</description>
+    </item>
+    
+    <item>
+      <title>Следим за процессом выполнения задачи</title>
+      <link>https://shapkin.me/posts/watch-the-process/</link>
+      <pubDate>Sun, 20 Mar 2016 09:43:33 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/watch-the-process/</guid>
+      <description>Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)
+Пример использования pv dump.sql | mysql -u user -p password database </description>
+    </item>
+    
+    <item>
+      <title>Удаление пустых строк при просмотре файла</title>
+      <link>https://shapkin.me/posts/remove-blank-lines/</link>
+      <pubDate>Wed, 11 Mar 2015 07:57:30 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/remove-blank-lines/</guid>
+      <description>sed &amp;lsquo;/^$/d&amp;rsquo; file.txt
+или с выводом в новый файл
+sed &amp;lsquo;/^$/d&amp;rsquo; file.txt &amp;gt; newfile.txt</description>
+    </item>
+    
+    <item>
+      <title>Реструктуризация директорий</title>
+      <link>https://shapkin.me/posts/directory-restructuring/</link>
+      <pubDate>Fri, 27 Feb 2015 12:58:08 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/directory-restructuring/</guid>
+      <description>Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:
+/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):
+CentOS #!/bin/bash path=&amp;#34;/root/sort/&amp;#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&amp;#34;$(stat -c &amp;#34;%y %n&amp;#34; $i | awk &amp;#39;{ print $1 }&amp;#39; | sed s%-%/%g)&amp;#34; if ! [ -d &amp;#34;$date&amp;#34; ]; then mkdir -pv &amp;#34;$path$date&amp;#34; fi mv -v $i $path$date done FreeNAS #!</description>
+    </item>
+    
+    <item>
+      <title>Скрипт мониторинга сервера по ping</title>
+      <link>https://shapkin.me/posts/check-servers-by-ping/</link>
+      <pubDate>Wed, 06 Feb 2013 01:01:00 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/check-servers-by-ping/</guid>
+      <description>Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&amp;rsquo;a или nagios&amp;rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).
+Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.
+Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.
+Вот и в моей жизни настал такой момент. Итак, ниже код скрипта с простыми пояснениями:</description>
+    </item>
+    
+  </channel>
+</rss>

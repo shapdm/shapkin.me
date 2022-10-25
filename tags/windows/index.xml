@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Заметки на полях</title>
+    <link>https://shapkin.me/tags/windows/</link>
+    <description>Recent content in windows on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 12 Sep 2022 12:18:47 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Блокировка исходящего трафика в Windows</title>
+      <link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
+      <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
+      <description>Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
+Решение: Блокировка исходящего трафика для браузера
+New-NetFirewallRule -Program &amp;#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&amp;#34; -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Блокировка всего исходящего трафика
+New-NetFirewallRule -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Удаление правила
+Remove-NetFirewallRule -DisplayName &amp;#34;block traffic&amp;#34; Включение и отключение правила
+Disable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Enable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Написал скрипт для удобства пользования</description>
+    </item>
+    
+    <item>
+      <title>Поиск ключа лицензии Windows</title>
+      <link>https://shapkin.me/posts/find-out-the-windows-built-in-license/</link>
+      <pubDate>Thu, 10 Dec 2015 08:46:09 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/find-out-the-windows-built-in-license/</guid>
+      <description>На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
+Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
+Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
+wmic path softwarelicensingservice get OA3xOriginalProductKey
+Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).</description>
+    </item>
+    
+    <item>
+      <title>Меняем порядок вывода DisplayName в Active Directory</title>
+      <link>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</link>
+      <pubDate>Mon, 05 Oct 2015 13:47:41 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</guid>
+      <description>Проблема: При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.
+В итоге приходится вручную менять местами эти значения (возможно не все так делают).
+Если оставлять в таком виде, то в будущем будет проблематично найти сотрудника по его фамилии.
+Решение: Запускаем оснастку ADSI Edit Нажимаем Connect to, далее меняем Контекст именования на Конфигурация Разворачиваем &amp;ldquo;Контейнер конфигурации&amp;rdquo; и затем &amp;ldquo;Конфигурация&amp;rdquo;
+Разворачиваем DisplaySpecifiers и ищем CN=409 (для англ версии, так как 409 это код США, если у Вас многоязычная система или на русском, нужно вносить правки в другие коды)</description>
+    </item>
+    
+    <item>
+      <title>Access to Owa</title>
+      <link>https://shapkin.me/posts/access-to-owa/</link>
+      <pubDate>Fri, 02 Oct 2015 08:56:37 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/access-to-owa/</guid>
+      <description>Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).
+Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает&amp;hellip; и почта ходит, более того, я юзера залочил в ad - все равно работает через web</description>
+    </item>
+    
+  </channel>
+</rss>

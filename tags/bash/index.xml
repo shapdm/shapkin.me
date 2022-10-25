@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Заметки на полях</title>
+    <link>https://shapkin.me/tags/bash/</link>
+    <description>Recent content in bash on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 27 Feb 2015 12:58:08 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Реструктуризация директорий</title>
+      <link>https://shapkin.me/posts/directory-restructuring/</link>
+      <pubDate>Fri, 27 Feb 2015 12:58:08 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/directory-restructuring/</guid>
+      <description>Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:
+/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):
+CentOS #!/bin/bash path=&amp;#34;/root/sort/&amp;#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&amp;#34;$(stat -c &amp;#34;%y %n&amp;#34; $i | awk &amp;#39;{ print $1 }&amp;#39; | sed s%-%/%g)&amp;#34; if ! [ -d &amp;#34;$date&amp;#34; ]; then mkdir -pv &amp;#34;$path$date&amp;#34; fi mv -v $i $path$date done FreeNAS #!</description>
+    </item>
+    
+    <item>
+      <title>Скрипт мониторинга сервера по ping</title>
+      <link>https://shapkin.me/posts/check-servers-by-ping/</link>
+      <pubDate>Wed, 06 Feb 2013 01:01:00 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/check-servers-by-ping/</guid>
+      <description>Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&amp;rsquo;a или nagios&amp;rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).
+Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.
+Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.
+Вот и в моей жизни настал такой момент. Итак, ниже код скрипта с простыми пояснениями:</description>
+    </item>
+    
+  </channel>
+</rss>

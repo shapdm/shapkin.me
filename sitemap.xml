@@ -23,23 +23,53 @@
     <loc>https://shapkin.me/</loc>
     <lastmod>2022-10-24T22:55:36+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/powershell/</loc>
+    <lastmod>2022-09-12T12:18:47+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/windows/</loc>
+    <lastmod>2022-09-12T12:18:47+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/posts/block-traffic-by-powershell/</loc>
+    <lastmod>2022-09-12T12:18:47+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/about/</loc>
     <lastmod>2021-02-27T22:52:31+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/ipv6/</loc>
+    <lastmod>2021-02-03T17:44:25+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/linux/</loc>
+    <lastmod>2021-02-03T17:44:25+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/disable-ipv6-in-centos8/</loc>
     <lastmod>2021-02-03T17:44:25+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/openvpn/</loc>
+    <lastmod>2021-01-25T16:39:22+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/posts/openvpn-certificate-verify-failed/</loc>
     <lastmod>2021-01-25T16:39:22+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/redmine/</loc>
+    <lastmod>2020-12-08T19:41:15+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/redmine-update-and-migrate/</loc>
     <lastmod>2020-12-08T19:41:15+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/acronis/</loc>
+    <lastmod>2020-09-22T10:42:35+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/posts/acronis-corrupts-linux-loader/</loc>
     <lastmod>2020-09-22T10:42:35+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/tools/</loc>
+    <lastmod>2016-03-20T09:43:33+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/posts/watch-the-process/</loc>
     <lastmod>2016-03-20T09:43:33+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/ssd/</loc>
+    <lastmod>2016-03-05T13:44:26+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</loc>
     <lastmod>2016-03-05T13:44:26+03:00</lastmod>
@@ -50,8 +80,17 @@
     <loc>https://shapkin.me/posts/delete-plugin-in-vcenter/</loc>
     <lastmod>2015-11-02T18:53:22+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/active-directory/</loc>
+    <lastmod>2015-10-05T13:47:41+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</loc>
     <lastmod>2015-10-05T13:47:41+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/netbios/</loc>
+    <lastmod>2015-10-02T15:48:00+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/windows-server/</loc>
+    <lastmod>2015-10-02T15:48:00+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/rename-netbios-domain-name/</loc>
     <lastmod>2015-10-02T15:48:00+03:00</lastmod>
@@ -59,11 +98,23 @@
     <loc>https://shapkin.me/posts/access-to-owa/</loc>
     <lastmod>2015-10-02T08:56:37+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/exchange/</loc>
+    <lastmod>2015-10-02T08:56:37+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/owa/</loc>
+    <lastmod>2015-10-02T08:56:37+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/posts/remove-blank-lines/</loc>
     <lastmod>2015-03-11T07:57:30+03:00</lastmod>
   </url><url>
+    <loc>https://shapkin.me/tags/bash/</loc>
+    <lastmod>2015-02-27T12:58:08+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/posts/directory-restructuring/</loc>
     <lastmod>2015-02-27T12:58:08+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/monitoring/</loc>
+    <lastmod>2013-02-06T01:01:00+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/check-servers-by-ping/</loc>
     <lastmod>2013-02-06T01:01:00+03:00</lastmod>

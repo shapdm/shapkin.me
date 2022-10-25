@@ -79,6 +79,51 @@ Alias :	sms_self_signed
 		</item>
 		
 		<item>
+			<title>Блокировка исходящего трафика в Windows</title>
+			<link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
+			<pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
+			
+			<guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
+			<description>Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
+Решение: Блокировка исходящего трафика для браузера
+New-NetFirewallRule -Program &amp;#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&amp;#34; -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Блокировка всего исходящего трафика
+New-NetFirewallRule -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Удаление правила
+Remove-NetFirewallRule -DisplayName &amp;#34;block traffic&amp;#34; Включение и отключение правила
+Disable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Enable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Написал скрипт для удобства пользования</description>
+			<content type="html"><![CDATA[<h2 id="задача">Задача:</h2>
+<p>Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.</p>
+<h2 id="решение">Решение:</h2>
+<p>Блокировка исходящего трафика для браузера</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="n">-Program</span> <span class="s2">&#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&#34;</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span>
+</span></span></code></pre></div><p>Блокировка всего исходящего трафика</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span>
+</span></span></code></pre></div><p>Удаление правила</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Remove-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span>
+</span></span></code></pre></div><p>Включение и отключение правила</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Disable-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;block traffic&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Enable-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;block traffic&#39;</span>
+</span></span></code></pre></div><p>Написал скрипт для удобства пользования</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;Список доступных действий&#34;</span> <span class="n">-BackgroundColor</span> <span class="n">White</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;1. Создать блокирующее правило&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;2. Удалить блокирующее правило&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;3. Завершить&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$choice</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&#34;Выберете пункт из списка&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Switch</span><span class="p">(</span><span class="nv">$choice</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="n">1</span><span class="p">{</span><span class="nb">New-NetFirewallRule</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">2</span><span class="p">{</span><span class="nb">Remove-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">3</span><span class="p">{</span><span class="nb">Write-Host</span> <span class="s2">&#34;Завершить&#34;</span><span class="p">;</span> <span class="n">exit</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span> <span class="p">{</span><span class="nb">Write-Host</span> <span class="s2">&#34;Некорректный ввод, попробуйте снова&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>]]></content>
+		</item>
+		
+		<item>
 			<title>Отключение IPv6 в CentOS 8</title>
 			<link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
 			<pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
