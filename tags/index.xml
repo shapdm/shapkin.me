@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 24 Oct 2022 22:55:36 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 12:52:01 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bash</title>
+      <link>https://shapkin.me/tags/bash/</link>
+      <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openvpn</title>
+      <link>https://shapkin.me/tags/openvpn/</link>
+      <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>certificates</title>
       <link>https://shapkin.me/tags/certificates/</link>
@@ -72,29 +90,11 @@
     </item>
     
     <item>
-      <title>openvpn</title>
-      <link>https://shapkin.me/tags/openvpn/</link>
-      <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/openvpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>redmine</title>
       <link>https://shapkin.me/tags/redmine/</link>
       <pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate>
       
       <guid>https://shapkin.me/tags/redmine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>acronis</title>
-      <link>https://shapkin.me/tags/acronis/</link>
-      <pubDate>Tue, 22 Sep 2020 10:42:35 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/acronis/</guid>
       <description></description>
     </item>
     

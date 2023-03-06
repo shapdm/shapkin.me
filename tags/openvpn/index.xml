@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 25 Jan 2021 16:39:22 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 12:52:01 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Скрипт генерации клиентского конфига OpenVPN</title>
+      <link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
+      <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
+      <description>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
+После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
+Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
+Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.</description>
+    </item>
+    
     <item>
       <title>Openvpn Certificate Verify Failed</title>
       <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>

@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://shapkin.me/tags/certificates/</loc>
-    <lastmod>2022-10-24T22:55:36+03:00</lastmod>
+    <loc>https://shapkin.me/tags/bash/</loc>
+    <lastmod>2023-03-01T12:52:01+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/openvpn/</loc>
+    <lastmod>2023-03-01T12:52:01+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/</loc>
-    <lastmod>2022-10-24T22:55:36+03:00</lastmod>
+    <lastmod>2023-03-01T12:52:01+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/tags/</loc>
+    <lastmod>2023-03-01T12:52:01+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/</loc>
+    <lastmod>2023-03-01T12:52:01+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</loc>
+    <lastmod>2023-03-01T12:52:01+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/certificates/</loc>
     <lastmod>2022-10-24T22:55:36+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/tags/vcsa/</loc>
@@ -18,9 +30,6 @@
     <lastmod>2022-10-24T22:55:36+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/vcsa-certificate-expired/</loc>
-    <lastmod>2022-10-24T22:55:36+03:00</lastmod>
-  </url><url>
-    <loc>https://shapkin.me/</loc>
     <lastmod>2022-10-24T22:55:36+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/tags/powershell/</loc>
@@ -43,9 +52,6 @@
   </url><url>
     <loc>https://shapkin.me/posts/disable-ipv6-in-centos8/</loc>
     <lastmod>2021-02-03T17:44:25+03:00</lastmod>
-  </url><url>
-    <loc>https://shapkin.me/tags/openvpn/</loc>
-    <lastmod>2021-01-25T16:39:22+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/openvpn-certificate-verify-failed/</loc>
     <lastmod>2021-01-25T16:39:22+03:00</lastmod>
@@ -106,9 +112,6 @@
   </url><url>
     <loc>https://shapkin.me/posts/remove-blank-lines/</loc>
     <lastmod>2015-03-11T07:57:30+03:00</lastmod>
-  </url><url>
-    <loc>https://shapkin.me/tags/bash/</loc>
-    <lastmod>2015-02-27T12:58:08+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/directory-restructuring/</loc>
     <lastmod>2015-02-27T12:58:08+03:00</lastmod>

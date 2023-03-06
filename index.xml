@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 24 Oct 2022 22:55:36 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 12:52:01 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Скрипт генерации клиентского конфига OpenVPN</title>
+      <link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
+      <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
+      <description>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
+После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
+Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
+Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.</description>
+    </item>
+    
     <item>
       <title>VMware VCSA Certificates Expired</title>
       <link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
@@ -110,19 +122,6 @@ WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, er
       
       <guid>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</guid>
       <description>В ESXi 5.* и 6.* по-умолчанию все диски определяются как Non-SSD. Из за этого, например, не получится подключить SSD как кэширующее хранилище. Необходимо добавить правило в SATP (Storage Adapter Type Plugin). В Configuration - Storage - Datastore смотрим название диска. Заходим по ssh на хост, и вводим команду esxcli storage nmp satp rule add -s VMW_SATP_LOCAL -d mpx.vmhba1:C0:T1:L0 -o enable_ssd. В моем случае имя было mpx.vmhba1:C0:T1:L0. После этого вводим команду esxcli storage core claiming reclaim -d mpx.</description>
-    </item>
-    
-    <item>
-      <title>Поиск ключа лицензии Windows</title>
-      <link>https://shapkin.me/posts/find-out-the-windows-built-in-license/</link>
-      <pubDate>Thu, 10 Dec 2015 08:46:09 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/find-out-the-windows-built-in-license/</guid>
-      <description>На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
-Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
-Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
-wmic path softwarelicensingservice get OA3xOriginalProductKey
-Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).</description>
     </item>
     
   </channel>
