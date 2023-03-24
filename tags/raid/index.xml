@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raid on Заметки на полях</title>
+    <link>https://shapkin.me/tags/raid/</link>
+    <description>Recent content in raid on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 24 Mar 2023 11:16:33 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/raid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Проблемы с дисковой производительностью на ESXi</title>
+      <link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
+      <pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
+      <description>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов. В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.
+В логах на хостах были такие записи:
+2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT Сразу уточню, что используется виртуализация VMware vSphere 6.
+Версия драйвера который был установлен на моих ESXi хостах lsi-mr3 6.</description>
+    </item>
+    
+  </channel>
+</rss>

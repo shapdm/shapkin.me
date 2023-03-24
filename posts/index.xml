@@ -6,8 +6,37 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Wed, 01 Mar 2023 12:52:01 +0300</lastBuildDate>
+		<lastBuildDate>Fri, 24 Mar 2023 11:16:33 +0300</lastBuildDate>
 		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Проблемы с дисковой производительностью на ESXi</title>
+			<link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
+			<pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
+			
+			<guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
+			<description>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов. В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.
+В логах на хостах были такие записи:
+2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT Сразу уточню, что используется виртуализация VMware vSphere 6.
+Версия драйвера который был установлен на моих ESXi хостах lsi-mr3 6.</description>
+			<content type="html"><![CDATA[<p>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.
+В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.</p>
+<p>В логах на хостах были такие записи:</p>
+<pre tabindex="0"><code>2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0
+2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984
+2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT
+</code></pre><p>Сразу уточню, что используется виртуализация VMware vSphere 6.</p>
+<p>Версия драйвера который был установлен на моих ESXi хостах
+<code>lsi-mr3 6.605.08.00-7vmw.600.1.17.3029758</code></p>
+<p>Драйвер lsi_mr3 заполняет журналы ОС виртуальным сбросом (VIRT_RESET), ожиданиями ввода-вывода ( fusionWaitForOutstanding ).
+ОС выдает виртуальные запросы на сброс (VRR) на локальные устройства хранения, что заставляет драйвер контроллера RAID прерывать все операции ввода-вывода,
+а это в свою очередь может привести к отключению VMFS при большом количестве VRR.</p>
+<p><code>Решается все установкой свежей версии драйвера, но возможно потребуется обновление прошивки RAID контроллера.</code></p>
+<p>Ссылки по проблеме:</p>
+<p><a href="https://kb.vmware.com/s/article/2151234" target="_blank">VMware KB</a></p>
+<p><a href="https://support.lenovo.com/hk/ru/solutions/ht505543-vmware-local-datastore-disconnect-and-virtual-resets-on-the-logs-lenovo-thinksystem-and-lenovo-server" target="_blank">Support Lenovo</a></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Скрипт генерации клиентского конфига OpenVPN</title>

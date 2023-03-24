@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 01 Mar 2023 12:52:01 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Mar 2023 11:16:33 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Проблемы с дисковой производительностью на ESXi</title>
+      <link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
+      <pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
+      <description>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов. В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.
+В логах на хостах были такие записи:
+2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT Сразу уточню, что используется виртуализация VMware vSphere 6.
+Версия драйвера который был установлен на моих ESXi хостах lsi-mr3 6.</description>
+    </item>
+    
     <item>
       <title>Скрипт генерации клиентского конфига OpenVPN</title>
       <link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
@@ -113,15 +125,6 @@ WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, er
       <guid>https://shapkin.me/posts/watch-the-process/</guid>
       <description>Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)
 Пример использования pv dump.sql | mysql -u user -p password database </description>
-    </item>
-    
-    <item>
-      <title>Как заставить ESXi увидеть SSD хранилище</title>
-      <link>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</link>
-      <pubDate>Sat, 05 Mar 2016 13:44:26 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</guid>
-      <description>В ESXi 5.* и 6.* по-умолчанию все диски определяются как Non-SSD. Из за этого, например, не получится подключить SSD как кэширующее хранилище. Необходимо добавить правило в SATP (Storage Adapter Type Plugin). В Configuration - Storage - Datastore смотрим название диска. Заходим по ssh на хост, и вводим команду esxcli storage nmp satp rule add -s VMW_SATP_LOCAL -d mpx.vmhba1:C0:T1:L0 -o enable_ssd. В моем случае имя было mpx.vmhba1:C0:T1:L0. После этого вводим команду esxcli storage core claiming reclaim -d mpx.</description>
     </item>
     
   </channel>
