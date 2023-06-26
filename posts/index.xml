@@ -212,9 +212,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
 </span></span></code></pre></div><p>Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.</p>
 <h3 id="ps">P.S.</h3>
 <p>На этапе перегенерации конфигов я столкнулся с такой ошибкой:
-<img src="/static/img/006/006-1.png" alt=""></p>
+<img src="/img/006/006-1.png" alt=""></p>
 <p>Для решения было достаточно пересоздать grubenv командой <code>grub2-editenv create</code></p>
-<p><img src="/static/img/006/006-2.png" alt=""></p>
+<p><img src="/img/006/006-2.png" alt=""></p>
 <p>Отмечу, что все действия производились на свежеустановленной ОС.</p>
 ]]></content>
 		</item>
