@@ -52,7 +52,8 @@ expandtab — Включает замену tab на пробелы smarttab —
 </span></span></span><span class="line"><span class="cl"><span class="s">set encoding=utf8
 </span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
 </span></span></code></pre></div><p>Осталось переподключить ssh сессию для применения настроек, либо воспользоваться командой source для применения настроек файла к текущей сессии.</p>
-]]></content>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> .vimrc
+</span></span></code></pre></div>]]></content>
 		</item>
 		
 		<item>
