@@ -6,8 +6,54 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Fri, 24 Mar 2023 11:16:33 +0300</lastBuildDate>
+		<lastBuildDate>Fri, 30 Jun 2023 13:12:24 +0300</lastBuildDate>
 		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Настройка Vim</title>
+			<link>https://shapkin.me/posts/customizing-vim/</link>
+			<pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate>
+			
+			<guid>https://shapkin.me/posts/customizing-vim/</guid>
+			<description>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim. Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.
+За несколько лет использования редактора, я пришел к следующему набору:
+expandtab — Включает замену tab на пробелы smarttab — При нажатии tab в начале строки добавляется количество пробелов, указанное в директиве shiftwidth shiftwidth=4 — Задает количество пробелов в одном tab tabstop=4 — Задает количество пробелов в одном tab softtabstop=4 — Задает количество пробелов в одном tab при удалении number — Добавляет нумерацию строк syntax on — Включает подсветку синтаксиса mouse=i — Включает режим вставки (мне обычно нужно для выделения курсором мышки и копирования строк) ignorecase и smartcase — Убирает чувствительность к регистру при поиске hlsearch — Включает подсветку результатов поиска incsearch — Подсветка первого вхождения по поиску encoding=utf8 — Задает кодировку для работы с файлом Итак, чтобы добавить данные настройки пишем в консоли:</description>
+			<content type="html"><![CDATA[<p>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim.
+Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.</p>
+<p>За несколько лет использования редактора, я пришел к следующему набору:</p>
+<ol>
+<li><strong>expandtab</strong> —  Включает замену tab на пробелы</li>
+<li><strong>smarttab</strong> — При нажатии tab в начале строки добавляется количество пробелов, указанное в директиве shiftwidth</li>
+<li><strong>shiftwidth=4</strong> — Задает количество пробелов в одном tab</li>
+<li><strong>tabstop=4</strong> — Задает количество пробелов в одном tab</li>
+<li><strong>softtabstop=4</strong> — Задает количество пробелов в одном tab при удалении</li>
+<li><strong>number</strong> — Добавляет нумерацию строк</li>
+<li><strong>syntax on</strong> — Включает подсветку синтаксиса</li>
+<li><strong>mouse=i</strong> — Включает режим вставки (мне обычно нужно для выделения курсором мышки и копирования строк)</li>
+<li><strong>ignorecase и smartcase</strong> — Убирает чувствительность к регистру при поиске</li>
+<li><strong>hlsearch</strong> — Включает подсветку результатов поиска</li>
+<li><strong>incsearch</strong> — Подсветка первого вхождения по поиску</li>
+<li><strong>encoding=utf8</strong> — Задает кодировку для работы с файлом</li>
+</ol>
+<p>Итак, чтобы добавить данные настройки пишем в консоли:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat &gt; ~/.vimrc <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">set expandtab
+</span></span></span><span class="line"><span class="cl"><span class="s">set smarttab
+</span></span></span><span class="line"><span class="cl"><span class="s">set tabstop=4
+</span></span></span><span class="line"><span class="cl"><span class="s">set softtabstop=4
+</span></span></span><span class="line"><span class="cl"><span class="s">set shiftwidth=4
+</span></span></span><span class="line"><span class="cl"><span class="s">set number
+</span></span></span><span class="line"><span class="cl"><span class="s">syntax on
+</span></span></span><span class="line"><span class="cl"><span class="s">set mouse-=a
+</span></span></span><span class="line"><span class="cl"><span class="s">set ignorecase
+</span></span></span><span class="line"><span class="cl"><span class="s">set smartcase
+</span></span></span><span class="line"><span class="cl"><span class="s">set hlsearch
+</span></span></span><span class="line"><span class="cl"><span class="s">set incsearch
+</span></span></span><span class="line"><span class="cl"><span class="s">set encoding=utf8
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></div><p>Осталось переподключить ssh сессию для применения настроек, либо воспользоваться командой source для применения настроек файла к текущей сессии.</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Проблемы с дисковой производительностью на ESXi</title>

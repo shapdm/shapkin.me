@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on Заметки на полях</title>
+    <link>https://shapkin.me/tags/vim/</link>
+    <description>Recent content in vim on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 30 Jun 2023 13:12:24 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Настройка Vim</title>
+      <link>https://shapkin.me/posts/customizing-vim/</link>
+      <pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/customizing-vim/</guid>
+      <description>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim. Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.
+За несколько лет использования редактора, я пришел к следующему набору:
+expandtab — Включает замену tab на пробелы smarttab — При нажатии tab в начале строки добавляется количество пробелов, указанное в директиве shiftwidth shiftwidth=4 — Задает количество пробелов в одном tab tabstop=4 — Задает количество пробелов в одном tab softtabstop=4 — Задает количество пробелов в одном tab при удалении number — Добавляет нумерацию строк syntax on — Включает подсветку синтаксиса mouse=i — Включает режим вставки (мне обычно нужно для выделения курсором мышки и копирования строк) ignorecase и smartcase — Убирает чувствительность к регистру при поиске hlsearch — Включает подсветку результатов поиска incsearch — Подсветка первого вхождения по поиску encoding=utf8 — Задает кодировку для работы с файлом Итак, чтобы добавить данные настройки пишем в консоли:</description>
+    </item>
+    
+  </channel>
+</rss>
