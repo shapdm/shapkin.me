@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 01 Mar 2023 12:52:01 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
+      <link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
+      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
+      <description>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
+Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
+Общая логика работы Система состоит из нескольких компонентов:</description>
+    </item>
+    
     <item>
       <title>Скрипт генерации клиентского конфига OpenVPN</title>
       <link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>

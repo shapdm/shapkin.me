@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 30 Jun 2023 13:12:24 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bash</title>
+      <link>https://shapkin.me/tags/bash/</link>
+      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://shapkin.me/tags/docker/</link>
+      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grafana</title>
+      <link>https://shapkin.me/tags/grafana/</link>
+      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/grafana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prometheus</title>
+      <link>https://shapkin.me/tags/prometheus/</link>
+      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/prometheus/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>vim</title>
       <link>https://shapkin.me/tags/vim/</link>
@@ -36,15 +72,6 @@
     </item>
     
     <item>
-      <title>bash</title>
-      <link>https://shapkin.me/tags/bash/</link>
-      <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>openvpn</title>
       <link>https://shapkin.me/tags/openvpn/</link>
       <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
@@ -68,33 +95,6 @@
       <pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
       
       <guid>https://shapkin.me/tags/vcsa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>powershell</title>
-      <link>https://shapkin.me/tags/powershell/</link>
-      <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/powershell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://shapkin.me/tags/windows/</link>
-      <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ipv6</title>
-      <link>https://shapkin.me/tags/ipv6/</link>
-      <pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/ipv6/</guid>
       <description></description>
     </item>
     

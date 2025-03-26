@@ -2,19 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://shapkin.me/tags/bash/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/docker/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/grafana/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/posts/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/prometheus/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/tags/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
+    <loc>https://shapkin.me/posts/domain-expiration-days-grafana/</loc>
+    <lastmod>2025-03-26T18:20:02+03:00</lastmod>
+  </url><url>
     <loc>https://shapkin.me/about/</loc>
     <lastmod>2024-09-18T19:11:48+03:00</lastmod>
   </url><url>
-    <loc>https://shapkin.me/posts/</loc>
-    <lastmod>2023-06-30T13:12:24+03:00</lastmod>
-  </url><url>
-    <loc>https://shapkin.me/tags/</loc>
-    <lastmod>2023-06-30T13:12:24+03:00</lastmod>
-  </url><url>
     <loc>https://shapkin.me/tags/vim/</loc>
-    <lastmod>2023-06-30T13:12:24+03:00</lastmod>
-  </url><url>
-    <loc>https://shapkin.me/</loc>
     <lastmod>2023-06-30T13:12:24+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/posts/customizing-vim/</loc>
@@ -28,9 +43,6 @@
   </url><url>
     <loc>https://shapkin.me/posts/vmware-lsi-mr3/</loc>
     <lastmod>2023-03-24T11:16:33+03:00</lastmod>
-  </url><url>
-    <loc>https://shapkin.me/tags/bash/</loc>
-    <lastmod>2023-03-01T12:52:01+03:00</lastmod>
   </url><url>
     <loc>https://shapkin.me/tags/openvpn/</loc>
     <lastmod>2023-03-01T12:52:01+03:00</lastmod>

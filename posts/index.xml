@@ -6,8 +6,153 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Fri, 30 Jun 2023 13:12:24 +0300</lastBuildDate>
+		<lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate>
 		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
+			<link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
+			<pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+			
+			<guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
+			<description>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
+Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
+Общая логика работы Система состоит из нескольких компонентов:</description>
+			<content type="html"><![CDATA[<p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
+Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.</p>
+<p>Установку и настройку <code>prometheus</code> и <code>grafana</code> в этом посте рассматривать не будем, предполагается, что они уже установлены.</p>
+<h3 id="общая-логика-работы">Общая логика работы</h3>
+<p>Система состоит из нескольких компонентов:</p>
+<p><strong>Bash-скрипт (check_domains.sh)</strong>: Проверяет срок действия доменов через whois и отправляет данные в Pushgateway.<br>
+<strong>Pushgateway</strong>: Промежуточный сервис для отправки метрик в Prometheus.<br>
+<strong>Prometheus</strong>: Собирает метрики из Pushgateway.<br>
+<strong>Grafana</strong>: Визуализирует данные в виде графиков и панелей.</p>
+<p>Работает это так:</p>
+<p>Скрипт запускается по расписанию через cron.
+Он получает дату истечения домена через whois, вычисляет количество дней до истечения и отправляет эти данные в Pushgateway.
+Prometheus периодически собирает данные из Pushgateway.
+В Grafana создаем dashboard для отображения данных в подходящем виде.</p>
+<p>Для установки <code>Pushgateway</code> нужно прописать в <code>docker-compose</code> файле:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  pushgateway:
+</span></span><span class="line"><span class="cl">    image: prom/pushgateway
+</span></span><span class="line"><span class="cl">    container_name: pushgateway
+</span></span><span class="line"><span class="cl">    network_mode: host
+</span></span><span class="line"><span class="cl">    ports:
+</span></span><span class="line"><span class="cl">      - <span class="s2">&#34;9091:9091&#34;</span> <span class="c1"># Порт Pushgateway</span>
+</span></span></code></pre></div><p>Также, нужно сообщить <code>Prometheus</code> откуда брать данные, для этого в prometheus.yml пропишем:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  - job_name: <span class="s2">&#34;pushgateway&#34;</span>
+</span></span><span class="line"><span class="cl">    honor_labels: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    static_configs:
+</span></span><span class="line"><span class="cl">	  - targets: <span class="o">[</span><span class="s1">&#39;prometheus:9091&#39;</span><span class="o">]</span>
+</span></span></code></pre></div><h3 id="код-скрипта-check_domainssh">Код скрипта check_domains.sh</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -euo pipefail
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">&#34;/var/log/check-domains.log&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PUSHGATEWAY_URL</span><span class="o">=</span><span class="s2">&#34;http://localhost:9091&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DOMAINS</span><span class="o">=(</span><span class="s2">&#34;aaa.ru&#34;</span> <span class="s2">&#34;bbb.ru&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Проверка наличия необходимых утилит</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> cmd in whois curl<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">command</span> -v <span class="s2">&#34;</span><span class="nv">$cmd</span><span class="s2">&#34;</span> &gt;/dev/null <span class="o">||</span> <span class="o">{</span> <span class="nb">echo</span> <span class="s2">&#34;Error: </span><span class="nv">$cmd</span><span class="s2"> is not installed.&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span><span class="p">;</span> <span class="nb">exit</span> 1<span class="p">;</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Функция для получения и отправки данных</span>
+</span></span><span class="line"><span class="cl">process_domain<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">domain</span><span class="o">=</span><span class="nv">$1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Получение даты истечения через whois</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">expiration_date</span><span class="o">=</span><span class="k">$(</span>whois <span class="s2">&#34;</span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="p">|</span> grep -i <span class="s2">&#34;expiry date&#34;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $4}&#39;</span> <span class="p">|</span> head -n 1<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> -z <span class="s2">&#34;</span><span class="nv">$expiration_date</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date <span class="s1">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span class="k">)</span><span class="s2"> Error: Could not retrieve expiration date for </span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Преобразование даты в формат Unix timestamp</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">expiration_timestamp</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$expiration_date</span><span class="s2">&#34;</span> <span class="p">|</span> sed <span class="s1">&#39;s/\.[0-9]*Z//; s/T/ /&#39;</span><span class="k">)</span><span class="s2">&#34;</span> +%s 2&gt;&gt;<span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">current_timestamp</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Вычисление количества дней до истечения</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">days_remaining</span><span class="o">=</span><span class="k">$((</span> <span class="o">(</span>expiration_timestamp <span class="o">-</span> current_timestamp<span class="o">)</span> <span class="o">/</span> <span class="m">86400</span> <span class="k">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Отправка метрик в Pushgateway</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">metric_name</span><span class="o">=</span><span class="s2">&#34;domain_expiration_days&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">push_url</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PUSHGATEWAY_URL</span><span class="s2">/metrics/job/domain_expiration/instance/</span><span class="nv">$domain</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">metric_data</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$metric_name</span><span class="s2">{domain=\&#34;</span><span class="nv">$domain</span><span class="s2">\&#34;} </span><span class="nv">$days_remaining</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date <span class="s1">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span class="k">)</span><span class="s2"> Pushing data for </span><span class="nv">$domain</span><span class="s2">: </span><span class="nv">$days_remaining</span><span class="s2"> days remaining&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$metric_data</span><span class="s2">&#34;</span> <span class="p">|</span> curl -X POST <span class="s2">&#34;</span><span class="nv">$push_url</span><span class="s2">&#34;</span> --data-binary @- 2&gt;&gt;<span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Основной цикл</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> domain in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">DOMAINS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date <span class="s1">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span class="k">)</span><span class="s2"> Processing domain: </span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    process_domain <span class="s2">&#34;</span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="k">continue</span>  <span class="c1"># Пропуск домена в случае ошибки</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><h3 id="файл-crontab-для-настройки-расписания-запуска-скрипта">Файл crontab для настройки расписания запуска скрипта:</h3>
+<pre tabindex="0"><code># Запускать скрипт каждый день в 00:00
+0 0 * * * /usr/local/bin/check_domains.sh &gt; /var/log/cron.log 2&gt;&amp;1
+</code></pre><h3 id="файл-docker-composeyml">Файл docker-compose.yml</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">services:
+</span></span><span class="line"><span class="cl">  pushgateway:
+</span></span><span class="line"><span class="cl">    image: prom/pushgateway
+</span></span><span class="line"><span class="cl">    container_name: pushgateway
+</span></span><span class="line"><span class="cl">    network_mode: host
+</span></span><span class="line"><span class="cl">    ports:
+</span></span><span class="line"><span class="cl">      - <span class="s2">&#34;9091:9091&#34;</span> <span class="c1"># Порт Pushgateway</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  check-domains:
+</span></span><span class="line"><span class="cl">    build:
+</span></span><span class="line"><span class="cl">      context: .
+</span></span><span class="line"><span class="cl">      dockerfile: Dockerfile
+</span></span><span class="line"><span class="cl">    container_name: check-domains
+</span></span><span class="line"><span class="cl">    hostname: check-domains
+</span></span><span class="line"><span class="cl">    restart: always
+</span></span><span class="line"><span class="cl">    environment:
+</span></span><span class="line"><span class="cl">      - <span class="nv">PUSHGATEWAY_URL</span><span class="o">=</span>http://localhost:9091/metrics/job/domain_expiration
+</span></span><span class="line"><span class="cl">    depends_on:
+</span></span><span class="line"><span class="cl">      - pushgateway
+</span></span><span class="line"><span class="cl">    network_mode: host
+</span></span><span class="line"><span class="cl">    volumes:
+</span></span><span class="line"><span class="cl">      - ./logs:/var/log <span class="c1"># Монтируем папку для логов</span>
+</span></span></code></pre></div><h3 id="файл-dockerfile">Файл Dockerfile</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Используем базовый образ Alpine Linux</span>
+</span></span><span class="line"><span class="cl">FROM alpine:latest
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Устанавливаем необходимые пакеты</span>
+</span></span><span class="line"><span class="cl">RUN apk add --no-cache <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    bash <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    curl <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    whois <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    dcron
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Копируем скрипт в контейнер</span>
+</span></span><span class="line"><span class="cl">COPY check_domains.sh /usr/local/bin/check_domains.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Делаем скрипт исполняемым</span>
+</span></span><span class="line"><span class="cl">RUN chmod +x /usr/local/bin/check_domains.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Копируем cron-задачу</span>
+</span></span><span class="line"><span class="cl">COPY crontab /etc/cron.d/crontab
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Даем права на выполнение cron-задачи</span>
+</span></span><span class="line"><span class="cl">RUN chmod <span class="m">0644</span> /etc/cron.d/crontab
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Создаем лог-файл для cron</span>
+</span></span><span class="line"><span class="cl">RUN touch /var/log/cron.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Запускаем cron и логируем вывод</span>
+</span></span><span class="line"><span class="cl">CMD touch /var/log/cron.log <span class="o">&amp;&amp;</span> crond <span class="o">&amp;&amp;</span> tail -f /var/log/cron.log
+</span></span></code></pre></div><p>Настройка dashboard в Grafana:</p>
+<ol>
+<li>Добавляем Prometheus как источник данных.</li>
+<li>Создаем панель с запросом:
+<code>domain_expiration_days{domain=&quot;aaa.ru&quot;}</code></li>
+<li>Настраиваем отображения данных в подходящем виде.</li>
+</ol>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Настройка Vim</title>

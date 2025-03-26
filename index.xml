@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 30 Jun 2023 13:12:24 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
+      <link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
+      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
+      <description>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
+Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
+Общая логика работы Система состоит из нескольких компонентов:</description>
+    </item>
+    
     <item>
       <title>Обо мне</title>
       <link>https://shapkin.me/about/</link>
@@ -113,17 +124,6 @@ WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, er
       <description>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
 Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).
 Установка нужной версии Redmine по инструкциям с сайта https://redmine.</description>
-    </item>
-    
-    <item>
-      <title>Acronis ломает загрузчик</title>
-      <link>https://shapkin.me/posts/acronis-corrupts-linux-loader/</link>
-      <pubDate>Tue, 22 Sep 2020 10:42:35 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/acronis-corrupts-linux-loader/</guid>
-      <description>Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.
-Восстановливаем загрузчик таким образом:
-1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).</description>
     </item>
     
   </channel>

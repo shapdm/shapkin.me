@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Заметки на полях</title>
+    <link>https://shapkin.me/tags/docker/</link>
+    <description>Recent content in docker on Заметки на полях</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
+      <link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
+      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
+      <description>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
+Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
+Общая логика работы Система состоит из нескольких компонентов:</description>
+    </item>
+    
+  </channel>
+</rss>
