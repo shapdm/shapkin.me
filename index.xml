@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 12:31:58 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Сборка OpenVPN с патчем XOR в Docker</title>
+      <link>https://shapkin.me/posts/build-openvpn-with-xor/</link>
+      <pubDate>Thu, 27 Mar 2025 12:31:58 +0300</pubDate>
+      
+      <guid>https://shapkin.me/posts/build-openvpn-with-xor/</guid>
+      <description>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.
+Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах. Первым делом, создаем директорию, в которой будут все наши конфиги:
+mkdir openvpn Теперь переходим в нее и создаем файлы, указанные ниже.
+Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимые пакеты 4RUN apt-get update &amp;amp;&amp;amp; \ 5 apt-get install -y git \ 6 gcc \ 7 libssl-dev \ 8 liblzo2-dev \ 9 liblz4-dev \ 10 libpam0g-dev \ 11 make \ 12 unzip \ 13 sbuild \ 14 build-essential \ 15 debhelper \ 16 fakeroot \ 17 devscripts \ 18 pkg-config \ 19 dpkg-dev \ 20 libpkcs11-helper-dev \ 21 libselinux1-dev \ 22 libcap-ng-dev \ 23 libnl-3-dev \ 24 libnl-genl-3-dev 25 26# Создаем рабочую директорию 27WORKDIR /openvpn-build 28 29# Скачиваем исходный код OpenVPN 30RUN wget https://github.</description>
+    </item>
+    
     <item>
       <title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
       <link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
@@ -115,17 +127,6 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
       <description>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
 В логе openvpn.log обнаружил следующее:
 WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&amp;gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.</description>
-    </item>
-    
-    <item>
-      <title>Обновление и миграция Redmine между двумя серверами</title>
-      <link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
-      <pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
-      <description>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
-Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).
-Установка нужной версии Redmine по инструкциям с сайта https://redmine.</description>
     </item>
     
   </channel>

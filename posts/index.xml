@@ -6,8 +6,227 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate>
+		<lastBuildDate>Thu, 27 Mar 2025 12:31:58 +0300</lastBuildDate>
 		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Сборка OpenVPN с патчем XOR в Docker</title>
+			<link>https://shapkin.me/posts/build-openvpn-with-xor/</link>
+			<pubDate>Thu, 27 Mar 2025 12:31:58 +0300</pubDate>
+			
+			<guid>https://shapkin.me/posts/build-openvpn-with-xor/</guid>
+			<description>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.
+Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах. Первым делом, создаем директорию, в которой будут все наши конфиги:
+mkdir openvpn Теперь переходим в нее и создаем файлы, указанные ниже.
+Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимые пакеты 4RUN apt-get update &amp;amp;&amp;amp; \ 5 apt-get install -y git \ 6 gcc \ 7 libssl-dev \ 8 liblzo2-dev \ 9 liblz4-dev \ 10 libpam0g-dev \ 11 make \ 12 unzip \ 13 sbuild \ 14 build-essential \ 15 debhelper \ 16 fakeroot \ 17 devscripts \ 18 pkg-config \ 19 dpkg-dev \ 20 libpkcs11-helper-dev \ 21 libselinux1-dev \ 22 libcap-ng-dev \ 23 libnl-3-dev \ 24 libnl-genl-3-dev 25 26# Создаем рабочую директорию 27WORKDIR /openvpn-build 28 29# Скачиваем исходный код OpenVPN 30RUN wget https://github.</description>
+			<content type="html"><![CDATA[<p>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.</p>
+<p>Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.
+Первым делом, создаем директорию, в которой будут все наши конфиги:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir openvpn
+</span></span></code></pre></div><p>Теперь переходим в нее и создаем файлы, указанные ниже.</p>
+<h3 id="dockerfile">Dockerfile</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">FROM debian:12
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># Устанавливаем необходимые пакеты</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">RUN apt-get update <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="se"></span>    apt-get install -y git <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="se"></span>    gcc <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="se"></span>    libssl-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="se"></span>    liblzo2-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="se"></span>    liblz4-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="se"></span>    libpam0g-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="se"></span>    make <span class="se">\
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="se"></span>    unzip <span class="se">\
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="se"></span>    sbuild <span class="se">\
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="se"></span>    build-essential <span class="se">\
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="se"></span>    debhelper <span class="se">\
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="se"></span>    fakeroot <span class="se">\
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="se"></span>    devscripts <span class="se">\
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="se"></span>    pkg-config <span class="se">\
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="se"></span>    dpkg-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="se"></span>    libpkcs11-helper-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="se"></span>    libselinux1-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="se"></span>    libcap-ng-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="se"></span>    libnl-3-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="se"></span>    libnl-genl-3-dev
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c1"># Создаем рабочую директорию</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">WORKDIR /openvpn-build
+</span></span><span class="line"><span class="ln">28</span><span class="cl">
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c1"># Скачиваем исходный код OpenVPN</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">RUN wget https://github.com/OpenVPN/openvpn/releases/download/v2.6.13/openvpn-2.6.13.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="se"></span>    tar -xzf openvpn-2.6.13.tar.gz 
+</span></span><span class="line"><span class="ln">32</span><span class="cl">
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="c1"># Копируем настройки и скрипт сборки</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">WORKDIR /openvpn-build/openvpn-2.6.13
+</span></span><span class="line"><span class="ln">35</span><span class="cl">COPY ./debian debian
+</span></span><span class="line"><span class="ln">36</span><span class="cl">COPY ./entrypoint.sh /entrypoint.sh
+</span></span><span class="line"><span class="ln">37</span><span class="cl">
+</span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="c1"># Make Executable</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">RUN chmod +x /entrypoint.sh
+</span></span><span class="line"><span class="ln">40</span><span class="cl">
+</span></span><span class="line"><span class="ln">41</span><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;bash&#34;</span>, <span class="s2">&#34;-ex&#34;</span>, <span class="s2">&#34;/entrypoint.sh&#34;</span><span class="o">]</span>
+</span></span></code></pre></div><h3 id="docker-composeyml">docker-compose.yml</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">services:
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  openvpn:
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    build:
+</span></span><span class="line"><span class="ln">4</span><span class="cl">      context: .
+</span></span><span class="line"><span class="ln">5</span><span class="cl">      dockerfile: Dockerfile
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    container_name: openvpn
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    volumes:
+</span></span><span class="line"><span class="ln">8</span><span class="cl">      - ./release:/release
+</span></span></code></pre></div><h3 id="entrypointsh">entrypoint.sh</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nb">set</span> -euo pipefail
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nv">OVPN_VERSION</span><span class="o">=</span><span class="s2">&#34;2.6.13&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nb">cd</span> /openvpn-build/openvpn-<span class="nv">$OVPN_VERSION</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># Скачиваем и применяем XOR patch</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">mkdir -p patches <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="se"></span>    <span class="nb">cd</span> patches <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="se"></span>    wget -q https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-<span class="nv">$OVPN_VERSION</span>/patches/02-tunnelblick-openvpn_xorpatch-a.diff -O 02-tunnelblick-openvpn_xorpatch-a.diff <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="se"></span>    wget -q https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-<span class="nv">$OVPN_VERSION</span>/patches/03-tunnelblick-openvpn_xorpatch-b.diff -O 03-tunnelblick-openvpn_xorpatch-b.diff <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="se"></span>    wget -q https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-<span class="nv">$OVPN_VERSION</span>/patches/04-tunnelblick-openvpn_xorpatch-c.diff -O 04-tunnelblick-openvpn_xorpatch-c.diff <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="se"></span>    wget -q https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-<span class="nv">$OVPN_VERSION</span>/patches/05-tunnelblick-openvpn_xorpatch-d.diff -O 05-tunnelblick-openvpn_xorpatch-d.diff <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="se"></span>    wget -q https://raw.githubusercontent.com/Tunnelblick/Tunnelblick/master/third_party/sources/openvpn/openvpn-<span class="nv">$OVPN_VERSION</span>/patches/06-tunnelblick-openvpn_xorpatch-e.diff -O 06-tunnelblick-openvpn_xorpatch-e.diff
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"># Применяем патчи</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="nb">cd</span> /openvpn-build/openvpn-<span class="nv">$OVPN_VERSION</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="k">for</span> patch in patches/*.diff<span class="p">;</span> <span class="k">do</span> 
+</span></span><span class="line"><span class="ln">22</span><span class="cl">	patch -p1 &lt; <span class="s2">&#34;</span><span class="nv">$patch</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c1"># Правим аттрибуты</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">chmod -R <span class="m">644</span> debian/*
+</span></span><span class="line"><span class="ln">27</span><span class="cl">chmod <span class="m">755</span> debian/rules
+</span></span><span class="line"><span class="ln">28</span><span class="cl">
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c1"># Запуск сборки</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">dpkg-buildpackage -us -uc
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="c1"># Копируем собранный deb пакет на хост</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">cp /openvpn-build/openvpn_*.deb /release
+</span></span><span class="line"><span class="ln">34</span><span class="cl">
+</span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="c1"># Очищаем ненужные файлы</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">apt-get clean <span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+</span></span></code></pre></div><p>Создаем папки release и debian</p>
+<pre tabindex="0"><code>mkdir {release,debian}
+</code></pre><p>В папке debian нужно создать файлы с конфигурацией для сборки, приведу свои варианты.</p>
+<p>Кратко опишу для чего каждый файл: </p>
+<table>
+<thead>
+<tr>
+<th>Имя файла</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Changelog</strong></td>
+<td>Описывает всю историю изменений</td>
+</tr>
+<tr>
+<td><strong>Compat</strong></td>
+<td>Указывает уровень совместимости с debhelper</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Содержит всю основную информацию о собираемом пакете</td>
+</tr>
+<tr>
+<td><strong>Rules</strong></td>
+<td>Описывает правила по которым будет происходить компиляции пакета</td>
+</tr>
+<tr>
+<td><strong>Copyright</strong></td>
+<td>Содержит информацию об авторских правах и лицензии исходников</td>
+</tr>
+</tbody>
+</table>
+<p>Подробнее с форматом можно ознакомиться по ссылке: <a href="https://www.debian.org/doc/manuals/maint-guide/dreq.ru.html" target="_blank">https://www.debian.org/doc/manuals/maint-guide/dreq.ru.html</a></p>
+<h3 id="debianchangelog">debian/changelog</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openvpn <span class="o">(</span>2.6.13<span class="o">)</span> unstable<span class="p">;</span> <span class="nv">urgency</span><span class="o">=</span>medium
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  * Custom build with XOR patch <span class="k">for</span> Tunnelblick
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  -- Your Name &lt;your@mail&gt;  Thu, <span class="m">01</span> Jan <span class="m">1970</span> 00:00:00 +0000
+</span></span></code></pre></div><h3 id="debiancompat">debian/compat</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">12</span>
+</span></span></code></pre></div><h3 id="debiancontrol">debian/control</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Source: openvpn
+</span></span><span class="line"><span class="cl">Section: net
+</span></span><span class="line"><span class="cl">Priority: optional
+</span></span><span class="line"><span class="cl">Maintainer: ShDm &lt;shdmw@yandex.ru&gt;
+</span></span><span class="line"><span class="cl">Build-Depends: debhelper <span class="o">(</span>&gt;<span class="o">=</span> 12<span class="o">)</span>, libssl-dev, liblz4-dev, libpkcs11-helper-dev, libpam0g-dev, libselinux1-dev, libcap-ng-dev
+</span></span><span class="line"><span class="cl">Standards-Version: 2.6.13
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Package: openvpn
+</span></span><span class="line"><span class="cl">Architecture: any
+</span></span><span class="line"><span class="cl">Depends: <span class="si">${</span><span class="nv">shlibs</span><span class="p">:</span><span class="nv">Depends</span><span class="si">}</span>, <span class="si">${</span><span class="nv">misc</span><span class="p">:</span><span class="nv">Depends</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">Recommends: easy-rsa
+</span></span><span class="line"><span class="cl">Suggests: openssl, resolvconf, openvpn-dco-dkms, openvpn-systemd-resolved
+</span></span><span class="line"><span class="cl">Homepage: https://openvpn.net/
+</span></span><span class="line"><span class="cl">Description: OpenVPN with XOR
+</span></span><span class="line"><span class="cl"> Custom OpenVPN build with XOR patch from Tunnelblick
+</span></span></code></pre></div><h3 id="debiancopyright">debian/copyright</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+</span></span><span class="line"><span class="cl">Upstream-Name: OpenVPN
+</span></span><span class="line"><span class="cl">Source: https://github.com/OpenVPN/openvpn
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Files: *
+</span></span><span class="line"><span class="cl">Copyright: 2001-2023 OpenVPN Inc.
+</span></span><span class="line"><span class="cl">License: GPL-2+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">License: GPL-2+
+</span></span><span class="line"><span class="cl"> This program is free software<span class="p">;</span> you can redistribute it and/or modify
+</span></span><span class="line"><span class="cl"> it under the terms of the GNU General Public License as published by
+</span></span><span class="line"><span class="cl"> the Free Software Foundation<span class="p">;</span> either version <span class="m">2</span> of the License, or
+</span></span><span class="line"><span class="cl"> <span class="o">(</span>at your option<span class="o">)</span> any later version.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> This program is distributed in the hope that it will be useful,
+</span></span><span class="line"><span class="cl"> but WITHOUT ANY WARRANTY<span class="p">;</span> without even the implied warranty of
+</span></span><span class="line"><span class="cl"> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+</span></span><span class="line"><span class="cl"> GNU General Public License <span class="k">for</span> more details.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> You should have received a copy of the GNU General Public License along
+</span></span><span class="line"><span class="cl"> with this program<span class="p">;</span> <span class="k">if</span> not, write to the Free Software Foundation, Inc.,
+</span></span><span class="line"><span class="cl"> <span class="m">51</span> Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+</span></span></code></pre></div><h3 id="debianrules">debian/rules</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/make -f
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">%:
+</span></span><span class="line"><span class="cl">	dh <span class="nv">$@</span>
+</span></span></code></pre></div><p>Теперь запускаем и ждем выполнения, процесс может быть долгим, все зависит от характеристик оборудования, на котором запускается сборка.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose up --build
+</span></span></code></pre></div><p>Статус <code>openvpn exited with code 0</code> значит, что все прошло успешно и собранный deb пакет должен находиться в папке <code>release</code>, а контейнер будет в состоянии Exited <code>Exited (0) About a minute ago</code>.</p>
+<p>Информацию о собранном пакете можем проверить командой:</p>
+<pre tabindex="0"><code>apt info ./release/openvpn_2.6.13_amd64.deb
+</code></pre><p>Вывод будет примерно таким:</p>
+<pre tabindex="0"><code>Package: openvpn
+Version: 2.6.13
+Priority: optional
+Section: net
+Maintainer: Your Name &lt;your@mail&gt;
+Installed-Size: 1,177 kB
+Depends: libc6 (&gt;= 2.34), libcap-ng0 (&gt;= 0.7.9), liblz4-1 (&gt;= 0.0~r130), liblzo2-2 (&gt;= 2.02), libnl-3-200 (&gt;= 3.2.7), libnl-genl-3-200 (&gt;= 3.2.7), libpam0g (&gt;= 0.99.7.1), libssl3 (&gt;= 3.0.0)
+Recommends: easy-rsa
+Suggests: openssl, resolvconf, openvpn-dco-dkms, openvpn-systemd-resolved
+Homepage: https://openvpn.net/
+Download-Size: 522 kB
+APT-Sources: /opt/openvpn/release/openvpn_2.6.13_amd64.deb
+Description: OpenVPN with XOR
+ Custom OpenVPN build with XOR patch from Tunnelblick
+</code></pre><p>Теперь собранный пакет можно использовать для установки.
+Нужно учесть, что для обновления версии потребуется заново производить сборку и важно, чтобы под желаемую версию OpenVPN уже существовали актуальные патчи от Tunnelblick.</p>
+<p><strong>Исходники OpenVPN:</strong><br>
+<a href="https://github.com/OpenVPN/openvpn" target="_blank">https://github.com/OpenVPN/openvpn</a><br>
+<strong>Исходники патчей Tunnelblick:</strong><br>
+<a href="https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/sources/openvpn" target="_blank">https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/sources/openvpn</a></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>

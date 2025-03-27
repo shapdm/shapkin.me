@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on Заметки на полях</title>
-    <link>https://shapkin.me/tags/docker/</link>
-    <description>Recent content in docker on Заметки на полях</description>
+    <title>xor on Заметки на полях</title>
+    <link>https://shapkin.me/tags/xor/</link>
+    <description>Recent content in xor on Заметки на полях</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 27 Mar 2025 12:31:58 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 12:31:58 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/xor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Сборка OpenVPN с патчем XOR в Docker</title>
       <link>https://shapkin.me/posts/build-openvpn-with-xor/</link>
@@ -18,17 +18,6 @@
 Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах. Первым делом, создаем директорию, в которой будут все наши конфиги:
 mkdir openvpn Теперь переходим в нее и создаем файлы, указанные ниже.
 Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимые пакеты 4RUN apt-get update &amp;amp;&amp;amp; \ 5 apt-get install -y git \ 6 gcc \ 7 libssl-dev \ 8 liblzo2-dev \ 9 liblz4-dev \ 10 libpam0g-dev \ 11 make \ 12 unzip \ 13 sbuild \ 14 build-essential \ 15 debhelper \ 16 fakeroot \ 17 devscripts \ 18 pkg-config \ 19 dpkg-dev \ 20 libpkcs11-helper-dev \ 21 libselinux1-dev \ 22 libcap-ng-dev \ 23 libnl-3-dev \ 24 libnl-genl-3-dev 25 26# Создаем рабочую директорию 27WORKDIR /openvpn-build 28 29# Скачиваем исходный код OpenVPN 30RUN wget https://github.</description>
-    </item>
-    
-    <item>
-      <title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
-      <link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
-      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
-      <description>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
-Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:</description>
     </item>
     
   </channel>

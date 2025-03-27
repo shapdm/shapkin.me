@@ -7,22 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 12:31:58 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://shapkin.me/tags/docker/</link>
+      <pubDate>Thu, 27 Mar 2025 12:31:58 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openvpn</title>
+      <link>https://shapkin.me/tags/openvpn/</link>
+      <pubDate>Thu, 27 Mar 2025 12:31:58 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xor</title>
+      <link>https://shapkin.me/tags/xor/</link>
+      <pubDate>Thu, 27 Mar 2025 12:31:58 +0300</pubDate>
+      
+      <guid>https://shapkin.me/tags/xor/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bash</title>
       <link>https://shapkin.me/tags/bash/</link>
       <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
       
       <guid>https://shapkin.me/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://shapkin.me/tags/docker/</link>
-      <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -72,29 +90,11 @@
     </item>
     
     <item>
-      <title>openvpn</title>
-      <link>https://shapkin.me/tags/openvpn/</link>
-      <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/openvpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>certificates</title>
       <link>https://shapkin.me/tags/certificates/</link>
       <pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
       
       <guid>https://shapkin.me/tags/certificates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vcsa</title>
-      <link>https://shapkin.me/tags/vcsa/</link>
-      <pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
-      
-      <guid>https://shapkin.me/tags/vcsa/</guid>
       <description></description>
     </item>
     
