@@ -6,19 +6,19 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Thu, 27 Mar 2025 12:31:58 +0300</lastBuildDate>
+		<lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
 		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Сборка OpenVPN с патчем XOR в Docker</title>
 			<link>https://shapkin.me/posts/build-openvpn-with-xor/</link>
-			<pubDate>Thu, 27 Mar 2025 12:31:58 +0300</pubDate>
+			<pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate>
 			
 			<guid>https://shapkin.me/posts/build-openvpn-with-xor/</guid>
 			<description>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.
 Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах. Первым делом, создаем директорию, в которой будут все наши конфиги:
 mkdir openvpn Теперь переходим в нее и создаем файлы, указанные ниже.
-Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимые пакеты 4RUN apt-get update &amp;amp;&amp;amp; \ 5 apt-get install -y git \ 6 gcc \ 7 libssl-dev \ 8 liblzo2-dev \ 9 liblz4-dev \ 10 libpam0g-dev \ 11 make \ 12 unzip \ 13 sbuild \ 14 build-essential \ 15 debhelper \ 16 fakeroot \ 17 devscripts \ 18 pkg-config \ 19 dpkg-dev \ 20 libpkcs11-helper-dev \ 21 libselinux1-dev \ 22 libcap-ng-dev \ 23 libnl-3-dev \ 24 libnl-genl-3-dev 25 26# Создаем рабочую директорию 27WORKDIR /openvpn-build 28 29# Скачиваем исходный код OpenVPN 30RUN wget https://github.</description>
+Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Устанавливаем необходимые пакеты 7RUN apt-get update &amp;amp;&amp;amp; \ 8 apt-get install -y git \ 9 gcc \ 10 libssl-dev \ 11 liblzo2-dev \ 12 liblz4-dev \ 13 libpam0g-dev \ 14 make \ 15 unzip \ 16 sbuild \ 17 build-essential \ 18 debhelper \ 19 fakeroot \ 20 devscripts \ 21 pkg-config \ 22 dpkg-dev \ 23 libpkcs11-helper-dev \ 24 libselinux1-dev \ 25 libcap-ng-dev \ 26 libnl-3-dev \ 27 libnl-genl-3-dev 28 29# Создаем рабочую директорию 30WORKDIR /openvpn-build 31 32# Скачиваем исходный код OpenVPN 33RUN wget https://github.</description>
 			<content type="html"><![CDATA[<p>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.</p>
 <p>Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.
 Первым делом, создаем директорию, в которой будут все наши конфиги:</p>
@@ -27,54 +27,48 @@ Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимы�
 <h3 id="dockerfile">Dockerfile</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">FROM debian:12
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># Устанавливаем необходимые пакеты</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">RUN apt-get update <span class="o">&amp;&amp;</span> <span class="se">\
-</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="se"></span>    apt-get install -y git <span class="se">\
-</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="se"></span>    gcc <span class="se">\
-</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="se"></span>    libssl-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="se"></span>    liblzo2-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="se"></span>    liblz4-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="se"></span>    libpam0g-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="se"></span>    make <span class="se">\
-</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="se"></span>    unzip <span class="se">\
-</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="se"></span>    sbuild <span class="se">\
-</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="se"></span>    build-essential <span class="se">\
-</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="se"></span>    debhelper <span class="se">\
-</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="se"></span>    fakeroot <span class="se">\
-</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="se"></span>    devscripts <span class="se">\
-</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="se"></span>    pkg-config <span class="se">\
-</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="se"></span>    dpkg-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="se"></span>    libpkcs11-helper-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="se"></span>    libselinux1-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="se"></span>    libcap-ng-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="se"></span>    libnl-3-dev <span class="se">\
-</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="se"></span>    libnl-genl-3-dev
-</span></span><span class="line"><span class="ln">25</span><span class="cl">
-</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c1"># Создаем рабочую директорию</span>
-</span></span><span class="line"><span class="ln">27</span><span class="cl">WORKDIR /openvpn-build
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># Создаем volume</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">VOLUME /release
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"># Устанавливаем необходимые пакеты</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">RUN apt-get update <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="se"></span>    apt-get install -y git <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="se"></span>    gcc <span class="se">\
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="se"></span>    libssl-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="se"></span>    liblzo2-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="se"></span>    liblz4-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="se"></span>    libpam0g-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="se"></span>    make <span class="se">\
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="se"></span>    unzip <span class="se">\
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="se"></span>    sbuild <span class="se">\
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="se"></span>    build-essential <span class="se">\
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="se"></span>    debhelper <span class="se">\
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="se"></span>    fakeroot <span class="se">\
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="se"></span>    devscripts <span class="se">\
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="se"></span>    pkg-config <span class="se">\
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="se"></span>    dpkg-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="se"></span>    libpkcs11-helper-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="se"></span>    libselinux1-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="se"></span>    libcap-ng-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="se"></span>    libnl-3-dev <span class="se">\
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="se"></span>    libnl-genl-3-dev
 </span></span><span class="line"><span class="ln">28</span><span class="cl">
-</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c1"># Скачиваем исходный код OpenVPN</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">RUN wget https://github.com/OpenVPN/openvpn/releases/download/v2.6.13/openvpn-2.6.13.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\
-</span></span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="se"></span>    tar -xzf openvpn-2.6.13.tar.gz 
-</span></span><span class="line"><span class="ln">32</span><span class="cl">
-</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="c1"># Копируем настройки и скрипт сборки</span>
-</span></span><span class="line"><span class="ln">34</span><span class="cl">WORKDIR /openvpn-build/openvpn-2.6.13
-</span></span><span class="line"><span class="ln">35</span><span class="cl">COPY ./debian debian
-</span></span><span class="line"><span class="ln">36</span><span class="cl">COPY ./entrypoint.sh /entrypoint.sh
-</span></span><span class="line"><span class="ln">37</span><span class="cl">
-</span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="c1"># Делаем исполняемым</span>
-</span></span><span class="line"><span class="ln">39</span><span class="cl">RUN chmod +x /entrypoint.sh
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c1"># Создаем рабочую директорию</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">WORKDIR /openvpn-build
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="c1"># Скачиваем исходный код OpenVPN</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">RUN wget https://github.com/OpenVPN/openvpn/releases/download/v2.6.13/openvpn-2.6.13.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="se"></span>    tar -xzf openvpn-2.6.13.tar.gz 
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="c1"># Копируем настройки и скрипт сборки</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">WORKDIR /openvpn-build/openvpn-2.6.13
+</span></span><span class="line"><span class="ln">38</span><span class="cl">COPY ./debian debian
+</span></span><span class="line"><span class="ln">39</span><span class="cl">COPY ./entrypoint.sh /entrypoint.sh
 </span></span><span class="line"><span class="ln">40</span><span class="cl">
-</span></span><span class="line"><span class="ln">41</span><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;bash&#34;</span>, <span class="s2">&#34;-ex&#34;</span>, <span class="s2">&#34;/entrypoint.sh&#34;</span><span class="o">]</span>
-</span></span></code></pre></div><h3 id="docker-composeyml">docker-compose.yml</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">services:
-</span></span><span class="line"><span class="ln">2</span><span class="cl">  openvpn:
-</span></span><span class="line"><span class="ln">3</span><span class="cl">    build:
-</span></span><span class="line"><span class="ln">4</span><span class="cl">      context: .
-</span></span><span class="line"><span class="ln">5</span><span class="cl">      dockerfile: Dockerfile
-</span></span><span class="line"><span class="ln">6</span><span class="cl">    container_name: openvpn
-</span></span><span class="line"><span class="ln">7</span><span class="cl">    volumes:
-</span></span><span class="line"><span class="ln">8</span><span class="cl">      - ./release:/release
+</span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="c1"># Делаем исполняемым</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">RUN chmod +x /entrypoint.sh
+</span></span><span class="line"><span class="ln">43</span><span class="cl">
+</span></span><span class="line"><span class="ln">44</span><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;bash&#34;</span>, <span class="s2">&#34;-ex&#34;</span>, <span class="s2">&#34;/entrypoint.sh&#34;</span><span class="o">]</span>
 </span></span></code></pre></div><h3 id="entrypointsh">entrypoint.sh</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
@@ -199,9 +193,12 @@ Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимы�
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">%:
 </span></span><span class="line"><span class="cl">	dh <span class="nv">$@</span>
-</span></span></code></pre></div><p>Теперь запускаем и ждем выполнения, процесс может быть долгим, все зависит от характеристик оборудования, на котором запускается сборка.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose up --build
-</span></span></code></pre></div><p>Статус <code>openvpn exited with code 0</code> значит, что все прошло успешно и собранный deb пакет должен находиться в папке <code>release</code>, а контейнер будет в состоянии Exited <code>Exited (0) About a minute ago</code>.</p>
+</span></span></code></pre></div><p>Теперь запускаем и ждем выполнения, процесс может быть долгим, все зависит от характеристик оборудования, на котором запускается сборка.
+Сперва соберем наш образ:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t openvpn-build .
+</span></span></code></pre></div><p>После успешной сборки запускаем контейнер, внутри которого уже соберется deb пакет:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/release:/release -t openvpn openvpn-build
+</span></span></code></pre></div><p>Если ошибок в конце нет, значит все прошло успешно и собранный deb пакет должен находиться в папке <code>release</code>, а контейнер будет удален, так как мы запустили сборку с флагом <code>--rm</code>.</p>
 <p>Информацию о собранном пакете можем проверить командой:</p>
 <pre tabindex="0"><code>apt info ./release/openvpn_2.6.13_amd64.deb
 </code></pre><p>Вывод будет примерно таким:</p>

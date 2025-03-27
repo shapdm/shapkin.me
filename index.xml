@@ -7,17 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 27 Mar 2025 12:31:58 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate><atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Сборка OpenVPN с патчем XOR в Docker</title>
       <link>https://shapkin.me/posts/build-openvpn-with-xor/</link>
-      <pubDate>Thu, 27 Mar 2025 12:31:58 +0300</pubDate>
+      <pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate>
       
       <guid>https://shapkin.me/posts/build-openvpn-with-xor/</guid>
       <description>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.
 Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах. Первым делом, создаем директорию, в которой будут все наши конфиги:
 mkdir openvpn Теперь переходим в нее и создаем файлы, указанные ниже.
-Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимые пакеты 4RUN apt-get update &amp;amp;&amp;amp; \ 5 apt-get install -y git \ 6 gcc \ 7 libssl-dev \ 8 liblzo2-dev \ 9 liblz4-dev \ 10 libpam0g-dev \ 11 make \ 12 unzip \ 13 sbuild \ 14 build-essential \ 15 debhelper \ 16 fakeroot \ 17 devscripts \ 18 pkg-config \ 19 dpkg-dev \ 20 libpkcs11-helper-dev \ 21 libselinux1-dev \ 22 libcap-ng-dev \ 23 libnl-3-dev \ 24 libnl-genl-3-dev 25 26# Создаем рабочую директорию 27WORKDIR /openvpn-build 28 29# Скачиваем исходный код OpenVPN 30RUN wget https://github.</description>
+Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Устанавливаем необходимые пакеты 7RUN apt-get update &amp;amp;&amp;amp; \ 8 apt-get install -y git \ 9 gcc \ 10 libssl-dev \ 11 liblzo2-dev \ 12 liblz4-dev \ 13 libpam0g-dev \ 14 make \ 15 unzip \ 16 sbuild \ 17 build-essential \ 18 debhelper \ 19 fakeroot \ 20 devscripts \ 21 pkg-config \ 22 dpkg-dev \ 23 libpkcs11-helper-dev \ 24 libselinux1-dev \ 25 libcap-ng-dev \ 26 libnl-3-dev \ 27 libnl-genl-3-dev 28 29# Создаем рабочую директорию 30WORKDIR /openvpn-build 31 32# Скачиваем исходный код OpenVPN 33RUN wget https://github.</description>
     </item>
     
     <item>
