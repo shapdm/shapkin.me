@@ -62,7 +62,7 @@ Dockerfile 1FROM debian:12 2 3# Устанавливаем необходимы�
 </span></span><span class="line"><span class="ln">35</span><span class="cl">COPY ./debian debian
 </span></span><span class="line"><span class="ln">36</span><span class="cl">COPY ./entrypoint.sh /entrypoint.sh
 </span></span><span class="line"><span class="ln">37</span><span class="cl">
-</span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="c1"># Make Executable</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="c1"># Делаем исполняемым</span>
 </span></span><span class="line"><span class="ln">39</span><span class="cl">RUN chmod +x /entrypoint.sh
 </span></span><span class="line"><span class="ln">40</span><span class="cl">
 </span></span><span class="line"><span class="ln">41</span><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;bash&#34;</span>, <span class="s2">&#34;-ex&#34;</span>, <span class="s2">&#34;/entrypoint.sh&#34;</span><span class="o">]</span>
