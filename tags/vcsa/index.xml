@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vcsa on Заметки на полях</title>
-    <link>https://shapkin.me/tags/vcsa/</link>
+    <link>http://localhost:1313/tags/vcsa/</link>
     <description>Recent content in Vcsa on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 24 Oct 2022 22:55:36 +0300</lastBuildDate>
-    <atom:link href="https://shapkin.me/tags/vcsa/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/vcsa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware VCSA Certificates Expired</title>
-      <link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
+      <link>http://localhost:1313/posts/vcsa-certificate-expired/</link>
       <pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
-      <guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
+      <guid>http://localhost:1313/posts/vcsa-certificate-expired/</guid>
       <description>&lt;p&gt;Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.&#xA;После перезагрузки в web интерфейсе постоянно висела 503 ошибка:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters:&#xA;--&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B&#xA;--&amp;gt; ExpectedThumbprint: &#xA;--&amp;gt; ExpectedPeerName: vcsa.domain.com&#xA;--&amp;gt; The remote host certificate has these problems:&#xA;--&amp;gt; &#xA;--&amp;gt; * certificate has expired)&#xA;--&amp;gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Удаление плагина в vCenter</title>
-      <link>https://shapkin.me/posts/delete-plugin-in-vcenter/</link>
+      <link>http://localhost:1313/posts/delete-plugin-in-vcenter/</link>
       <pubDate>Mon, 02 Nov 2015 18:53:22 +0300</pubDate>
-      <guid>https://shapkin.me/posts/delete-plugin-in-vcenter/</guid>
-      <description>&lt;p&gt;Появилась необходимость удалить неиспользуемый плагин в vCenter.&lt;/p&gt;&#xA;&lt;p&gt;Для этого в браузере вбиваем адрес следующего вида &lt;code&gt;https://vcenter_ip/mob&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Жмем &lt;code&gt;Content&lt;/code&gt;&#xA;&lt;img src=&#34;https://shapkin.me/img/003/003-1.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Жмем &lt;code&gt;ExtensionManager&lt;/code&gt;&#xA;&lt;img src=&#34;https://shapkin.me/img/003/003-2.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Выбираем плагин, который нужно удалить. Копируем его название.&#xA;Жмем &lt;code&gt;UnregisterExtension&lt;/code&gt;. Откроется новое окно.&#xA;Вставляем название плагина в поле &lt;code&gt;Value&lt;/code&gt; и жмем &lt;code&gt;Invoke Method&lt;/code&gt;.&#xA;&lt;img src=&#34;https://shapkin.me/img/003/003-3.JPG&#34; alt=&#34;&#34;&gt;&#xA;Закрываем окно.&lt;/p&gt;&#xA;&lt;p&gt;Обновляем страницу и проверяем, что плагин удален.&#xA;Проверяем список плагинов в &lt;code&gt;vSphere Client -&amp;gt; Plug-in Manager&lt;/code&gt;&#xA;Если плагин все еще будет в списке - перезапустите клиент.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/delete-plugin-in-vcenter/</guid>
+      <description>&lt;p&gt;Появилась необходимость удалить неиспользуемый плагин в vCenter.&lt;/p&gt;&#xA;&lt;p&gt;Для этого в браузере вбиваем адрес следующего вида &lt;code&gt;https://vcenter_ip/mob&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Жмем &lt;code&gt;Content&lt;/code&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/003/003-1.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Жмем &lt;code&gt;ExtensionManager&lt;/code&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/003/003-2.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Выбираем плагин, который нужно удалить. Копируем его название.&#xA;Жмем &lt;code&gt;UnregisterExtension&lt;/code&gt;. Откроется новое окно.&#xA;Вставляем название плагина в поле &lt;code&gt;Value&lt;/code&gt; и жмем &lt;code&gt;Invoke Method&lt;/code&gt;.&#xA;&lt;img src=&#34;http://localhost:1313/img/003/003-3.JPG&#34; alt=&#34;&#34;&gt;&#xA;Закрываем окно.&lt;/p&gt;&#xA;&lt;p&gt;Обновляем страницу и проверяем, что плагин удален.&#xA;Проверяем список плагинов в &lt;code&gt;vSphere Client -&amp;gt; Plug-in Manager&lt;/code&gt;&#xA;Если плагин все еще будет в списке - перезапустите клиент.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

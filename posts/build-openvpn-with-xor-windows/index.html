@@ -83,10 +83,15 @@
 				<div class="site-branding">
 					<a href="http://localhost:1313/">Заметки на полях</a>
 				</div>
-				<nav class="site-nav hide-in-mobile"><a href="http://localhost:1313/posts/">Посты</a><a href="http://localhost:1313/about/">Обо мне</a></nav>
+				<nav class="site-nav hide-in-mobile"><a href="http://localhost:1313/posts/">Посты</a><a href="http://localhost:1313/projects/">Проекты</a><a href="http://localhost:1313/about/">Обо мне</a></nav>
 			</div>
 			<div class="hdr-right hdr-icons">
-				<button id="menu-btn" class="hdr-btn" title="Меню"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+				<span class="hdr-links hide-in-mobile"><a href="https://github.com/shapdm" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path
+      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+   </path>
+</svg></a><a href="https://career.habr.com/shapdm" target="_blank" rel="noopener me" title="Habr"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 7.025 4 L 8.658 4 C 9.877 4 10.298 4.029 10.326 4.113 C 10.345 4.179 10.354 5.482 10.354 7.01 L 10.346 9.793 L 10.822 9.371 C 11.479 8.79 12.034 8.584 13.084 8.547 C 13.778 8.528 14.057 8.556 14.544 8.725 C 15.604 9.081 16.354 9.812 16.748 10.891 C 16.898 11.312 16.918 11.754 16.945 15.176 L 16.975 19 L 13.637 19 L 13.637 15.879 C 13.637 12.804 13.627 12.766 13.42 12.391 C 13.13 11.894 12.811 11.669 12.314 11.613 C 11.461 11.52 10.871 11.81 10.534 12.503 C 10.374 12.823 10.355 13.159 10.346 15.859 C 10.336 17.509 10.316 18.889 10.316 18.926 C 10.308 18.973 9.566 19 8.666 19 L 7.026 19 L 7.026 11.5 L 7.025 4 Z"/></svg></a></span><button id="menu-btn" class="hdr-btn" title="Меню"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -98,6 +103,7 @@
 	<div id="mobile-menu" class="animated fast">
 		<ul>
 			<li><a href="http://localhost:1313/posts/">Посты</a></li>
+			<li><a href="http://localhost:1313/projects/">Проекты</a></li>
 			<li><a href="http://localhost:1313/about/">Обо мне</a></li>
 		</ul>
 	</div>
@@ -188,26 +194,7 @@
    </svg></span><br><span>Сборка OpenVPN с патчем XOR в Docker для Debian</span>
 			</a>
 		</div>
-		<div id="comments" class="thin"><div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "https-shapkin-me" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
+		<div id="comments" class="thin"></div>
 	</main>
 <footer id="site-footer" class="section-inner thin animated fadeIn faster">
 <p>

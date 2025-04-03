@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on Заметки на полях</title>
-    <link>https://shapkin.me/tags/vim/</link>
+    <link>http://localhost:1313/tags/vim/</link>
     <description>Recent content in Vim on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 30 Jun 2023 13:12:24 +0300</lastBuildDate>
-    <atom:link href="https://shapkin.me/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Настройка Vim</title>
-      <link>https://shapkin.me/posts/customizing-vim/</link>
+      <link>http://localhost:1313/posts/customizing-vim/</link>
       <pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate>
-      <guid>https://shapkin.me/posts/customizing-vim/</guid>
+      <guid>http://localhost:1313/posts/customizing-vim/</guid>
       <description>&lt;p&gt;Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim.&#xA;Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.&lt;/p&gt;&#xA;&lt;p&gt;За несколько лет использования редактора, я пришел к следующему набору:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;expandtab&lt;/strong&gt; —  Включает замену tab на пробелы&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;smarttab&lt;/strong&gt; — При нажатии tab в начале строки добавляется количество пробелов, указанное в директиве shiftwidth&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;shiftwidth=4&lt;/strong&gt; — Задает количество пробелов в одном tab&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;tabstop=4&lt;/strong&gt; — Задает количество пробелов в одном tab&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;softtabstop=4&lt;/strong&gt; — Задает количество пробелов в одном tab при удалении&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;number&lt;/strong&gt; — Добавляет нумерацию строк&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;syntax on&lt;/strong&gt; — Включает подсветку синтаксиса&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;mouse=i&lt;/strong&gt; — Включает режим вставки (мне обычно нужно для выделения курсором мышки и копирования строк)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ignorecase и smartcase&lt;/strong&gt; — Убирает чувствительность к регистру при поиске&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;hlsearch&lt;/strong&gt; — Включает подсветку результатов поиска&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;incsearch&lt;/strong&gt; — Подсветка первого вхождения по поиску&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;encoding=utf8&lt;/strong&gt; — Задает кодировку для работы с файлом&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Итак, чтобы добавить данные настройки пишем в консоли:&lt;/p&gt;</description>
     </item>
   </channel>

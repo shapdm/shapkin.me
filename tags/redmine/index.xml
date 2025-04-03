@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redmine on Заметки на полях</title>
-    <link>https://shapkin.me/tags/redmine/</link>
+    <link>http://localhost:1313/tags/redmine/</link>
     <description>Recent content in Redmine on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 08 Dec 2020 19:41:15 +0300</lastBuildDate>
-    <atom:link href="https://shapkin.me/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Обновление и миграция Redmine между двумя серверами</title>
-      <link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
+      <link>http://localhost:1313/posts/redmine-update-and-migrate/</link>
       <pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate>
-      <guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
+      <guid>http://localhost:1313/posts/redmine-update-and-migrate/</guid>
       <description>&lt;p&gt;Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.&lt;/p&gt;&#xA;&lt;h3 id=&#34;старый-сервер-с-redmine&#34;&gt;Старый сервер с Redmine&lt;a href=&#34;#%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CentOS 7&lt;/li&gt;&#xA;&lt;li&gt;mysql 5.5&lt;/li&gt;&#xA;&lt;li&gt;ruby 2.0 / rail 4.2&lt;/li&gt;&#xA;&lt;li&gt;thin (gem сервер приложения)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;новый-сервер-с-redmine&#34;&gt;Новый сервер с Redmine&lt;a href=&#34;#%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CentOS 8&lt;/li&gt;&#xA;&lt;li&gt;mariadb 10&lt;/li&gt;&#xA;&lt;li&gt;ruby 2.6.5 / rails 5.2&lt;/li&gt;&#xA;&lt;li&gt;thin (gem сервер приложения)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).&lt;/p&gt;</description>
     </item>
   </channel>

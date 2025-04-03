@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Untagged on Заметки на полях</title>
+    <link>http://localhost:1313/tags/untagged/</link>
+    <description>Recent content in Untagged on Заметки на полях</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 24 Oct 2023 14:40:20 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Управление доступом для OpenVPN</title>
+      <link>http://localhost:1313/posts/openvpn-access-control-script/</link>
+      <pubDate>Tue, 24 Oct 2023 14:40:20 +0300</pubDate>
+      <guid>http://localhost:1313/posts/openvpn-access-control-script/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Скрипт для инвентаризации оборудования</title>
+      <link>http://localhost:1313/posts/script-for-inventory/</link>
+      <pubDate>Tue, 24 Oct 2023 14:39:29 +0300</pubDate>
+      <guid>http://localhost:1313/posts/script-for-inventory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Установка продуктов Atlassian</title>
+      <link>http://localhost:1313/posts/atlassian-crack/</link>
+      <pubDate>Tue, 24 Oct 2023 14:39:02 +0300</pubDate>
+      <guid>http://localhost:1313/posts/atlassian-crack/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -2,74 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Заметки на полях</title>
-    <link>https://shapkin.me/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
-    <atom:link href="https://shapkin.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Mar 2025 18:24:40 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Настройка сервера OpenVPN</title>
+      <link>http://localhost:1313/posts/openvpn-server-setup/</link>
+      <pubDate>Mon, 31 Mar 2025 18:24:40 +0300</pubDate>
+      <guid>http://localhost:1313/posts/openvpn-server-setup/</guid>
+      <description>&lt;p&gt;Этот пост продолжение цикла статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;h2 id=&#34;данная-статья-в-процесса-написания&#34;&gt;Данная статья в процесса написания.&lt;a href=&#34;#%d0%b4%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d1%81%d1%82%d0%b0%d1%82%d1%8c%d1%8f-%d0%b2-%d0%bf%d1%80%d0%be%d1%86%d0%b5%d1%81%d1%81%d0%b0-%d0%bd%d0%b0%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d1%8f&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
-      <link>https://shapkin.me/posts/build-openvpn-with-xor-debian/</link>
+      <link>http://localhost:1313/posts/build-openvpn-with-xor-debian/</link>
       <pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate>
-      <guid>https://shapkin.me/posts/build-openvpn-with-xor-debian/</guid>
-      <description>&lt;p&gt;Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.&#xA;Первым делом, создаем директорию, в которой будут все наши конфиги:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/build-openvpn-with-xor-debian/</guid>
+      <description>&lt;p&gt;Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.&#xA;Первым делом, создаем директорию, в которой будут все наши конфиги:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Отключение IPv6 в CentOS 8</title>
-      <link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
+      <link>http://localhost:1313/posts/disable-ipv6-in-centos8/</link>
       <pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
-      <guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
+      <guid>http://localhost:1313/posts/disable-ipv6-in-centos8/</guid>
       <description>&lt;p&gt;Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.&lt;/p&gt;&#xA;&lt;p&gt;Открываем &lt;code&gt;/etc/default/grub&lt;/code&gt; и добавляем новой строкой следующее:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_CMDLINE_LINUX=&amp;#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Сохраняем и закрываем файл.&lt;/p&gt;&#xA;&lt;p&gt;Теперь следует обновить конфиг &lt;code&gt;grub.cfg&lt;/code&gt;, выполняем команду  &lt;code&gt;ls -la /etc/grub*.cfg&lt;/code&gt; и видим пути до 2х файлов:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Openvpn Certificate Verify Failed</title>
-      <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
+      <link>http://localhost:1313/posts/openvpn-certificate-verify-failed/</link>
       <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
-      <guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
+      <guid>http://localhost:1313/posts/openvpn-certificate-verify-failed/</guid>
       <description>&lt;p&gt;Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.&lt;/p&gt;&#xA;&lt;p&gt;В логе openvpn.log обнаружил следующее:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    WARNING: Failed to stat CRL file, not (re)loading CRL.&#xA;    VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235&#xA;    OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed&#xA;    TLS_ERROR: BIO read tls_read_plaintext error&#xA;    TLS Error: TLS object -&amp;gt; incoming plaintext read error&#xA;    TLS Error: TLS handshake failed&#xA;    Fatal TLS error (check_tls_errors_co), restarting&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ключевое, на что нужно обратить внимание, это &lt;code&gt;WARNING: Failed to stat CRL file, not (re)loading CRL.&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Обновление и миграция Redmine между двумя серверами</title>
-      <link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
+      <link>http://localhost:1313/posts/redmine-update-and-migrate/</link>
       <pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate>
-      <guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
+      <guid>http://localhost:1313/posts/redmine-update-and-migrate/</guid>
       <description>&lt;p&gt;Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.&lt;/p&gt;&#xA;&lt;h3 id=&#34;старый-сервер-с-redmine&#34;&gt;Старый сервер с Redmine&lt;a href=&#34;#%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CentOS 7&lt;/li&gt;&#xA;&lt;li&gt;mysql 5.5&lt;/li&gt;&#xA;&lt;li&gt;ruby 2.0 / rail 4.2&lt;/li&gt;&#xA;&lt;li&gt;thin (gem сервер приложения)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;новый-сервер-с-redmine&#34;&gt;Новый сервер с Redmine&lt;a href=&#34;#%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CentOS 8&lt;/li&gt;&#xA;&lt;li&gt;mariadb 10&lt;/li&gt;&#xA;&lt;li&gt;ruby 2.6.5 / rails 5.2&lt;/li&gt;&#xA;&lt;li&gt;thin (gem сервер приложения)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acronis ломает загрузчик</title>
-      <link>https://shapkin.me/posts/acronis-corrupts-linux-loader/</link>
+      <link>http://localhost:1313/posts/acronis-corrupts-linux-loader/</link>
       <pubDate>Tue, 22 Sep 2020 10:42:35 +0300</pubDate>
-      <guid>https://shapkin.me/posts/acronis-corrupts-linux-loader/</guid>
+      <guid>http://localhost:1313/posts/acronis-corrupts-linux-loader/</guid>
       <description>&lt;p&gt;Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home.&#xA;Раскатал образ, а система не грузится, так как сектора не совпадают.&lt;br&gt;&#xA;Восстановливаем загрузчик таким образом:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1. sudo mount /dev/sd*** /mnt&#xA;2. sudo mount /dev/sd** /mnt/boot/efi&#xA;3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done&#xA;4. sudo chroot /mnt&#xA;5. grub-install /dev/sd*&#xA;6. update-grub  &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция&#xA;Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Следим за процессом выполнения задачи</title>
-      <link>https://shapkin.me/posts/watch-the-process/</link>
+      <link>http://localhost:1313/posts/watch-the-process/</link>
       <pubDate>Sun, 20 Mar 2016 09:43:33 +0300</pubDate>
-      <guid>https://shapkin.me/posts/watch-the-process/</guid>
-      <description>&lt;p&gt;Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)&lt;/p&gt;&#xA;&lt;p&gt;Пример использования &lt;code&gt;pv dump.sql | mysql -u user -p password database&lt;/code&gt;&#xA;&lt;img src=&#34;https://shapkin.me/img/005/005-1.png&#34; alt=&#34;Pipe Viewer&#34;&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/watch-the-process/</guid>
+      <description>&lt;p&gt;Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)&lt;/p&gt;&#xA;&lt;p&gt;Пример использования &lt;code&gt;pv dump.sql | mysql -u user -p password database&lt;/code&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/005/005-1.png&#34; alt=&#34;Pipe Viewer&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Удаление пустых строк при просмотре файла</title>
-      <link>https://shapkin.me/posts/remove-blank-lines/</link>
+      <link>http://localhost:1313/posts/remove-blank-lines/</link>
       <pubDate>Wed, 11 Mar 2015 07:57:30 +0300</pubDate>
-      <guid>https://shapkin.me/posts/remove-blank-lines/</guid>
+      <guid>http://localhost:1313/posts/remove-blank-lines/</guid>
       <description>&lt;p&gt;sed &amp;lsquo;/^$/d&amp;rsquo; file.txt&lt;/p&gt;&#xA;&lt;p&gt;или с выводом в новый файл&lt;/p&gt;&#xA;&lt;p&gt;sed &amp;lsquo;/^$/d&amp;rsquo; file.txt &amp;gt; newfile.txt&lt;/p&gt;</description>
     </item>
     <item>
       <title>Реструктуризация директорий</title>
-      <link>https://shapkin.me/posts/directory-restructuring/</link>
+      <link>http://localhost:1313/posts/directory-restructuring/</link>
       <pubDate>Fri, 27 Feb 2015 12:58:08 +0300</pubDate>
-      <guid>https://shapkin.me/posts/directory-restructuring/</guid>
+      <guid>http://localhost:1313/posts/directory-restructuring/</guid>
       <description>&lt;p&gt;Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/root_dir/year/&#xA;              /month/&#xA;                    /day&#xA;/dir/2012/&#xA;         /02/&#xA;            /10&#xA;            /13&#xA;            /27&#xA;/dir/2012/&#xA;         /05/&#xA;            /12&#xA;            /23&#xA;            /30&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):&lt;/p&gt;&#xA;&lt;h3 id=&#34;centos&#34;&gt;CentOS&lt;a href=&#34;#centos&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash&#xA;path=&amp;#34;/root/sort/&amp;#34;&#xA;dirs=`find $path -maxdepth 1 -type f`&#xA;for i in $dirs&#xA;do&#xA;&#x9;date=&amp;#34;$(stat -c &amp;#34;%y %n&amp;#34; $i | awk &amp;#39;{ print $1 }&amp;#39; | sed s%-%/%g)&amp;#34;&#xA;&#x9;if ! [ -d &amp;#34;$date&amp;#34; ]; then&#xA;&#x9;&#x9;mkdir -pv &amp;#34;$path$date&amp;#34;&#xA;&#x9;fi&#xA;&#x9;mv -v $i $path$date&#xA;done&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;freenas&#34;&gt;FreeNAS&lt;a href=&#34;#freenas&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash&#xA;path=&amp;#34;/root/sort/&amp;#34;&#xA;dirs=`find $path -maxdepth 1 -type f`&#xA;for i in $dirs&#xA;do&#xA;&#x9;date=&amp;#34;$(stat -f %Sm -t %Y/%m/%d $i)&amp;#34;&#xA;&#x9;if ! [ -d &amp;#34;$date&amp;#34; ]; then&#xA;&#x9;&#x9;mkdir -pv &amp;#34;$path$date&amp;#34;&#xA;&#x9;fi&#xA;&#x9;mv $i $path$date&#xA;done&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Скрипт мониторинга сервера по ping</title>
-      <link>https://shapkin.me/posts/check-servers-by-ping/</link>
+      <link>http://localhost:1313/posts/check-servers-by-ping/</link>
       <pubDate>Wed, 06 Feb 2013 01:01:00 +0300</pubDate>
-      <guid>https://shapkin.me/posts/check-servers-by-ping/</guid>
+      <guid>http://localhost:1313/posts/check-servers-by-ping/</guid>
       <description>&lt;p&gt;Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&amp;rsquo;a или nagios&amp;rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).&lt;/p&gt;&#xA;&lt;p&gt;Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.&lt;/p&gt;&#xA;&lt;p&gt;Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.&lt;/p&gt;&#xA;&lt;p&gt;Вот и в моей жизни настал такой момент.&#xA;Итак, ниже код скрипта с простыми пояснениями:&lt;/p&gt;</description>
     </item>
   </channel>

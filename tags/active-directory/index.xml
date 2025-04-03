@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Active Directory on Заметки на полях</title>
-    <link>https://shapkin.me/tags/active-directory/</link>
+    <link>http://localhost:1313/tags/active-directory/</link>
     <description>Recent content in Active Directory on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 05 Oct 2015 13:47:41 +0300</lastBuildDate>
-    <atom:link href="https://shapkin.me/tags/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/active-directory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Меняем порядок вывода DisplayName в Active Directory</title>
-      <link>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</link>
+      <link>http://localhost:1313/posts/change-order-of-dispaying-name-in-ad/</link>
       <pubDate>Mon, 05 Oct 2015 13:47:41 +0300</pubDate>
-      <guid>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</guid>
+      <guid>http://localhost:1313/posts/change-order-of-dispaying-name-in-ad/</guid>
       <description>&lt;h3 id=&#34;проблема&#34;&gt;Проблема:&lt;a href=&#34;#%d0%bf%d1%80%d0%be%d0%b1%d0%bb%d0%b5%d0%bc%d0%b0&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.&lt;/p&gt;&#xA;&lt;p&gt;В итоге приходится вручную менять местами эти значения (возможно не все так делают).&lt;/p&gt;</description>
     </item>
   </channel>
