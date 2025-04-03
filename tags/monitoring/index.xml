@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Monitoring on Заметки на полях</title>
-    <link>http://localhost:1313/tags/monitoring/</link>
+    <link>https://shapkin.me/tags/monitoring/</link>
     <description>Recent content in Monitoring on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Wed, 06 Feb 2013 01:01:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Скрипт мониторинга сервера по ping</title>
-      <link>http://localhost:1313/posts/check-servers-by-ping/</link>
+      <link>https://shapkin.me/posts/check-servers-by-ping/</link>
       <pubDate>Wed, 06 Feb 2013 01:01:00 +0300</pubDate>
-      <guid>http://localhost:1313/posts/check-servers-by-ping/</guid>
+      <guid>https://shapkin.me/posts/check-servers-by-ping/</guid>
       <description>&lt;p&gt;Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&amp;rsquo;a или nagios&amp;rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).&lt;/p&gt;&#xA;&lt;p&gt;Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.&lt;/p&gt;&#xA;&lt;p&gt;Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.&lt;/p&gt;&#xA;&lt;p&gt;Вот и в моей жизни настал такой момент.&#xA;Итак, ниже код скрипта с простыми пояснениями:&lt;/p&gt;</description>
     </item>
   </channel>

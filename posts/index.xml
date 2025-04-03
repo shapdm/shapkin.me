@@ -2,94 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 	<channel>
 		<title>Posts on Заметки на полях</title>
-		<link>http://localhost:1313/posts/</link>
+		<link>https://shapkin.me/posts/</link>
 		<description>Recent content in Posts on Заметки на полях</description>
 		<generator>Hugo -- 0.145.0</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Mon, 31 Mar 2025 18:24:40 +0300</lastBuildDate>
-		<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
 		
-		
-		<item>
-			<title>Настройка сервера OpenVPN</title>
-			<link>http://localhost:1313/posts/openvpn-server-setup/</link>
-			<pubDate>Mon, 31 Mar 2025 18:24:40 +0300</pubDate><guid>http://localhost:1313/posts/openvpn-server-setup/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Этот пост продолжение цикла статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.<br>
-Полный список статей спрятан под спойлер.</p>
-
-<details>
-  <summary>Список статей</summary>
-  <ol>
-<li><a href="/posts/build-openvpn-with-xor-debian/">Сборка OpenVPN с патчем XOR в Docker для Debian</a></li>
-<li><a href="/posts/build-openvpn-with-xor-windows/">Сборка OpenVPN с патчем XOR в Docker для Windows</a></li>
-<li><a href="/posts/build-openvpn-with-xor-android/">Сборка OpenVPN с патчем XOR в Docker для Android</a></li>
-<li><a href="/posts/openvpn-server-setup/">Настройка сервера OpenVPN</a></li>
-</ol>
-</details>
-
-<h2 id="данная-статья-в-процесса-написания">Данная статья в процесса написания.<a href="#%d0%b4%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d1%81%d1%82%d0%b0%d1%82%d1%8c%d1%8f-%d0%b2-%d0%bf%d1%80%d0%be%d1%86%d0%b5%d1%81%d1%81%d0%b0-%d0%bd%d0%b0%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d1%8f" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Сборка OpenVPN с патчем XOR в Docker для Android</title>
-			<link>http://localhost:1313/posts/build-openvpn-with-xor-android/</link>
-			<pubDate>Mon, 31 Mar 2025 18:24:25 +0300</pubDate><guid>http://localhost:1313/posts/build-openvpn-with-xor-android/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Этот пост продолжение цикла статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.<br>
-Полный список статей спрятан под спойлер.</p>
-
-<details>
-  <summary>Список статей</summary>
-  <ol>
-<li><a href="/posts/build-openvpn-with-xor-debian/">Сборка OpenVPN с патчем XOR в Docker для Debian</a></li>
-<li><a href="/posts/build-openvpn-with-xor-windows/">Сборка OpenVPN с патчем XOR в Docker для Windows</a></li>
-<li><a href="/posts/build-openvpn-with-xor-android/">Сборка OpenVPN с патчем XOR в Docker для Android</a></li>
-<li><a href="/posts/openvpn-server-setup/">Настройка сервера OpenVPN</a></li>
-</ol>
-</details>
-
-<h2 id="данная-статья-в-процесса-написания">Данная статья в процесса написания.<a href="#%d0%b4%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d1%81%d1%82%d0%b0%d1%82%d1%8c%d1%8f-%d0%b2-%d0%bf%d1%80%d0%be%d1%86%d0%b5%d1%81%d1%81%d0%b0-%d0%bd%d0%b0%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d1%8f" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Сборка OpenVPN с патчем XOR в Docker для Windows</title>
-			<link>http://localhost:1313/posts/build-openvpn-with-xor-windows/</link>
-			<pubDate>Mon, 31 Mar 2025 18:24:03 +0300</pubDate><guid>http://localhost:1313/posts/build-openvpn-with-xor-windows/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Этот пост продолжение цикла статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.<br>
-Полный список статей спрятан под спойлер.</p>
-
-<details>
-  <summary>Список статей</summary>
-  <ol>
-<li><a href="/posts/build-openvpn-with-xor-debian/">Сборка OpenVPN с патчем XOR в Docker для Debian</a></li>
-<li><a href="/posts/build-openvpn-with-xor-windows/">Сборка OpenVPN с патчем XOR в Docker для Windows</a></li>
-<li><a href="/posts/build-openvpn-with-xor-android/">Сборка OpenVPN с патчем XOR в Docker для Android</a></li>
-<li><a href="/posts/openvpn-server-setup/">Настройка сервера OpenVPN</a></li>
-</ol>
-</details>
-
-<h2 id="данная-статья-в-процесса-написания">Данная статья в процесса написания.<a href="#%d0%b4%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d1%81%d1%82%d0%b0%d1%82%d1%8c%d1%8f-%d0%b2-%d0%bf%d1%80%d0%be%d1%86%d0%b5%d1%81%d1%81%d0%b0-%d0%bd%d0%b0%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d1%8f" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-]]></content>
-		</item>
 		
 		<item>
 			<title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
-			<link>http://localhost:1313/posts/build-openvpn-with-xor-debian/</link>
-			<pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate><guid>http://localhost:1313/posts/build-openvpn-with-xor-debian/</guid>
+			<link>https://shapkin.me/posts/build-openvpn-with-xor-debian/</link>
+			<pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate><guid>https://shapkin.me/posts/build-openvpn-with-xor-debian/</guid>
 			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.<br>
 Полный список статей спрятан под спойлер.</p>
 
@@ -338,8 +263,8 @@ Description: OpenVPN with XOR
 		
 		<item>
 			<title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
-			<link>http://localhost:1313/posts/domain-expiration-days-grafana/</link>
-			<pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate><guid>http://localhost:1313/posts/domain-expiration-days-grafana/</guid>
+			<link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
+			<pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate><guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
 			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
 Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.</p>
 <p>Установку и настройку <code>prometheus</code> и <code>grafana</code> в этом посте рассматривать не будем, предполагается, что они уже установлены.</p>
@@ -497,30 +422,9 @@ Prometheus периодически собирает данные из Pushgatew
 		</item>
 		
 		<item>
-			<title>Управление доступом для OpenVPN</title>
-			<link>http://localhost:1313/posts/openvpn-access-control-script/</link>
-			<pubDate>Tue, 24 Oct 2023 14:40:20 +0300</pubDate><guid>http://localhost:1313/posts/openvpn-access-control-script/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[]]></content>
-		</item>
-		
-		<item>
-			<title>Скрипт для инвентаризации оборудования</title>
-			<link>http://localhost:1313/posts/script-for-inventory/</link>
-			<pubDate>Tue, 24 Oct 2023 14:39:29 +0300</pubDate><guid>http://localhost:1313/posts/script-for-inventory/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[]]></content>
-		</item>
-		
-		<item>
-			<title>Установка продуктов Atlassian</title>
-			<link>http://localhost:1313/posts/atlassian-crack/</link>
-			<pubDate>Tue, 24 Oct 2023 14:39:02 +0300</pubDate><guid>http://localhost:1313/posts/atlassian-crack/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[]]></content>
-		</item>
-		
-		<item>
 			<title>Настройка Vim</title>
-			<link>http://localhost:1313/posts/customizing-vim/</link>
-			<pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate><guid>http://localhost:1313/posts/customizing-vim/</guid>
+			<link>https://shapkin.me/posts/customizing-vim/</link>
+			<pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate><guid>https://shapkin.me/posts/customizing-vim/</guid>
 			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim.
 Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.</p>
 <p>За несколько лет использования редактора, я пришел к следующему набору:</p>
@@ -561,8 +465,8 @@ Prometheus периодически собирает данные из Pushgatew
 		
 		<item>
 			<title>Проблемы с дисковой производительностью на ESXi</title>
-			<link>http://localhost:1313/posts/vmware-lsi-mr3/</link>
-			<pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate><guid>http://localhost:1313/posts/vmware-lsi-mr3/</guid>
+			<link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
+			<pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate><guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
 			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.
 В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.</p>
 <p>В логах на хостах были такие записи:</p>
@@ -579,6 +483,256 @@ Prometheus периодически собирает данные из Pushgatew
 <p>Ссылки по проблеме:</p>
 <p><a href="https://kb.vmware.com/s/article/2151234" target="_blank">VMware KB</a></p>
 <p><a href="https://support.lenovo.com/hk/ru/solutions/ht505543-vmware-local-datastore-disconnect-and-virtual-resets-on-the-logs-lenovo-thinksystem-and-lenovo-server" target="_blank">Support Lenovo</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Скрипт генерации клиентского конфига OpenVPN</title>
+			<link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
+			<pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate><guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.</p>
+<p>После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.</p>
+<p>Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/</p>
+<p>Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ.
+При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Enter client name: &#34;</span> clientname
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$clientname</span><span class="s2">&#34;</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">	/etc/openvpn/easyrsa/easyrsa build-client-full <span class="nv">$clientname</span> nopass
+</span></span><span class="line"><span class="cl">	cp /etc/openvpn/user_config.sample /etc/openvpn/user_configs/<span class="nv">$clientname</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;cert&gt;\n</span><span class="k">$(</span>cat /etc/openvpn/easyrsa/pki/issued/<span class="nv">$clientname</span>.crt<span class="k">)</span><span class="s2">\n&lt;/cert&gt;&#34;</span> &gt;&gt; /etc/openvpn/user_configs/<span class="nv">$clientname</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;key&gt;\n</span><span class="k">$(</span>cat /etc/openvpn/easyrsa/pki/private/<span class="nv">$clientname</span>.key<span class="k">)</span><span class="s2">\n&lt;/key&gt;&#34;</span> &gt;&gt; /etc/openvpn/user_configs/<span class="nv">$clientname</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;+--------------------------------------------------------+&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;|                                                        |&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;| Find your new ovpn config in /etc/openvpn/user_configs |&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;|                                                        |&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;+--------------------------------------------------------+&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Client name cannot be empty&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div>]]></content>
+		</item>
+		
+		<item>
+			<title>VMware VCSA Certificates Expired</title>
+			<link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
+			<pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate><guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.
+После перезагрузки в web интерфейсе постоянно висела 503 ошибка:</p>
+<blockquote>
+<p>503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)</p></blockquote>
+<p>Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:</p>
+<pre tabindex="0"><code>2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters:
+--&gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B
+--&gt; ExpectedThumbprint: 
+--&gt; ExpectedPeerName: vcsa.domain.com
+--&gt; The remote host certificate has these problems:
+--&gt; 
+--&gt; * certificate has expired)
+--&gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context]
+</code></pre><p>Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:</p>
+<pre tabindex="0"><code>Действителен с	Thu, 22 Oct 2020 16:17:37 GMT
+Действителен по	Sun, 23 Oct 2022 04:17:37 GMT
+</code></pre><p>Запускаем команду в shell (для linux версии) для получения списка сроков действия всех сертификатов:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> store in <span class="k">$(</span>/usr/lib/vmware-vmafd/bin/vecs-cli store list <span class="p">|</span> grep -v TRUSTED_ROOT_CRLS<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&#34;[*] Store :&#34;</span> <span class="nv">$store</span><span class="p">;</span> /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store <span class="nv">$store</span> --text <span class="p">|</span> grep -ie <span class="s2">&#34;Alias&#34;</span> -ie <span class="s2">&#34;Not After&#34;</span><span class="p">;</span><span class="k">done</span><span class="p">;</span>
+</span></span></code></pre></div><pre tabindex="0"><code>[*] Store : MACHINE_SSL_CERT
+Alias :	__MACHINE_CERT
+            Not After : Oct 23 04:17:37 2022 GMT
+[*] Store : TRUSTED_ROOTS
+Alias :	520b4889e71ea0ba9aa2fa5c9ca93131188bbcf5
+            Not After : Oct 17 16:17:36 2030 GMT
+[*] Store : machine
+Alias :	machine
+            Not After : Oct 22 16:08:37 2022 GMT
+[*] Store : vsphere-webclient
+Alias :	vsphere-webclient
+            Not After : Oct 22 16:08:38 2022 GMT
+[*] Store : vpxd
+Alias :	vpxd
+            Not After : Oct 22 16:08:39 2022 GMT
+[*] Store : vpxd-extension
+Alias :	vpxd-extension
+            Not After : Oct 22 16:08:39 2022 GMT
+[*] Store : APPLMGMT_PASSWORD
+[*] Store : data-encipherment
+Alias :	data-encipherment
+            Not After : Oct 22 16:11:21 2022 GMT
+[*] Store : SMS
+Alias :	sms_self_signed
+            Not After : Oct 22 16:24:58 2030 GMT
+</code></pre><h3 id="решение-проблемы">Решение проблемы:<a href="#%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b1%d0%bb%d0%b5%d0%bc%d1%8b" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<ul>
+<li>запускаем менеджер сертификатов /usr/lib/vmware-vmca/bin/certificate-manager</li>
+<li>выбираем нужный нам пункт</li>
+<li>вводим логин от локального администратора (дефолтное значение будет указано в скобках)</li>
+<li>вводим пароль от этого пользователя</li>
+<li>далее отвечаем на вопросы для генерации нового сертификата</li>
+<li>ждем выполнения процесса, пока не отобразится сообщение &ldquo;Status : 100% Completed [All tasks completed successfully]&rdquo;</li>
+</ul>
+<h3 id="источники">Источники:<a href="#%d0%b8%d1%81%d1%82%d0%be%d1%87%d0%bd%d0%b8%d0%ba%d0%b8" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p><a href="https://kb.vmware.com/s/article/82332" target="_blank">https://kb.vmware.com/s/article/82332</a></p>
+<p><a href="https://kb.vmware.com/s/article/2112283" target="_blank">https://kb.vmware.com/s/article/2112283</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Блокировка исходящего трафика в Windows</title>
+			<link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
+			<pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate><guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<h2 id="задача">Задача:<a href="#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d0%b0" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.</p>
+<h2 id="решение">Решение:<a href="#%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d0%b5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Блокировка исходящего трафика для браузера</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="n">-Program</span> <span class="s2">&#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&#34;</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span>
+</span></span></code></pre></div><p>Блокировка всего исходящего трафика</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span>
+</span></span></code></pre></div><p>Удаление правила</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Remove-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span>
+</span></span></code></pre></div><p>Включение и отключение правила</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Disable-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;block traffic&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Enable-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;block traffic&#39;</span>
+</span></span></code></pre></div><p>Написал скрипт для удобства пользования</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;Список доступных действий&#34;</span> <span class="n">-BackgroundColor</span> <span class="n">White</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;1. Создать блокирующее правило&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;2. Удалить блокирующее правило&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;3. Завершить&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$choice</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&#34;Выберете пункт из списка&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Switch</span><span class="p">(</span><span class="nv">$choice</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">1</span><span class="p">{</span><span class="nb">New-NetFirewallRule</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">2</span><span class="p">{</span><span class="nb">Remove-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">3</span><span class="p">{</span><span class="nb">Write-Host</span> <span class="s2">&#34;Завершить&#34;</span><span class="p">;</span> <span class="n">exit</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span> <span class="p">{</span><span class="nb">Write-Host</span> <span class="s2">&#34;Некорректный ввод, попробуйте снова&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>]]></content>
+		</item>
+		
+		<item>
+			<title>Отключение IPv6 в CentOS 8</title>
+			<link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
+			<pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate><guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.</p>
+<p>Открываем <code>/etc/default/grub</code> и добавляем новой строкой следующее:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34;
+</span></span></code></pre></div><p>Сохраняем и закрываем файл.</p>
+<p>Теперь следует обновить конфиг <code>grub.cfg</code>, выполняем команду  <code>ls -la /etc/grub*.cfg</code> и видим пути до 2х файлов:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">/boot/grub2/grub.cfg
+</span></span><span class="line"><span class="cl">/boot/efi/EFI/centos/grub.cfg
+</span></span></code></pre></div><p>Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">grub2-mkconfig -o /boot/grub2/grub.cfg
+</span></span><span class="line"><span class="cl">grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+</span></span></code></pre></div><p>Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.</p>
+<h3 id="ps">P.S.<a href="#ps" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>На этапе перегенерации конфигов я столкнулся с такой ошибкой:
+<img src="/img/006/006-1.png" alt=""></p>
+<p>Для решения было достаточно пересоздать grubenv командой <code>grub2-editenv create</code></p>
+<p><img src="/img/006/006-2.png" alt=""></p>
+<p>Отмечу, что все действия производились на свежеустановленной ОС.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Openvpn Certificate Verify Failed</title>
+			<link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
+			<pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate><guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.</p>
+<p>В логе openvpn.log обнаружил следующее:</p>
+<pre tabindex="0"><code>    WARNING: Failed to stat CRL file, not (re)loading CRL.
+    VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235
+    OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed
+    TLS_ERROR: BIO read tls_read_plaintext error
+    TLS Error: TLS object -&gt; incoming plaintext read error
+    TLS Error: TLS handshake failed
+    Fatal TLS error (check_tls_errors_co), restarting
+</code></pre><p>Ключевое, на что нужно обратить внимание, это <code>WARNING: Failed to stat CRL file, not (re)loading CRL.</code></p>
+<p>Заходим в директорию с easyrsa и там выполняем команду:</p>
+<p><code>openssl crl -inform PEM -in pki/crl.pem -text -noout</code></p>
+<p>Проверяем дату действия списка отозванных сертификатов, в моем случае он закончился сутки назад:</p>
+<pre tabindex="0"><code>	Last Update: Jul 28 21:28:59 2020 GMT
+	Next Update: Jan 24 21:28:59 2021 GMT
+</code></pre><p>Это значит, что прошло 180 дней с момента последнего запуска по генерации списка отозванных сертификатов и срок действия его - как раз 180 дней.</p>
+<p>Чтобы исправить ситуацию, необходимо выполнить команду</p>
+<pre><code>./easyrsa gen-crl
+</code></pre>
+<p>и скопировать новый crl.pem по пути, который указан в Вашем опенвпн сервер конфиге.
+Но я решил также и увеличить срок действия списка до 720 дней, для этого нужно открыть файл vars и увеличить значение для <code>EASYRSA_CRL_DAYS</code>.
+Проверяем:</p>
+<p><code>openssl crl -inform PEM -in pki/crl.pem -text -noout</code></p>
+<pre><code>Last Update: Jan 25 10:30:58 2021 GMT
+Next Update: Jan 15 10:30:58 2023 GMT
+</code></pre>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Обновление и миграция Redmine между двумя серверами</title>
+			<link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
+			<pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate><guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.</p>
+<h3 id="старый-сервер-с-redmine">Старый сервер с Redmine<a href="#%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<ul>
+<li>CentOS 7</li>
+<li>mysql 5.5</li>
+<li>ruby 2.0 / rail 4.2</li>
+<li>thin (gem сервер приложения)</li>
+</ul>
+<h3 id="новый-сервер-с-redmine">Новый сервер с Redmine<a href="#%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<ul>
+<li>CentOS 8</li>
+<li>mariadb 10</li>
+<li>ruby 2.6.5 / rails 5.2</li>
+<li>thin (gem сервер приложения)</li>
+</ul>
+<p>Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).</p>
+<ol>
+<li>Установка нужной версии Redmine по инструкциям с сайта <a href="https://redmine.org/" target="_blank">https://redmine.org/</a></li>
+<li>На старом redmine я отключаю все задачи cron для сервиса, в том числе и для получения почты (Подробнее о настройке по ссылке)</li>
+<li>Останавливаю сервис thin systemctl stop thin</li>
+<li>Удаляю установленные плагины, точнее чистим записи в базе, если для установки плагина требуется миграция (Подробнее про удаление по ссылке)</li>
+<li>Далее снимаем дамп с БД mysqldump -u root -p redmine &gt; redmine.sql (В моем случае используется mysql)</li>
+<li>Переносим на новый сервер scp redmine.sql <a href="mailto:root@192.168.1.1">root@192.168.1.1</a>:/tmp</li>
+<li>Теперь выполняем команды на новом сервер cp /tmp/redmine.sql /path/to/redmine/</li>
+<li>Восстанавливаем дамп mysql -u root -p redmine &lt; redmine.sql</li>
+<li>Теперь обязательный пункт, это совершить миграцию базы, чтобы применились изменения, иначе будет ошибка 500 при переходе в проекты rake db:migrate RAILS_ENV=production</li>
+<li>Дополнительно перезапускаем сервис thin</li>
+<li>Устанавливаем плагины</li>
+<li>Перенастраиваем адреса для проксирования, если есть пограничный сервер (в моем случае в роли обратного прокси выступает nginx)</li>
+</ol>
 ]]></content>
 		</item>
 		

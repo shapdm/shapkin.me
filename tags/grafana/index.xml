@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Grafana on Заметки на полях</title>
-    <link>http://localhost:1313/tags/grafana/</link>
+    <link>https://shapkin.me/tags/grafana/</link>
     <description>Recent content in Grafana on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
-      <link>http://localhost:1313/posts/domain-expiration-days-grafana/</link>
+      <link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
       <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
-      <guid>http://localhost:1313/posts/domain-expiration-days-grafana/</guid>
+      <guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
       <description>&lt;p&gt;В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.&#xA;Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.&lt;/p&gt;&#xA;&lt;p&gt;Установку и настройку &lt;code&gt;prometheus&lt;/code&gt; и &lt;code&gt;grafana&lt;/code&gt; в этом посте рассматривать не будем, предполагается, что они уже установлены.&lt;/p&gt;&#xA;&lt;h3 id=&#34;общая-логика-работы&#34;&gt;Общая логика работы&lt;a href=&#34;#%d0%be%d0%b1%d1%89%d0%b0%d1%8f-%d0%bb%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Система состоит из нескольких компонентов:&lt;/p&gt;</description>
     </item>
   </channel>
