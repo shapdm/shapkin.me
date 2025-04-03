@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3D Печать on Заметки на полях</title>
-    <link>http://localhost:1313/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/</link>
+    <link>https://shapkin.me/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/</link>
     <description>Recent content in 3D Печать on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Wed, 02 Apr 2025 20:24:52 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Маска Krampus</title>
-      <link>http://localhost:1313/projects/krampus/</link>
+      <link>https://shapkin.me/projects/krampus/</link>
       <pubDate>Wed, 02 Apr 2025 20:24:52 +0300</pubDate>
-      <guid>http://localhost:1313/projects/krampus/</guid>
-      <description>&lt;p&gt;Полноразмерная маска, которая одевается на голову, напечатана на 3D принтере под заказ.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/007/007-1.PNG&#34; alt=&#34;Krampus&#34;&gt;&lt;/p&gt;</description>
+      <guid>https://shapkin.me/projects/krampus/</guid>
+      <description>&lt;p&gt;Полноразмерная маска, которая одевается на голову, напечатана на 3D принтере под заказ.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://shapkin.me/img/007/007-1.png&#34; alt=&#34;Krampus mask&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

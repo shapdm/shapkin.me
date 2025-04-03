@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 02 Apr 2025 20:24:52 +0300</lastBuildDate>
     <atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Маска Krampus</title>
+      <link>https://shapkin.me/projects/krampus/</link>
+      <pubDate>Wed, 02 Apr 2025 20:24:52 +0300</pubDate>
+      <guid>https://shapkin.me/projects/krampus/</guid>
+      <description>&lt;p&gt;Полноразмерная маска, которая одевается на голову, напечатана на 3D принтере под заказ.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://shapkin.me/img/007/007-1.png&#34; alt=&#34;Krampus mask&#34;&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
       <link>https://shapkin.me/posts/build-openvpn-with-xor-debian/</link>
@@ -71,13 +78,6 @@
       <pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
       <guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
       <description>&lt;p&gt;Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.&lt;/p&gt;&#xA;&lt;p&gt;Открываем &lt;code&gt;/etc/default/grub&lt;/code&gt; и добавляем новой строкой следующее:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_CMDLINE_LINUX=&amp;#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Сохраняем и закрываем файл.&lt;/p&gt;&#xA;&lt;p&gt;Теперь следует обновить конфиг &lt;code&gt;grub.cfg&lt;/code&gt;, выполняем команду  &lt;code&gt;ls -la /etc/grub*.cfg&lt;/code&gt; и видим пути до 2х файлов:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Openvpn Certificate Verify Failed</title>
-      <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
-      <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
-      <guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
-      <description>&lt;p&gt;Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.&lt;/p&gt;&#xA;&lt;p&gt;В логе openvpn.log обнаружил следующее:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    WARNING: Failed to stat CRL file, not (re)loading CRL.&#xA;    VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235&#xA;    OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed&#xA;    TLS_ERROR: BIO read tls_read_plaintext error&#xA;    TLS Error: TLS object -&amp;gt; incoming plaintext read error&#xA;    TLS Error: TLS handshake failed&#xA;    Fatal TLS error (check_tls_errors_co), restarting&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ключевое, на что нужно обратить внимание, это &lt;code&gt;WARNING: Failed to stat CRL file, not (re)loading CRL.&lt;/code&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

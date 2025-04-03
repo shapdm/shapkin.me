@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 02 Apr 2025 20:24:52 +0300</lastBuildDate>
     <atom:link href="https://shapkin.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D Печать</title>
+      <link>https://shapkin.me/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/</link>
+      <pubDate>Wed, 02 Apr 2025 20:24:52 +0300</pubDate>
+      <guid>https://shapkin.me/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Docker</title>
       <link>https://shapkin.me/tags/docker/</link>
@@ -70,13 +77,6 @@
       <link>https://shapkin.me/tags/raid/</link>
       <pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
       <guid>https://shapkin.me/tags/raid/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vmware</title>
-      <link>https://shapkin.me/tags/vmware/</link>
-      <pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
-      <guid>https://shapkin.me/tags/vmware/</guid>
       <description></description>
     </item>
   </channel>
