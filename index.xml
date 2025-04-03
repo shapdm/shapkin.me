@@ -11,13 +11,6 @@
     <atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Маска Krampus</title>
-      <link>https://shapkin.me/posts/krampus/</link>
-      <pubDate>Wed, 02 Apr 2025 20:24:52 +0300</pubDate>
-      <guid>https://shapkin.me/posts/krampus/</guid>
-      <description>&lt;p&gt;Полноразмерная маска, которая одевается на голову, напечатана на 3D принтере под заказ.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://shapkin.me/img/007/007-1.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Маска Krampus</title>
       <link>https://shapkin.me/projects/krampus/</link>
       <pubDate>Wed, 02 Apr 2025 20:24:52 +0300</pubDate>
       <guid>https://shapkin.me/projects/krampus/</guid>
@@ -78,6 +71,13 @@
       <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
       <guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
       <description>&lt;h2 id=&#34;задача&#34;&gt;Задача:&lt;a href=&#34;#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d0%b0&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.&lt;/p&gt;&#xA;&lt;h2 id=&#34;решение&#34;&gt;Решение:&lt;a href=&#34;#%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d0%b5&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Блокировка исходящего трафика для браузера&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Отключение IPv6 в CentOS 8</title>
+      <link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
+      <pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
+      <guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
+      <description>&lt;p&gt;Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.&lt;/p&gt;&#xA;&lt;p&gt;Открываем &lt;code&gt;/etc/default/grub&lt;/code&gt; и добавляем новой строкой следующее:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_CMDLINE_LINUX=&amp;#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Сохраняем и закрываем файл.&lt;/p&gt;&#xA;&lt;p&gt;Теперь следует обновить конфиг &lt;code&gt;grub.cfg&lt;/code&gt;, выполняем команду  &lt;code&gt;ls -la /etc/grub*.cfg&lt;/code&gt; и видим пути до 2х файлов:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
