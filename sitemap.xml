@@ -2,163 +2,163 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/</loc>
+    <loc>https://shapkin.me/tags/3d-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C/</loc>
     <lastmod>2025-04-02T20:24:52+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://shapkin.me/projects/</loc>
     <lastmod>2025-04-02T20:24:52+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://shapkin.me/tags/</loc>
     <lastmod>2025-04-02T20:24:52+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://shapkin.me/</loc>
     <lastmod>2025-04-02T20:24:52+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/krampus/</loc>
+    <loc>https://shapkin.me/projects/krampus/</loc>
     <lastmod>2025-04-02T20:24:52+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://shapkin.me/posts/</loc>
     <lastmod>2025-03-31T18:24:40+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>https://shapkin.me/tags/docker/</loc>
     <lastmod>2025-03-27T18:31:58+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://shapkin.me/tags/linux/</loc>
     <lastmod>2025-03-27T18:31:58+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/openvpn/</loc>
+    <loc>https://shapkin.me/tags/openvpn/</loc>
     <lastmod>2025-03-27T18:31:58+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/xor/</loc>
+    <loc>https://shapkin.me/tags/xor/</loc>
     <lastmod>2025-03-27T18:31:58+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/build-openvpn-with-xor-debian/</loc>
+    <loc>https://shapkin.me/posts/build-openvpn-with-xor-debian/</loc>
     <lastmod>2025-03-27T18:31:58+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bash/</loc>
+    <loc>https://shapkin.me/tags/bash/</loc>
     <lastmod>2025-03-26T18:20:02+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/grafana/</loc>
+    <loc>https://shapkin.me/tags/grafana/</loc>
     <lastmod>2025-03-26T18:20:02+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/prometheus/</loc>
+    <loc>https://shapkin.me/tags/prometheus/</loc>
     <lastmod>2025-03-26T18:20:02+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/domain-expiration-days-grafana/</loc>
+    <loc>https://shapkin.me/posts/domain-expiration-days-grafana/</loc>
     <lastmod>2025-03-26T18:20:02+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://shapkin.me/about/</loc>
     <lastmod>2024-09-18T19:11:48+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vim/</loc>
+    <loc>https://shapkin.me/tags/vim/</loc>
     <lastmod>2023-06-30T13:12:24+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/customizing-vim/</loc>
+    <loc>https://shapkin.me/posts/customizing-vim/</loc>
     <lastmod>2023-06-30T13:12:24+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/raid/</loc>
+    <loc>https://shapkin.me/tags/raid/</loc>
     <lastmod>2023-03-24T11:16:33+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vmware/</loc>
+    <loc>https://shapkin.me/tags/vmware/</loc>
     <lastmod>2023-03-24T11:16:33+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/vmware-lsi-mr3/</loc>
+    <loc>https://shapkin.me/posts/vmware-lsi-mr3/</loc>
     <lastmod>2023-03-24T11:16:33+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</loc>
+    <loc>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</loc>
     <lastmod>2023-03-01T12:52:01+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/certificates/</loc>
+    <loc>https://shapkin.me/tags/certificates/</loc>
     <lastmod>2022-10-24T22:55:36+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vcsa/</loc>
+    <loc>https://shapkin.me/tags/vcsa/</loc>
     <lastmod>2022-10-24T22:55:36+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/vcsa-certificate-expired/</loc>
+    <loc>https://shapkin.me/posts/vcsa-certificate-expired/</loc>
     <lastmod>2022-10-24T22:55:36+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/powershell/</loc>
+    <loc>https://shapkin.me/tags/powershell/</loc>
     <lastmod>2022-09-12T12:18:47+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
+    <loc>https://shapkin.me/tags/windows/</loc>
     <lastmod>2022-09-12T12:18:47+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/block-traffic-by-powershell/</loc>
+    <loc>https://shapkin.me/posts/block-traffic-by-powershell/</loc>
     <lastmod>2022-09-12T12:18:47+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ipv6/</loc>
+    <loc>https://shapkin.me/tags/ipv6/</loc>
     <lastmod>2021-02-03T17:44:25+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/disable-ipv6-in-centos8/</loc>
+    <loc>https://shapkin.me/posts/disable-ipv6-in-centos8/</loc>
     <lastmod>2021-02-03T17:44:25+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/openvpn-certificate-verify-failed/</loc>
+    <loc>https://shapkin.me/posts/openvpn-certificate-verify-failed/</loc>
     <lastmod>2021-01-25T16:39:22+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/redmine/</loc>
+    <loc>https://shapkin.me/tags/redmine/</loc>
     <lastmod>2020-12-08T19:41:15+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/redmine-update-and-migrate/</loc>
+    <loc>https://shapkin.me/posts/redmine-update-and-migrate/</loc>
     <lastmod>2020-12-08T19:41:15+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/acronis/</loc>
+    <loc>https://shapkin.me/tags/acronis/</loc>
     <lastmod>2020-09-22T10:42:35+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/acronis-corrupts-linux-loader/</loc>
+    <loc>https://shapkin.me/posts/acronis-corrupts-linux-loader/</loc>
     <lastmod>2020-09-22T10:42:35+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tools/</loc>
+    <loc>https://shapkin.me/tags/tools/</loc>
     <lastmod>2016-03-20T09:43:33+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/watch-the-process/</loc>
+    <loc>https://shapkin.me/posts/watch-the-process/</loc>
     <lastmod>2016-03-20T09:43:33+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ssd/</loc>
+    <loc>https://shapkin.me/tags/ssd/</loc>
     <lastmod>2016-03-05T13:44:26+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/activate-ssd-storage-in-esxi/</loc>
+    <loc>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</loc>
     <lastmod>2016-03-05T13:44:26+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/find-out-the-windows-built-in-license/</loc>
+    <loc>https://shapkin.me/posts/find-out-the-windows-built-in-license/</loc>
     <lastmod>2015-12-10T08:46:09+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/delete-plugin-in-vcenter/</loc>
+    <loc>https://shapkin.me/posts/delete-plugin-in-vcenter/</loc>
     <lastmod>2015-11-02T18:53:22+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
+    <loc>https://shapkin.me/tags/active-directory/</loc>
     <lastmod>2015-10-05T13:47:41+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/change-order-of-dispaying-name-in-ad/</loc>
+    <loc>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</loc>
     <lastmod>2015-10-05T13:47:41+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/netbios/</loc>
+    <loc>https://shapkin.me/tags/netbios/</loc>
     <lastmod>2015-10-02T15:48:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/windows-server/</loc>
+    <loc>https://shapkin.me/tags/windows-server/</loc>
     <lastmod>2015-10-02T15:48:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/rename-netbios-domain-name/</loc>
+    <loc>https://shapkin.me/posts/rename-netbios-domain-name/</loc>
     <lastmod>2015-10-02T15:48:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/access-to-owa/</loc>
+    <loc>https://shapkin.me/posts/access-to-owa/</loc>
     <lastmod>2015-10-02T08:56:37+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/exchange/</loc>
+    <loc>https://shapkin.me/tags/exchange/</loc>
     <lastmod>2015-10-02T08:56:37+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/owa/</loc>
+    <loc>https://shapkin.me/tags/owa/</loc>
     <lastmod>2015-10-02T08:56:37+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/remove-blank-lines/</loc>
+    <loc>https://shapkin.me/posts/remove-blank-lines/</loc>
     <lastmod>2015-03-11T07:57:30+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/directory-restructuring/</loc>
+    <loc>https://shapkin.me/posts/directory-restructuring/</loc>
     <lastmod>2015-02-27T12:58:08+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/monitoring/</loc>
+    <loc>https://shapkin.me/tags/monitoring/</loc>
     <lastmod>2013-02-06T01:01:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/check-servers-by-ping/</loc>
+    <loc>https://shapkin.me/posts/check-servers-by-ping/</loc>
     <lastmod>2013-02-06T01:01:00+03:00</lastmod>
   </url>
 </urlset>

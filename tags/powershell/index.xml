@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Powershell on Заметки на полях</title>
-    <link>http://localhost:1313/tags/powershell/</link>
+    <link>https://shapkin.me/tags/powershell/</link>
     <description>Recent content in Powershell on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 12 Sep 2022 12:18:47 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Блокировка исходящего трафика в Windows</title>
-      <link>http://localhost:1313/posts/block-traffic-by-powershell/</link>
+      <link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
       <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
-      <guid>http://localhost:1313/posts/block-traffic-by-powershell/</guid>
+      <guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
       <description>&lt;h2 id=&#34;задача&#34;&gt;Задача:&lt;a href=&#34;#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d0%b0&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.&lt;/p&gt;&#xA;&lt;h2 id=&#34;решение&#34;&gt;Решение:&lt;a href=&#34;#%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d0%b5&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Блокировка исходящего трафика для браузера&lt;/p&gt;</description>
     </item>
     <item>
       <title>Поиск ключа лицензии Windows</title>
-      <link>http://localhost:1313/posts/find-out-the-windows-built-in-license/</link>
+      <link>https://shapkin.me/posts/find-out-the-windows-built-in-license/</link>
       <pubDate>Thu, 10 Dec 2015 08:46:09 +0300</pubDate>
-      <guid>http://localhost:1313/posts/find-out-the-windows-built-in-license/</guid>
+      <guid>https://shapkin.me/posts/find-out-the-windows-built-in-license/</guid>
       <description>&lt;p&gt;На новом ноутбуке стояла Windows 8.1, обновили до 10.&#xA;После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.&lt;/p&gt;&#xA;&lt;p&gt;Встал вопрос с активацией. Нашел способы, как узнать ключ системы.&lt;/p&gt;&#xA;&lt;h2 id=&#34;получаем-oem-ключ-из-uefi&#34;&gt;Получаем OEM ключ из UEFI&lt;a href=&#34;#%d0%bf%d0%be%d0%bb%d1%83%d1%87%d0%b0%d0%b5%d0%bc-oem-%d0%ba%d0%bb%d1%8e%d1%87-%d0%b8%d0%b7-uefi&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):&lt;/p&gt;</description>
     </item>
   </channel>

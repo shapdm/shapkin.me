@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xor on Заметки на полях</title>
-    <link>http://localhost:1313/tags/xor/</link>
+    <link>https://shapkin.me/tags/xor/</link>
     <description>Recent content in Xor on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/xor/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/xor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
-      <link>http://localhost:1313/posts/build-openvpn-with-xor-debian/</link>
+      <link>https://shapkin.me/posts/build-openvpn-with-xor-debian/</link>
       <pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate>
-      <guid>http://localhost:1313/posts/build-openvpn-with-xor-debian/</guid>
-      <description>&lt;p&gt;Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.&#xA;Первым делом, создаем директорию, в которой будут все наши конфиги:&lt;/p&gt;</description>
+      <guid>https://shapkin.me/posts/build-openvpn-with-xor-debian/</guid>
+      <description>&lt;p&gt;Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.&#xA;Первым делом, создаем директорию, в которой будут все наши конфиги:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

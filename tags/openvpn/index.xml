@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openvpn on Заметки на полях</title>
-    <link>http://localhost:1313/tags/openvpn/</link>
+    <link>https://shapkin.me/tags/openvpn/</link>
     <description>Recent content in Openvpn on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
-      <link>http://localhost:1313/posts/build-openvpn-with-xor-debian/</link>
+      <link>https://shapkin.me/posts/build-openvpn-with-xor-debian/</link>
       <pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate>
-      <guid>http://localhost:1313/posts/build-openvpn-with-xor-debian/</guid>
-      <description>&lt;p&gt;Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.&#xA;Первым делом, создаем директорию, в которой будут все наши конфиги:&lt;/p&gt;</description>
+      <guid>https://shapkin.me/posts/build-openvpn-with-xor-debian/</guid>
+      <description>&lt;p&gt;Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://shapkin.me/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.&#xA;Первым делом, создаем директорию, в которой будут все наши конфиги:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Скрипт генерации клиентского конфига OpenVPN</title>
-      <link>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</link>
+      <link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
       <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
-      <guid>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</guid>
+      <guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
       <description>&lt;p&gt;Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.&lt;/p&gt;&#xA;&lt;p&gt;После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.&lt;/p&gt;&#xA;&lt;p&gt;Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/&lt;/p&gt;&#xA;&lt;p&gt;Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ.&#xA;При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Openvpn Certificate Verify Failed</title>
-      <link>http://localhost:1313/posts/openvpn-certificate-verify-failed/</link>
+      <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
       <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
-      <guid>http://localhost:1313/posts/openvpn-certificate-verify-failed/</guid>
+      <guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
       <description>&lt;p&gt;Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.&lt;/p&gt;&#xA;&lt;p&gt;В логе openvpn.log обнаружил следующее:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    WARNING: Failed to stat CRL file, not (re)loading CRL.&#xA;    VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235&#xA;    OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed&#xA;    TLS_ERROR: BIO read tls_read_plaintext error&#xA;    TLS Error: TLS object -&amp;gt; incoming plaintext read error&#xA;    TLS Error: TLS handshake failed&#xA;    Fatal TLS error (check_tls_errors_co), restarting&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ключевое, на что нужно обратить внимание, это &lt;code&gt;WARNING: Failed to stat CRL file, not (re)loading CRL.&lt;/code&gt;&lt;/p&gt;</description>
     </item>
   </channel>

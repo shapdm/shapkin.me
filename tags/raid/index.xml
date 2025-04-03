@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raid on Заметки на полях</title>
-    <link>http://localhost:1313/tags/raid/</link>
+    <link>https://shapkin.me/tags/raid/</link>
     <description>Recent content in Raid on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 24 Mar 2023 11:16:33 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/raid/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/raid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Проблемы с дисковой производительностью на ESXi</title>
-      <link>http://localhost:1313/posts/vmware-lsi-mr3/</link>
+      <link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
       <pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
-      <guid>http://localhost:1313/posts/vmware-lsi-mr3/</guid>
+      <guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
       <description>&lt;p&gt;Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.&#xA;В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.&lt;/p&gt;&#xA;&lt;p&gt;В логах на хостах были такие записи:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0&#xA;2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984&#xA;2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Сразу уточню, что используется виртуализация VMware vSphere 6.&lt;/p&gt;&#xA;&lt;p&gt;Версия драйвера который был установлен на моих ESXi хостах&#xA;&lt;code&gt;lsi-mr3 6.605.08.00-7vmw.600.1.17.3029758&lt;/code&gt;&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Exchange on Заметки на полях</title>
-    <link>http://localhost:1313/tags/exchange/</link>
+    <link>https://shapkin.me/tags/exchange/</link>
     <description>Recent content in Exchange on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 02 Oct 2015 08:56:37 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/exchange/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/exchange/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Access to Owa</title>
-      <link>http://localhost:1313/posts/access-to-owa/</link>
+      <link>https://shapkin.me/posts/access-to-owa/</link>
       <pubDate>Fri, 02 Oct 2015 08:56:37 +0300</pubDate>
-      <guid>http://localhost:1313/posts/access-to-owa/</guid>
+      <guid>https://shapkin.me/posts/access-to-owa/</guid>
       <description>&lt;p&gt;Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).&lt;/p&gt;&#xA;&lt;p&gt;Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в  AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым.&#xA;4 раза менял пароль и под всеми пускает&amp;hellip; и почта ходит, более того, я юзера залочил в ad - все равно работает через web&lt;/p&gt;</description>
     </item>
   </channel>

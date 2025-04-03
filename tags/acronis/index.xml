@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Acronis on Заметки на полях</title>
-    <link>http://localhost:1313/tags/acronis/</link>
+    <link>https://shapkin.me/tags/acronis/</link>
     <description>Recent content in Acronis on Заметки на полях</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 22 Sep 2020 10:42:35 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/acronis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shapkin.me/tags/acronis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Acronis ломает загрузчик</title>
-      <link>http://localhost:1313/posts/acronis-corrupts-linux-loader/</link>
+      <link>https://shapkin.me/posts/acronis-corrupts-linux-loader/</link>
       <pubDate>Tue, 22 Sep 2020 10:42:35 +0300</pubDate>
-      <guid>http://localhost:1313/posts/acronis-corrupts-linux-loader/</guid>
+      <guid>https://shapkin.me/posts/acronis-corrupts-linux-loader/</guid>
       <description>&lt;p&gt;Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home.&#xA;Раскатал образ, а система не грузится, так как сектора не совпадают.&lt;br&gt;&#xA;Восстановливаем загрузчик таким образом:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1. sudo mount /dev/sd*** /mnt&#xA;2. sudo mount /dev/sd** /mnt/boot/efi&#xA;3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done&#xA;4. sudo chroot /mnt&#xA;5. grub-install /dev/sd*&#xA;6. update-grub  &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция&#xA;Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).&lt;/p&gt;</description>
     </item>
   </channel>
