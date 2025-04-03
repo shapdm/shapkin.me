@@ -1,47 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>openvpn on Заметки на полях</title>
-    <link>https://shapkin.me/tags/openvpn/</link>
-    <description>Recent content in openvpn on Заметки на полях</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Openvpn on Заметки на полях</title>
+    <link>http://localhost:1313/tags/openvpn/</link>
+    <description>Recent content in Openvpn on Заметки на полях</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Сборка OpenVPN с патчем XOR в Docker</title>
-      <link>https://shapkin.me/posts/build-openvpn-with-xor/</link>
+      <title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
+      <link>http://localhost:1313/posts/build-openvpn-with-xor-debian/</link>
       <pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/build-openvpn-with-xor/</guid>
-      <description>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.
-Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах. Первым делом, создаем директорию, в которой будут все наши конфиги:
-mkdir openvpn Теперь переходим в нее и создаем файлы, указанные ниже.
-Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Устанавливаем необходимые пакеты 7RUN apt-get update &amp;amp;&amp;amp; \ 8 apt-get install -y git \ 9 gcc \ 10 libssl-dev \ 11 liblzo2-dev \ 12 liblz4-dev \ 13 libpam0g-dev \ 14 make \ 15 unzip \ 16 sbuild \ 17 build-essential \ 18 debhelper \ 19 fakeroot \ 20 devscripts \ 21 pkg-config \ 22 dpkg-dev \ 23 libpkcs11-helper-dev \ 24 libselinux1-dev \ 25 libcap-ng-dev \ 26 libnl-3-dev \ 27 libnl-genl-3-dev 28 29# Создаем рабочую директорию 30WORKDIR /openvpn-build 31 32# Скачиваем исходный код OpenVPN 33RUN wget https://github.</description>
+      <guid>http://localhost:1313/posts/build-openvpn-with-xor-debian/</guid>
+      <description>&lt;p&gt;Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.&lt;br&gt;&#xA;Полный список статей спрятан под спойлер.&lt;/p&gt;&#xA;&#xA;&lt;details&gt;&#xA;  &lt;summary&gt;Список статей&lt;/summary&gt;&#xA;  &lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-debian/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Debian&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-windows/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Windows&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/build-openvpn-with-xor-android/&#34;&gt;Сборка OpenVPN с патчем XOR в Docker для Android&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/openvpn-server-setup/&#34;&gt;Настройка сервера OpenVPN&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;p&gt;Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.&#xA;Первым делом, создаем директорию, в которой будут все наши конфиги:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Скрипт генерации клиентского конфига OpenVPN</title>
-      <link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
+      <link>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</link>
       <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
-      <description>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
-После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
-Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
-Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.</description>
+      <guid>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</guid>
+      <description>&lt;p&gt;Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.&lt;/p&gt;&#xA;&lt;p&gt;После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.&lt;/p&gt;&#xA;&lt;p&gt;Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/&lt;/p&gt;&#xA;&lt;p&gt;Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ.&#xA;При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Openvpn Certificate Verify Failed</title>
-      <link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
+      <link>http://localhost:1313/posts/openvpn-certificate-verify-failed/</link>
       <pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
-      <description>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
-В логе openvpn.log обнаружил следующее:
-WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&amp;gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.</description>
+      <guid>http://localhost:1313/posts/openvpn-certificate-verify-failed/</guid>
+      <description>&lt;p&gt;Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.&lt;/p&gt;&#xA;&lt;p&gt;В логе openvpn.log обнаружил следующее:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    WARNING: Failed to stat CRL file, not (re)loading CRL.&#xA;    VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235&#xA;    OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed&#xA;    TLS_ERROR: BIO read tls_read_plaintext error&#xA;    TLS Error: TLS object -&amp;gt; incoming plaintext read error&#xA;    TLS Error: TLS handshake failed&#xA;    Fatal TLS error (check_tls_errors_co), restarting&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ключевое, на что нужно обратить внимание, это &lt;code&gt;WARNING: Failed to stat CRL file, not (re)loading CRL.&lt;/code&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

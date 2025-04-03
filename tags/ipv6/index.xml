@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ipv6 on Заметки на полях</title>
-    <link>https://shapkin.me/tags/ipv6/</link>
-    <description>Recent content in ipv6 on Заметки на полях</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Ipv6 on Заметки на полях</title>
+    <link>http://localhost:1313/tags/ipv6/</link>
+    <description>Recent content in Ipv6 on Заметки на полях</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 03 Feb 2021 17:44:25 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/ipv6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 17:44:25 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ipv6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Отключение IPv6 в CentOS 8</title>
-      <link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
+      <link>http://localhost:1313/posts/disable-ipv6-in-centos8/</link>
       <pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
-      <description>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.
-Открываем /etc/default/grub и добавляем новой строкой следующее:
-GRUB_CMDLINE_LINUX=&amp;#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&amp;#34; Сохраняем и закрываем файл.
-Теперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:
-/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:
-grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.</description>
+      <guid>http://localhost:1313/posts/disable-ipv6-in-centos8/</guid>
+      <description>&lt;p&gt;Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.&lt;/p&gt;&#xA;&lt;p&gt;Открываем &lt;code&gt;/etc/default/grub&lt;/code&gt; и добавляем новой строкой следующее:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GRUB_CMDLINE_LINUX=&amp;#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Сохраняем и закрываем файл.&lt;/p&gt;&#xA;&lt;p&gt;Теперь следует обновить конфиг &lt;code&gt;grub.cfg&lt;/code&gt;, выполняем команду  &lt;code&gt;ls -la /etc/grub*.cfg&lt;/code&gt; и видим пути до 2х файлов:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/grub2/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

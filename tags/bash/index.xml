@@ -1,58 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bash on Заметки на полях</title>
-    <link>https://shapkin.me/tags/bash/</link>
-    <description>Recent content in bash on Заметки на полях</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Bash on Заметки на полях</title>
+    <link>http://localhost:1313/tags/bash/</link>
+    <description>Recent content in Bash on Заметки на полях</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Mar 2025 18:20:02 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
-      <link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
+      <link>http://localhost:1313/posts/domain-expiration-days-grafana/</link>
       <pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
-      <description>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
-Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:</description>
+      <guid>http://localhost:1313/posts/domain-expiration-days-grafana/</guid>
+      <description>&lt;p&gt;В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.&#xA;Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.&lt;/p&gt;&#xA;&lt;p&gt;Установку и настройку &lt;code&gt;prometheus&lt;/code&gt; и &lt;code&gt;grafana&lt;/code&gt; в этом посте рассматривать не будем, предполагается, что они уже установлены.&lt;/p&gt;&#xA;&lt;h3 id=&#34;общая-логика-работы&#34;&gt;Общая логика работы&lt;a href=&#34;#%d0%be%d0%b1%d1%89%d0%b0%d1%8f-%d0%bb%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Система состоит из нескольких компонентов:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Скрипт генерации клиентского конфига OpenVPN</title>
-      <link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
+      <link>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</link>
       <pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
-      <description>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
-После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
-Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
-Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.</description>
+      <guid>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</guid>
+      <description>&lt;p&gt;Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.&lt;/p&gt;&#xA;&lt;p&gt;После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.&lt;/p&gt;&#xA;&lt;p&gt;Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/&lt;/p&gt;&#xA;&lt;p&gt;Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ.&#xA;При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Реструктуризация директорий</title>
-      <link>https://shapkin.me/posts/directory-restructuring/</link>
+      <link>http://localhost:1313/posts/directory-restructuring/</link>
       <pubDate>Fri, 27 Feb 2015 12:58:08 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/directory-restructuring/</guid>
-      <description>Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:
-/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):
-CentOS #!/bin/bash path=&amp;#34;/root/sort/&amp;#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&amp;#34;$(stat -c &amp;#34;%y %n&amp;#34; $i | awk &amp;#39;{ print $1 }&amp;#39; | sed s%-%/%g)&amp;#34; if ! [ -d &amp;#34;$date&amp;#34; ]; then mkdir -pv &amp;#34;$path$date&amp;#34; fi mv -v $i $path$date done FreeNAS #!</description>
+      <guid>http://localhost:1313/posts/directory-restructuring/</guid>
+      <description>&lt;p&gt;Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/root_dir/year/&#xA;              /month/&#xA;                    /day&#xA;/dir/2012/&#xA;         /02/&#xA;            /10&#xA;            /13&#xA;            /27&#xA;/dir/2012/&#xA;         /05/&#xA;            /12&#xA;            /23&#xA;            /30&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):&lt;/p&gt;&#xA;&lt;h3 id=&#34;centos&#34;&gt;CentOS&lt;a href=&#34;#centos&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash&#xA;path=&amp;#34;/root/sort/&amp;#34;&#xA;dirs=`find $path -maxdepth 1 -type f`&#xA;for i in $dirs&#xA;do&#xA;&#x9;date=&amp;#34;$(stat -c &amp;#34;%y %n&amp;#34; $i | awk &amp;#39;{ print $1 }&amp;#39; | sed s%-%/%g)&amp;#34;&#xA;&#x9;if ! [ -d &amp;#34;$date&amp;#34; ]; then&#xA;&#x9;&#x9;mkdir -pv &amp;#34;$path$date&amp;#34;&#xA;&#x9;fi&#xA;&#x9;mv -v $i $path$date&#xA;done&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;freenas&#34;&gt;FreeNAS&lt;a href=&#34;#freenas&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash&#xA;path=&amp;#34;/root/sort/&amp;#34;&#xA;dirs=`find $path -maxdepth 1 -type f`&#xA;for i in $dirs&#xA;do&#xA;&#x9;date=&amp;#34;$(stat -f %Sm -t %Y/%m/%d $i)&amp;#34;&#xA;&#x9;if ! [ -d &amp;#34;$date&amp;#34; ]; then&#xA;&#x9;&#x9;mkdir -pv &amp;#34;$path$date&amp;#34;&#xA;&#x9;fi&#xA;&#x9;mv $i $path$date&#xA;done&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Скрипт мониторинга сервера по ping</title>
-      <link>https://shapkin.me/posts/check-servers-by-ping/</link>
+      <link>http://localhost:1313/posts/check-servers-by-ping/</link>
       <pubDate>Wed, 06 Feb 2013 01:01:00 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/check-servers-by-ping/</guid>
-      <description>Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&amp;rsquo;a или nagios&amp;rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).
-Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.
-Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.
-Вот и в моей жизни настал такой момент. Итак, ниже код скрипта с простыми пояснениями:</description>
+      <guid>http://localhost:1313/posts/check-servers-by-ping/</guid>
+      <description>&lt;p&gt;Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&amp;rsquo;a или nagios&amp;rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).&lt;/p&gt;&#xA;&lt;p&gt;Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.&lt;/p&gt;&#xA;&lt;p&gt;Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.&lt;/p&gt;&#xA;&lt;p&gt;Вот и в моей жизни настал такой момент.&#xA;Итак, ниже код скрипта с простыми пояснениями:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

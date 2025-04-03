@@ -1,57 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vmware on Заметки на полях</title>
-    <link>https://shapkin.me/tags/vmware/</link>
-    <description>Recent content in vmware on Заметки на полях</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Vmware on Заметки на полях</title>
+    <link>http://localhost:1313/tags/vmware/</link>
+    <description>Recent content in Vmware on Заметки на полях</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 24 Mar 2023 11:16:33 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Mar 2023 11:16:33 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Проблемы с дисковой производительностью на ESXi</title>
-      <link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
+      <link>http://localhost:1313/posts/vmware-lsi-mr3/</link>
       <pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
-      <description>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов. В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.
-В логах на хостах были такие записи:
-2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT Сразу уточню, что используется виртуализация VMware vSphere 6.
-Версия драйвера который был установлен на моих ESXi хостах lsi-mr3 6.</description>
+      <guid>http://localhost:1313/posts/vmware-lsi-mr3/</guid>
+      <description>&lt;p&gt;Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.&#xA;В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.&lt;/p&gt;&#xA;&lt;p&gt;В логах на хостах были такие записи:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0&#xA;2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984&#xA;2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Сразу уточню, что используется виртуализация VMware vSphere 6.&lt;/p&gt;&#xA;&lt;p&gt;Версия драйвера который был установлен на моих ESXi хостах&#xA;&lt;code&gt;lsi-mr3 6.605.08.00-7vmw.600.1.17.3029758&lt;/code&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>VMware VCSA Certificates Expired</title>
-      <link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
+      <link>http://localhost:1313/posts/vcsa-certificate-expired/</link>
       <pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
-      <description>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:
-503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)
-Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:
-2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&amp;gt; ExpectedThumbprint: --&amp;gt; ExpectedPeerName: vcsa.</description>
+      <guid>http://localhost:1313/posts/vcsa-certificate-expired/</guid>
+      <description>&lt;p&gt;Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.&#xA;После перезагрузки в web интерфейсе постоянно висела 503 ошибка:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters:&#xA;--&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B&#xA;--&amp;gt; ExpectedThumbprint: &#xA;--&amp;gt; ExpectedPeerName: vcsa.domain.com&#xA;--&amp;gt; The remote host certificate has these problems:&#xA;--&amp;gt; &#xA;--&amp;gt; * certificate has expired)&#xA;--&amp;gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Как заставить ESXi увидеть SSD хранилище</title>
-      <link>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</link>
+      <link>http://localhost:1313/posts/activate-ssd-storage-in-esxi/</link>
       <pubDate>Sat, 05 Mar 2016 13:44:26 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</guid>
-      <description>В ESXi 5.* и 6.* по-умолчанию все диски определяются как Non-SSD. Из за этого, например, не получится подключить SSD как кэширующее хранилище. Необходимо добавить правило в SATP (Storage Adapter Type Plugin). В Configuration - Storage - Datastore смотрим название диска. Заходим по ssh на хост, и вводим команду esxcli storage nmp satp rule add -s VMW_SATP_LOCAL -d mpx.vmhba1:C0:T1:L0 -o enable_ssd. В моем случае имя было mpx.vmhba1:C0:T1:L0. После этого вводим команду esxcli storage core claiming reclaim -d mpx.</description>
+      <guid>http://localhost:1313/posts/activate-ssd-storage-in-esxi/</guid>
+      <description>&lt;p&gt;В ESXi 5.* и 6.*  по-умолчанию все диски определяются как Non-SSD.&#xA;Из за этого, например, не получится подключить SSD как кэширующее хранилище.&#xA;Необходимо добавить правило в &lt;code&gt;SATP (Storage Adapter Type Plugin)&lt;/code&gt;.&#xA;&lt;img src=&#34;http://localhost:1313/img/004/004-1.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;В &lt;code&gt;Configuration - Storage - Datastore&lt;/code&gt; смотрим название диска.&#xA;&lt;img src=&#34;http://localhost:1313/img/004/004-2.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Заходим по ssh на хост, и вводим команду &lt;code&gt;esxcli storage nmp satp rule add -s VMW_SATP_LOCAL -d mpx.vmhba1:C0:T1:L0 -o enable_ssd&lt;/code&gt;.&#xA;В моем случае имя было &lt;code&gt;mpx.vmhba1:C0:T1:L0&lt;/code&gt;.&#xA;&lt;img src=&#34;http://localhost:1313/img/004/004-3.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;После этого вводим команду &lt;code&gt;esxcli storage core claiming reclaim -d mpx.vmhba1:C0:T1:L0&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Удаление плагина в vCenter</title>
-      <link>https://shapkin.me/posts/delete-plugin-in-vcenter/</link>
+      <link>http://localhost:1313/posts/delete-plugin-in-vcenter/</link>
       <pubDate>Mon, 02 Nov 2015 18:53:22 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/delete-plugin-in-vcenter/</guid>
-      <description>Появилась необходимость удалить неиспользуемый плагин в vCenter.
-Для этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob
-Жмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.
-Обновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -&amp;gt; Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.</description>
+      <guid>http://localhost:1313/posts/delete-plugin-in-vcenter/</guid>
+      <description>&lt;p&gt;Появилась необходимость удалить неиспользуемый плагин в vCenter.&lt;/p&gt;&#xA;&lt;p&gt;Для этого в браузере вбиваем адрес следующего вида &lt;code&gt;https://vcenter_ip/mob&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Жмем &lt;code&gt;Content&lt;/code&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/003/003-1.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Жмем &lt;code&gt;ExtensionManager&lt;/code&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/003/003-2.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Выбираем плагин, который нужно удалить. Копируем его название.&#xA;Жмем &lt;code&gt;UnregisterExtension&lt;/code&gt;. Откроется новое окно.&#xA;Вставляем название плагина в поле &lt;code&gt;Value&lt;/code&gt; и жмем &lt;code&gt;Invoke Method&lt;/code&gt;.&#xA;&lt;img src=&#34;http://localhost:1313/img/003/003-3.JPG&#34; alt=&#34;&#34;&gt;&#xA;Закрываем окно.&lt;/p&gt;&#xA;&lt;p&gt;Обновляем страницу и проверяем, что плагин удален.&#xA;Проверяем список плагинов в &lt;code&gt;vSphere Client -&amp;gt; Plug-in Manager&lt;/code&gt;&#xA;Если плагин все еще будет в списке - перезапустите клиент.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

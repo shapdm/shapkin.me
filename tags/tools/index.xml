@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tools on Заметки на полях</title>
-    <link>https://shapkin.me/tags/tools/</link>
-    <description>Recent content in tools on Заметки на полях</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Tools on Заметки на полях</title>
+    <link>http://localhost:1313/tags/tools/</link>
+    <description>Recent content in Tools on Заметки на полях</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 20 Mar 2016 09:43:33 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2016 09:43:33 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Следим за процессом выполнения задачи</title>
-      <link>https://shapkin.me/posts/watch-the-process/</link>
+      <link>http://localhost:1313/posts/watch-the-process/</link>
       <pubDate>Sun, 20 Mar 2016 09:43:33 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/watch-the-process/</guid>
-      <description>Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)
-Пример использования pv dump.sql | mysql -u user -p password database </description>
+      <guid>http://localhost:1313/posts/watch-the-process/</guid>
+      <description>&lt;p&gt;Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)&lt;/p&gt;&#xA;&lt;p&gt;Пример использования &lt;code&gt;pv dump.sql | mysql -u user -p password database&lt;/code&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/005/005-1.png&#34; alt=&#34;Pipe Viewer&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

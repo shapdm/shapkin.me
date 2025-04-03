@@ -1,30 +1,42 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 	<channel>
 		<title>Posts on Заметки на полях</title>
-		<link>https://shapkin.me/posts/</link>
+		<link>http://localhost:1313/posts/</link>
 		<description>Recent content in Posts on Заметки на полях</description>
-		<generator>Hugo -- gohugo.io</generator>
+		<generator>Hugo -- 0.145.0</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Thu, 27 Mar 2025 18:31:58 +0300</lastBuildDate>
-		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+		<lastBuildDate>Mon, 31 Mar 2025 18:24:40 +0300</lastBuildDate>
+		<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+		
 		
 		<item>
-			<title>Сборка OpenVPN с патчем XOR в Docker</title>
-			<link>https://shapkin.me/posts/build-openvpn-with-xor/</link>
-			<pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/build-openvpn-with-xor/</guid>
-			<description>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.
-Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах. Первым делом, создаем директорию, в которой будут все наши конфиги:
-mkdir openvpn Теперь переходим в нее и создаем файлы, указанные ниже.
-Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Устанавливаем необходимые пакеты 7RUN apt-get update &amp;amp;&amp;amp; \ 8 apt-get install -y git \ 9 gcc \ 10 libssl-dev \ 11 liblzo2-dev \ 12 liblz4-dev \ 13 libpam0g-dev \ 14 make \ 15 unzip \ 16 sbuild \ 17 build-essential \ 18 debhelper \ 19 fakeroot \ 20 devscripts \ 21 pkg-config \ 22 dpkg-dev \ 23 libpkcs11-helper-dev \ 24 libselinux1-dev \ 25 libcap-ng-dev \ 26 libnl-3-dev \ 27 libnl-genl-3-dev 28 29# Создаем рабочую директорию 30WORKDIR /openvpn-build 31 32# Скачиваем исходный код OpenVPN 33RUN wget https://github.</description>
-			<content type="html"><![CDATA[<p>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.</p>
+			<title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
+			<link>http://localhost:1313/posts/build-openvpn-with-xor-debian/</link>
+			<pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate><guid>http://localhost:1313/posts/build-openvpn-with-xor-debian/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.<br>
+Полный список статей спрятан под спойлер.</p>
+
+<details>
+  <summary>Список статей</summary>
+  <ol>
+<li><a href="/posts/build-openvpn-with-xor-debian/">Сборка OpenVPN с патчем XOR в Docker для Debian</a></li>
+<li><a href="/posts/build-openvpn-with-xor-windows/">Сборка OpenVPN с патчем XOR в Docker для Windows</a></li>
+<li><a href="/posts/build-openvpn-with-xor-android/">Сборка OpenVPN с патчем XOR в Docker для Android</a></li>
+<li><a href="/posts/openvpn-server-setup/">Настройка сервера OpenVPN</a></li>
+</ol>
+</details>
+
 <p>Соберем deb пакет для Debian 12 и скопируем его на хостовую машину, чтобы использовать для установки на других системах.
 Первым делом, создаем директорию, в которой будут все наши конфиги:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir openvpn
 </span></span></code></pre></div><p>Теперь переходим в нее и создаем файлы, указанные ниже.</p>
-<h3 id="dockerfile">Dockerfile</h3>
+<h3 id="dockerfile">Dockerfile<a href="#dockerfile" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">FROM debian:12
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># Создаем volume</span>
@@ -69,7 +81,11 @@ Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Ус
 </span></span><span class="line"><span class="ln">42</span><span class="cl">RUN chmod +x /entrypoint.sh
 </span></span><span class="line"><span class="ln">43</span><span class="cl">
 </span></span><span class="line"><span class="ln">44</span><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;bash&#34;</span>, <span class="s2">&#34;-ex&#34;</span>, <span class="s2">&#34;/entrypoint.sh&#34;</span><span class="o">]</span>
-</span></span></code></pre></div><h3 id="entrypointsh">entrypoint.sh</h3>
+</span></span></code></pre></div><h3 id="entrypointsh">entrypoint.sh<a href="#entrypointsh" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nb">set</span> -euo pipefail
@@ -109,47 +125,59 @@ Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Ус
 </span></span></code></pre></div><p>Создаем папки release и debian</p>
 <pre tabindex="0"><code>mkdir {release,debian}
 </code></pre><p>В папке debian нужно создать файлы с конфигурацией для сборки, приведу свои варианты.</p>
-<p>Кратко опишу для чего каждый файл: </p>
+<p>Кратко опишу для чего каждый файл:</p>
 <table>
-<thead>
-<tr>
-<th>Имя файла</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Changelog</strong></td>
-<td>Описывает всю историю изменений</td>
-</tr>
-<tr>
-<td><strong>Compat</strong></td>
-<td>Указывает уровень совместимости с debhelper</td>
-</tr>
-<tr>
-<td><strong>Control</strong></td>
-<td>Содержит всю основную информацию о собираемом пакете</td>
-</tr>
-<tr>
-<td><strong>Rules</strong></td>
-<td>Описывает правила по которым будет происходить компиляции пакета</td>
-</tr>
-<tr>
-<td><strong>Copyright</strong></td>
-<td>Содержит информацию об авторских правах и лицензии исходников</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Имя файла</th>
+          <th>Описание</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Changelog</strong></td>
+          <td>Описывает всю историю изменений</td>
+      </tr>
+      <tr>
+          <td><strong>Compat</strong></td>
+          <td>Указывает уровень совместимости с debhelper</td>
+      </tr>
+      <tr>
+          <td><strong>Control</strong></td>
+          <td>Содержит всю основную информацию о собираемом пакете</td>
+      </tr>
+      <tr>
+          <td><strong>Rules</strong></td>
+          <td>Описывает правила по которым будет происходить компиляции пакета</td>
+      </tr>
+      <tr>
+          <td><strong>Copyright</strong></td>
+          <td>Содержит информацию об авторских правах и лицензии исходников</td>
+      </tr>
+  </tbody>
 </table>
 <p>Подробнее с форматом можно ознакомиться по ссылке: <a href="https://www.debian.org/doc/manuals/maint-guide/dreq.ru.html" target="_blank">https://www.debian.org/doc/manuals/maint-guide/dreq.ru.html</a></p>
-<h3 id="debianchangelog">debian/changelog</h3>
+<h3 id="debianchangelog">debian/changelog<a href="#debianchangelog" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openvpn <span class="o">(</span>2.6.13<span class="o">)</span> unstable<span class="p">;</span> <span class="nv">urgency</span><span class="o">=</span>medium
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  * Custom build with XOR patch <span class="k">for</span> Tunnelblick
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  -- Your Name &lt;your@mail&gt;  Thu, <span class="m">01</span> Jan <span class="m">1970</span> 00:00:00 +0000
-</span></span></code></pre></div><h3 id="debiancompat">debian/compat</h3>
+</span></span></code></pre></div><h3 id="debiancompat">debian/compat<a href="#debiancompat" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">12</span>
-</span></span></code></pre></div><h3 id="debiancontrol">debian/control</h3>
+</span></span></code></pre></div><h3 id="debiancontrol">debian/control<a href="#debiancontrol" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Source: openvpn
 </span></span><span class="line"><span class="cl">Section: net
 </span></span><span class="line"><span class="cl">Priority: optional
@@ -165,7 +193,11 @@ Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Ус
 </span></span><span class="line"><span class="cl">Homepage: https://openvpn.net/
 </span></span><span class="line"><span class="cl">Description: OpenVPN with XOR
 </span></span><span class="line"><span class="cl"> Custom OpenVPN build with XOR patch from Tunnelblick
-</span></span></code></pre></div><h3 id="debiancopyright">debian/copyright</h3>
+</span></span></code></pre></div><h3 id="debiancopyright">debian/copyright<a href="#debiancopyright" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 </span></span><span class="line"><span class="cl">Upstream-Name: OpenVPN
 </span></span><span class="line"><span class="cl">Source: https://github.com/OpenVPN/openvpn
@@ -188,7 +220,11 @@ Dockerfile 1FROM debian:12 2 3# Создаем volume 4VOLUME /release 5 6# Ус
 </span></span><span class="line"><span class="cl"> You should have received a copy of the GNU General Public License along
 </span></span><span class="line"><span class="cl"> with this program<span class="p">;</span> <span class="k">if</span> not, write to the Free Software Foundation, Inc.,
 </span></span><span class="line"><span class="cl"> <span class="m">51</span> Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-</span></span></code></pre></div><h3 id="debianrules">debian/rules</h3>
+</span></span></code></pre></div><h3 id="debianrules">debian/rules<a href="#debianrules" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/make -f
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl">%:
@@ -227,17 +263,16 @@ Description: OpenVPN with XOR
 		
 		<item>
 			<title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
-			<link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
-			<pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
-			<description>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
-Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:</description>
-			<content type="html"><![CDATA[<p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
+			<link>http://localhost:1313/posts/domain-expiration-days-grafana/</link>
+			<pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate><guid>http://localhost:1313/posts/domain-expiration-days-grafana/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
 Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.</p>
 <p>Установку и настройку <code>prometheus</code> и <code>grafana</code> в этом посте рассматривать не будем, предполагается, что они уже установлены.</p>
-<h3 id="общая-логика-работы">Общая логика работы</h3>
+<h3 id="общая-логика-работы">Общая логика работы<a href="#%d0%be%d0%b1%d1%89%d0%b0%d1%8f-%d0%bb%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <p>Система состоит из нескольких компонентов:</p>
 <p><strong>Bash-скрипт (check_domains.sh)</strong>: Проверяет срок действия доменов через whois и отправляет данные в Pushgateway.<br>
 <strong>Pushgateway</strong>: Промежуточный сервис для отправки метрик в Prometheus.<br>
@@ -260,7 +295,11 @@ Prometheus периодически собирает данные из Pushgatew
 </span></span><span class="line"><span class="cl">    honor_labels: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">    static_configs:
 </span></span><span class="line"><span class="cl">	  - targets: <span class="o">[</span><span class="s1">&#39;prometheus:9091&#39;</span><span class="o">]</span>
-</span></span></code></pre></div><h3 id="код-скрипта-check_domainssh">Код скрипта check_domains.sh</h3>
+</span></span></code></pre></div><h3 id="код-скрипта-check_domainssh">Код скрипта check_domains.sh<a href="#%d0%ba%d0%be%d0%b4-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%b0-check_domainssh" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> -euo pipefail
@@ -306,10 +345,18 @@ Prometheus периодически собирает данные из Pushgatew
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date <span class="s1">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span class="k">)</span><span class="s2"> Processing domain: </span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">    process_domain <span class="s2">&#34;</span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="k">continue</span>  <span class="c1"># Пропуск домена в случае ошибки</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
-</span></span></code></pre></div><h3 id="файл-crontab-для-настройки-расписания-запуска-скрипта">Файл crontab для настройки расписания запуска скрипта:</h3>
+</span></span></code></pre></div><h3 id="файл-crontab-для-настройки-расписания-запуска-скрипта">Файл crontab для настройки расписания запуска скрипта:<a href="#%d1%84%d0%b0%d0%b9%d0%bb-crontab-%d0%b4%d0%bb%d1%8f-%d0%bd%d0%b0%d1%81%d1%82%d1%80%d0%be%d0%b9%d0%ba%d0%b8-%d1%80%d0%b0%d1%81%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d1%8f-%d0%b7%d0%b0%d0%bf%d1%83%d1%81%d0%ba%d0%b0-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%b0" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <pre tabindex="0"><code># Запускать скрипт каждый день в 00:00
 0 0 * * * /usr/local/bin/check_domains.sh &gt; /var/log/cron.log 2&gt;&amp;1
-</code></pre><h3 id="файл-docker-composeyml">Файл docker-compose.yml</h3>
+</code></pre><h3 id="файл-docker-composeyml">Файл docker-compose.yml<a href="#%d1%84%d0%b0%d0%b9%d0%bb-docker-composeyml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">services:
 </span></span><span class="line"><span class="cl">  pushgateway:
 </span></span><span class="line"><span class="cl">    image: prom/pushgateway
@@ -332,7 +379,11 @@ Prometheus периодически собирает данные из Pushgatew
 </span></span><span class="line"><span class="cl">    network_mode: host
 </span></span><span class="line"><span class="cl">    volumes:
 </span></span><span class="line"><span class="cl">      - ./logs:/var/log <span class="c1"># Монтируем папку для логов</span>
-</span></span></code></pre></div><h3 id="файл-dockerfile">Файл Dockerfile</h3>
+</span></span></code></pre></div><h3 id="файл-dockerfile">Файл Dockerfile<a href="#%d1%84%d0%b0%d0%b9%d0%bb-dockerfile" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Используем базовый образ Alpine Linux</span>
 </span></span><span class="line"><span class="cl">FROM alpine:latest
 </span></span><span class="line"><span class="cl">
@@ -372,14 +423,9 @@ Prometheus периодически собирает данные из Pushgatew
 		
 		<item>
 			<title>Настройка Vim</title>
-			<link>https://shapkin.me/posts/customizing-vim/</link>
-			<pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/customizing-vim/</guid>
-			<description>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim. Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.
-За несколько лет использования редактора, я пришел к следующему набору:
-expandtab — Включает замену tab на пробелы smarttab — При нажатии tab в начале строки добавляется количество пробелов, указанное в директиве shiftwidth shiftwidth=4 — Задает количество пробелов в одном tab tabstop=4 — Задает количество пробелов в одном tab softtabstop=4 — Задает количество пробелов в одном tab при удалении number — Добавляет нумерацию строк syntax on — Включает подсветку синтаксиса mouse=i — Включает режим вставки (мне обычно нужно для выделения курсором мышки и копирования строк) ignorecase и smartcase — Убирает чувствительность к регистру при поиске hlsearch — Включает подсветку результатов поиска incsearch — Подсветка первого вхождения по поиску encoding=utf8 — Задает кодировку для работы с файлом Итак, чтобы добавить данные настройки пишем в консоли:</description>
-			<content type="html"><![CDATA[<p>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim.
+			<link>http://localhost:1313/posts/customizing-vim/</link>
+			<pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate><guid>http://localhost:1313/posts/customizing-vim/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim.
 Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.</p>
 <p>За несколько лет использования редактора, я пришел к следующему набору:</p>
 <ol>
@@ -419,15 +465,9 @@ expandtab — Включает замену tab на пробелы smarttab —
 		
 		<item>
 			<title>Проблемы с дисковой производительностью на ESXi</title>
-			<link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
-			<pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
-			<description>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов. В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.
-В логах на хостах были такие записи:
-2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:258: VIRT_RESET cmd # 328727984 2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:262: ABORT Сразу уточню, что используется виртуализация VMware vSphere 6.
-Версия драйвера который был установлен на моих ESXi хостах lsi-mr3 6.</description>
-			<content type="html"><![CDATA[<p>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.
+			<link>http://localhost:1313/posts/vmware-lsi-mr3/</link>
+			<pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate><guid>http://localhost:1313/posts/vmware-lsi-mr3/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.
 В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.</p>
 <p>В логах на хостах были такие записи:</p>
 <pre tabindex="0"><code>2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0
@@ -448,15 +488,9 @@ expandtab — Включает замену tab на пробелы smarttab —
 		
 		<item>
 			<title>Скрипт генерации клиентского конфига OpenVPN</title>
-			<link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
-			<pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
-			<description>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
-После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
-Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
-Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.</description>
-			<content type="html"><![CDATA[<p>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.</p>
+			<link>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</link>
+			<pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate><guid>http://localhost:1313/posts/script-for-creating-new-openvpn-client/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.</p>
 <p>После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.</p>
 <p>Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/</p>
 <p>Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ.
@@ -483,19 +517,12 @@ expandtab — Включает замену tab на пробелы smarttab —
 		
 		<item>
 			<title>VMware VCSA Certificates Expired</title>
-			<link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
-			<pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
-			<description>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:
-503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)
-Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:
-2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&amp;gt; ExpectedThumbprint: --&amp;gt; ExpectedPeerName: vcsa.</description>
-			<content type="html"><![CDATA[<p>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.
+			<link>http://localhost:1313/posts/vcsa-certificate-expired/</link>
+			<pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate><guid>http://localhost:1313/posts/vcsa-certificate-expired/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.
 После перезагрузки в web интерфейсе постоянно висела 503 ошибка:</p>
 <blockquote>
-<p>503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)</p>
-</blockquote>
+<p>503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)</p></blockquote>
 <p>Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:</p>
 <pre tabindex="0"><code>2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters:
 --&gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B
@@ -535,7 +562,11 @@ Alias :	data-encipherment
 [*] Store : SMS
 Alias :	sms_self_signed
             Not After : Oct 22 16:24:58 2030 GMT
-</code></pre><h3 id="решение-проблемы">Решение проблемы:</h3>
+</code></pre><h3 id="решение-проблемы">Решение проблемы:<a href="#%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bf%d1%80%d0%be%d0%b1%d0%bb%d0%b5%d0%bc%d1%8b" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <ul>
 <li>запускаем менеджер сертификатов /usr/lib/vmware-vmca/bin/certificate-manager</li>
 <li>выбираем нужный нам пункт</li>
@@ -544,7 +575,11 @@ Alias :	sms_self_signed
 <li>далее отвечаем на вопросы для генерации нового сертификата</li>
 <li>ждем выполнения процесса, пока не отобразится сообщение &ldquo;Status : 100% Completed [All tasks completed successfully]&rdquo;</li>
 </ul>
-<h3 id="источники">Источники:</h3>
+<h3 id="источники">Источники:<a href="#%d0%b8%d1%81%d1%82%d0%be%d1%87%d0%bd%d0%b8%d0%ba%d0%b8" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <p><a href="https://kb.vmware.com/s/article/82332" target="_blank">https://kb.vmware.com/s/article/82332</a></p>
 <p><a href="https://kb.vmware.com/s/article/2112283" target="_blank">https://kb.vmware.com/s/article/2112283</a></p>
 ]]></content>
@@ -552,19 +587,19 @@ Alias :	sms_self_signed
 		
 		<item>
 			<title>Блокировка исходящего трафика в Windows</title>
-			<link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
-			<pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
-			<description>Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
-Решение: Блокировка исходящего трафика для браузера
-New-NetFirewallRule -Program &amp;#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&amp;#34; -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Блокировка всего исходящего трафика
-New-NetFirewallRule -Action Block -Profile Any -DisplayName &amp;#34;block traffic&amp;#34; -RemoteAddress Internet -Direction Outbound Удаление правила
-Remove-NetFirewallRule -DisplayName &amp;#34;block traffic&amp;#34; Включение и отключение правила
-Disable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Enable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Написал скрипт для удобства пользования</description>
-			<content type="html"><![CDATA[<h2 id="задача">Задача:</h2>
+			<link>http://localhost:1313/posts/block-traffic-by-powershell/</link>
+			<pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate><guid>http://localhost:1313/posts/block-traffic-by-powershell/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<h2 id="задача">Задача:<a href="#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d0%b0" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
 <p>Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.</p>
-<h2 id="решение">Решение:</h2>
+<h2 id="решение">Решение:<a href="#%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d0%b5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
 <p>Блокировка исходящего трафика для браузера</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="n">-Program</span> <span class="s2">&#34;C:\Program Files (x86)\Internet Explorer\iexplore.exe&#34;</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span>
 </span></span></code></pre></div><p>Блокировка всего исходящего трафика</p>
@@ -587,9 +622,9 @@ Disable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Enable-NetF
 </span></span><span class="line"><span class="cl"><span class="nv">$choice</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&#34;Выберете пункт из списка&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">Switch</span><span class="p">(</span><span class="nv">$choice</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">  <span class="n">1</span><span class="p">{</span><span class="nb">New-NetFirewallRule</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="n">2</span><span class="p">{</span><span class="nb">Remove-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="n">3</span><span class="p">{</span><span class="nb">Write-Host</span> <span class="s2">&#34;Завершить&#34;</span><span class="p">;</span> <span class="n">exit</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">1</span><span class="p">{</span><span class="nb">New-NetFirewallRule</span> <span class="n">-Action</span> <span class="n">Block</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span> <span class="n">-RemoteAddress</span> <span class="n">Internet</span> <span class="n">-Direction</span> <span class="n">Outbound</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">2</span><span class="p">{</span><span class="nb">Remove-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&#34;block traffic&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">3</span><span class="p">{</span><span class="nb">Write-Host</span> <span class="s2">&#34;Завершить&#34;</span><span class="p">;</span> <span class="n">exit</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">default</span> <span class="p">{</span><span class="nb">Write-Host</span> <span class="s2">&#34;Некорректный ввод, попробуйте снова&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>]]></content>
@@ -597,17 +632,9 @@ Disable-NetFirewallRule -DisplayName &amp;#39;block traffic&amp;#39; Enable-NetF
 		
 		<item>
 			<title>Отключение IPv6 в CentOS 8</title>
-			<link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
-			<pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
-			<description>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.
-Открываем /etc/default/grub и добавляем новой строкой следующее:
-GRUB_CMDLINE_LINUX=&amp;#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&amp;#34; Сохраняем и закрываем файл.
-Теперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:
-/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:
-grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.</description>
-			<content type="html"><![CDATA[<p>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.</p>
+			<link>http://localhost:1313/posts/disable-ipv6-in-centos8/</link>
+			<pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate><guid>http://localhost:1313/posts/disable-ipv6-in-centos8/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.</p>
 <p>Открываем <code>/etc/default/grub</code> и добавляем новой строкой следующее:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34;
 </span></span></code></pre></div><p>Сохраняем и закрываем файл.</p>
@@ -618,7 +645,11 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">grub2-mkconfig -o /boot/grub2/grub.cfg
 </span></span><span class="line"><span class="cl">grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 </span></span></code></pre></div><p>Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.</p>
-<h3 id="ps">P.S.</h3>
+<h3 id="ps">P.S.<a href="#ps" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <p>На этапе перегенерации конфигов я столкнулся с такой ошибкой:
 <img src="/img/006/006-1.png" alt=""></p>
 <p>Для решения было достаточно пересоздать grubenv командой <code>grub2-editenv create</code></p>
@@ -629,14 +660,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
 		
 		<item>
 			<title>Openvpn Certificate Verify Failed</title>
-			<link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
-			<pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
-			<description>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
-В логе openvpn.log обнаружил следующее:
-WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&amp;gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.</description>
-			<content type="html"><![CDATA[<p>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.</p>
+			<link>http://localhost:1313/posts/openvpn-certificate-verify-failed/</link>
+			<pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate><guid>http://localhost:1313/posts/openvpn-certificate-verify-failed/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.</p>
 <p>В логе openvpn.log обнаружил следующее:</p>
 <pre tabindex="0"><code>    WARNING: Failed to stat CRL file, not (re)loading CRL.
     VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235
@@ -667,22 +693,25 @@ Next Update: Jan 15 10:30:58 2023 GMT
 		
 		<item>
 			<title>Обновление и миграция Redmine между двумя серверами</title>
-			<link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
-			<pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
-			<description>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
-Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).
-Установка нужной версии Redmine по инструкциям с сайта https://redmine.</description>
-			<content type="html"><![CDATA[<p>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.</p>
-<h3 id="старый-сервер-с-redmine">Старый сервер с Redmine</h3>
+			<link>http://localhost:1313/posts/redmine-update-and-migrate/</link>
+			<pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate><guid>http://localhost:1313/posts/redmine-update-and-migrate/</guid>
+			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.</p>
+<h3 id="старый-сервер-с-redmine">Старый сервер с Redmine<a href="#%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <ul>
 <li>CentOS 7</li>
 <li>mysql 5.5</li>
 <li>ruby 2.0 / rail 4.2</li>
 <li>thin (gem сервер приложения)</li>
 </ul>
-<h3 id="новый-сервер-с-redmine">Новый сервер с Redmine</h3>
+<h3 id="новый-сервер-с-redmine">Новый сервер с Redmine<a href="#%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <ul>
 <li>CentOS 8</li>
 <li>mariadb 10</li>
@@ -704,368 +733,6 @@ Next Update: Jan 15 10:30:58 2023 GMT
 <li>Устанавливаем плагины</li>
 <li>Перенастраиваем адреса для проксирования, если есть пограничный сервер (в моем случае в роли обратного прокси выступает nginx)</li>
 </ol>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Acronis ломает загрузчик</title>
-			<link>https://shapkin.me/posts/acronis-corrupts-linux-loader/</link>
-			<pubDate>Tue, 22 Sep 2020 10:42:35 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/acronis-corrupts-linux-loader/</guid>
-			<description>Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.
-Восстановливаем загрузчик таким образом:
-1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).</description>
-			<content type="html"><![CDATA[<p>Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home.
-Раскатал образ, а система не грузится, так как сектора не совпадают.<br>
-Восстановливаем загрузчик таким образом:</p>
-<pre tabindex="0"><code>1. sudo mount /dev/sd*** /mnt
-2. sudo mount /dev/sd** /mnt/boot/efi
-3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
-4. sudo chroot /mnt
-5. grub-install /dev/sd*
-6. update-grub  
-</code></pre><p>Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция
-Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).</p>
-<p>P.S. Заметка с 2017 валялась в черновиках и наконец-то увидела свет, возможно еще актуальна :)</p>
-<p><a href="https://kb.acronis.com/content/4974" target="_blank">https://kb.acronis.com/content/4974</a><br>
-<a href="https://kb.acronis.com/content/1686" target="_blank">https://kb.acronis.com/content/1686</a></p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Следим за процессом выполнения задачи</title>
-			<link>https://shapkin.me/posts/watch-the-process/</link>
-			<pubDate>Sun, 20 Mar 2016 09:43:33 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/watch-the-process/</guid>
-			<description>Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)
-Пример использования pv dump.sql | mysql -u user -p password database </description>
-			<content type="html"><![CDATA[<p>Открыл для себя замечательную утилиту (в linux) - pv (Pipe Viewer)</p>
-<p>Пример использования <code>pv dump.sql | mysql -u user -p password database</code>
-<img src="/img/005/005-1.png" alt="Pipe Viewer"></p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Как заставить ESXi увидеть SSD хранилище</title>
-			<link>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</link>
-			<pubDate>Sat, 05 Mar 2016 13:44:26 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/activate-ssd-storage-in-esxi/</guid>
-			<description>В ESXi 5.* и 6.* по-умолчанию все диски определяются как Non-SSD. Из за этого, например, не получится подключить SSD как кэширующее хранилище. Необходимо добавить правило в SATP (Storage Adapter Type Plugin). В Configuration - Storage - Datastore смотрим название диска. Заходим по ssh на хост, и вводим команду esxcli storage nmp satp rule add -s VMW_SATP_LOCAL -d mpx.vmhba1:C0:T1:L0 -o enable_ssd. В моем случае имя было mpx.vmhba1:C0:T1:L0. После этого вводим команду esxcli storage core claiming reclaim -d mpx.</description>
-			<content type="html"><![CDATA[<p>В ESXi 5.* и 6.*  по-умолчанию все диски определяются как Non-SSD.
-Из за этого, например, не получится подключить SSD как кэширующее хранилище.
-Необходимо добавить правило в <code>SATP (Storage Adapter Type Plugin)</code>.
-<img src="/img/004/004-1.PNG" alt=""></p>
-<p>В <code>Configuration - Storage - Datastore</code> смотрим название диска.
-<img src="/img/004/004-2.PNG" alt=""></p>
-<p>Заходим по ssh на хост, и вводим команду <code>esxcli storage nmp satp rule add -s VMW_SATP_LOCAL -d mpx.vmhba1:C0:T1:L0 -o enable_ssd</code>.
-В моем случае имя было <code>mpx.vmhba1:C0:T1:L0</code>.
-<img src="/img/004/004-3.PNG" alt=""></p>
-<p>После этого вводим команду <code>esxcli storage core claiming reclaim -d mpx.vmhba1:C0:T1:L0</code>.</p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Поиск ключа лицензии Windows</title>
-			<link>https://shapkin.me/posts/find-out-the-windows-built-in-license/</link>
-			<pubDate>Thu, 10 Dec 2015 08:46:09 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/find-out-the-windows-built-in-license/</guid>
-			<description>На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
-Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
-Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):
-wmic path softwarelicensingservice get OA3xOriginalProductKey
-Получаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).</description>
-			<content type="html"><![CDATA[<p>На новом ноутбуке стояла Windows 8.1, обновили до 10.
-После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.</p>
-<p>Встал вопрос с активацией. Нашел способы, как узнать ключ системы.</p>
-<h2 id="получаем-oem-ключ-из-uefi">Получаем OEM ключ из UEFI</h2>
-<p>Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):</p>
-<p><code>wmic path softwarelicensingservice get OA3xOriginalProductKey</code></p>
-<h2 id="получаем-ключ-установленной-системы">Получаем ключ установленной системы</h2>
-<p>Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).</p>
-<p>Сохраняем текст в <code>filename.ps1</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">function</span> <span class="nb">Get-WindowsKey</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span><span class="nv">$targets</span> <span class="p">=</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$hklm</span> <span class="p">=</span> <span class="n">2147483650</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$regPath</span> <span class="p">=</span> <span class="s2">&#34;Software\Microsoft\Windows NT\CurrentVersion&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$regValue</span> <span class="p">=</span> <span class="s2">&#34;DigitalProductId&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$target</span> <span class="k">in</span> <span class="nv">$targets</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$productKey</span> <span class="p">=</span> <span class="nv">$null</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$win32os</span> <span class="p">=</span> <span class="nv">$null</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$wmi</span> <span class="p">=</span> <span class="no">[WMIClass]</span><span class="s2">&#34;\\$target\root\default:stdRegProv&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="p">=</span> <span class="nv">$wmi</span><span class="p">.</span><span class="n">GetBinaryValue</span><span class="p">(</span><span class="nv">$hklm</span><span class="p">,</span><span class="nv">$regPath</span><span class="p">,</span><span class="nv">$regValue</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$binArray</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$data</span><span class="p">.</span><span class="n">uValue</span><span class="p">)[</span><span class="n">52</span><span class="p">..</span><span class="n">66</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$charsArray</span> <span class="p">=</span> <span class="s2">&#34;B&#34;</span><span class="p">,</span><span class="s2">&#34;C&#34;</span><span class="p">,</span><span class="s2">&#34;D&#34;</span><span class="p">,</span><span class="s2">&#34;F&#34;</span><span class="p">,</span><span class="s2">&#34;G&#34;</span><span class="p">,</span><span class="s2">&#34;H&#34;</span><span class="p">,</span><span class="s2">&#34;J&#34;</span><span class="p">,</span><span class="s2">&#34;K&#34;</span><span class="p">,</span><span class="s2">&#34;M&#34;</span><span class="p">,</span><span class="s2">&#34;P&#34;</span><span class="p">,</span><span class="s2">&#34;Q&#34;</span><span class="p">,</span><span class="s2">&#34;R&#34;</span><span class="p">,</span><span class="s2">&#34;T&#34;</span><span class="p">,</span><span class="s2">&#34;V&#34;</span><span class="p">,</span><span class="s2">&#34;W&#34;</span><span class="p">,</span><span class="s2">&#34;X&#34;</span><span class="p">,</span><span class="s2">&#34;Y&#34;</span><span class="p">,</span><span class="s2">&#34;2&#34;</span><span class="p">,</span><span class="s2">&#34;3&#34;</span><span class="p">,</span><span class="s2">&#34;4&#34;</span><span class="p">,</span><span class="s2">&#34;6&#34;</span><span class="p">,</span><span class="s2">&#34;7&#34;</span><span class="p">,</span><span class="s2">&#34;8&#34;</span><span class="p">,</span><span class="s2">&#34;9&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="c">## decrypt base24 encoded binary data</span>
-</span></span><span class="line"><span class="cl">        <span class="k">For</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">24</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-ge</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span><span class="p">--)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$k</span> <span class="p">=</span> <span class="n">0</span>
-</span></span><span class="line"><span class="cl">            <span class="k">For</span> <span class="p">(</span><span class="nv">$j</span> <span class="p">=</span> <span class="n">14</span><span class="p">;</span> <span class="nv">$j</span> <span class="o">-ge</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$j</span><span class="p">--)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nv">$k</span> <span class="p">=</span> <span class="nv">$k</span> <span class="p">*</span> <span class="n">256</span> <span class="o">-bxor</span> <span class="nv">$binArray</span><span class="p">[</span><span class="nv">$j</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                <span class="nv">$binArray</span><span class="p">[</span><span class="nv">$j</span><span class="p">]</span> <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">truncate</span><span class="p">(</span><span class="nv">$k</span> <span class="p">/</span> <span class="n">24</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                <span class="nv">$k</span> <span class="p">=</span> <span class="nv">$k</span> <span class="p">%</span> <span class="n">24</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$productKey</span> <span class="p">=</span> <span class="nv">$charsArray</span><span class="p">[</span><span class="nv">$k</span><span class="p">]</span> <span class="p">+</span> <span class="nv">$productKey</span>
-</span></span><span class="line"><span class="cl">            <span class="k">If</span> <span class="p">((</span><span class="nv">$i</span> <span class="p">%</span> <span class="n">5</span> <span class="o">-eq</span> <span class="n">0</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nv">$productKey</span> <span class="p">=</span> <span class="s2">&#34;-&#34;</span> <span class="p">+</span> <span class="nv">$productKey</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$win32os</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">Win32_OperatingSystem</span> <span class="n">-computer</span> <span class="nv">$target</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">Object</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">Computer</span> <span class="n">-value</span> <span class="nv">$target</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">Caption</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">Caption</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">CSDVersion</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">CSDVersion</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">OSArch</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">OSArchitecture</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">BuildNumber</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">BuildNumber</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">RegisteredTo</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">RegisteredUser</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">ProductID</span> <span class="n">-value</span> <span class="nv">$win32os</span><span class="p">.</span><span class="n">SerialNumber</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">Noteproperty</span> <span class="n">ProductKey</span> <span class="n">-value</span> <span class="nv">$productkey</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$obj</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Открываем PowerShell с правами админа.
-Выполняем команду <code>Set-ExecutionPolicy RemoteSigned</code> (и подтверждаем ее выполнение - Y)
-Далее выполняем команду <code>Import-Module path/to/filename.ps1</code>
-Вводим <code>Get-WindowsKey</code> и смотрим наш <code>ProductKey</code>.</p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Удаление плагина в vCenter</title>
-			<link>https://shapkin.me/posts/delete-plugin-in-vcenter/</link>
-			<pubDate>Mon, 02 Nov 2015 18:53:22 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/delete-plugin-in-vcenter/</guid>
-			<description>Появилась необходимость удалить неиспользуемый плагин в vCenter.
-Для этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob
-Жмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.
-Обновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -&amp;gt; Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.</description>
-			<content type="html"><![CDATA[<p>Появилась необходимость удалить неиспользуемый плагин в vCenter.</p>
-<p>Для этого в браузере вбиваем адрес следующего вида <code>https://vcenter_ip/mob</code></p>
-<p>Жмем <code>Content</code>
-<img src="/img/003/003-1.JPG" alt=""></p>
-<p>Жмем <code>ExtensionManager</code>
-<img src="/img/003/003-2.JPG" alt=""></p>
-<p>Выбираем плагин, который нужно удалить. Копируем его название.
-Жмем <code>UnregisterExtension</code>. Откроется новое окно.
-Вставляем название плагина в поле <code>Value</code> и жмем <code>Invoke Method</code>.
-<img src="/img/003/003-3.JPG" alt="">
-Закрываем окно.</p>
-<p>Обновляем страницу и проверяем, что плагин удален.
-Проверяем список плагинов в <code>vSphere Client -&gt; Plug-in Manager</code>
-Если плагин все еще будет в списке - перезапустите клиент.</p>
-<p>Взято отсюда:
-<a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1025360" target="_blank">http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1025360</a></p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Меняем порядок вывода DisplayName в Active Directory</title>
-			<link>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</link>
-			<pubDate>Mon, 05 Oct 2015 13:47:41 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/</guid>
-			<description>Проблема: При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.
-В итоге приходится вручную менять местами эти значения (возможно не все так делают).
-Если оставлять в таком виде, то в будущем будет проблематично найти сотрудника по его фамилии.
-Решение: Запускаем оснастку ADSI Edit Нажимаем Connect to, далее меняем Контекст именования на Конфигурация Разворачиваем &amp;ldquo;Контейнер конфигурации&amp;rdquo; и затем &amp;ldquo;Конфигурация&amp;rdquo;
-Разворачиваем DisplaySpecifiers и ищем CN=409 (для англ версии, так как 409 это код США, если у Вас многоязычная система или на русском, нужно вносить правки в другие коды)</description>
-			<content type="html"><![CDATA[<h3 id="проблема">Проблема:</h3>
-<p>При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.</p>
-<p>В итоге приходится вручную менять местами эти значения (возможно не все так делают).</p>
-<p>Если оставлять в таком виде, то в будущем будет проблематично найти сотрудника по его фамилии.</p>
-<h3 id="решение">Решение:</h3>
-<p>Запускаем оснастку <code>ADSI Edit</code>
-Нажимаем Connect to, далее меняем Контекст именования на Конфигурация
-<img src="/img/002/002-1.JPG" alt=""></p>
-<p>Разворачиваем &ldquo;Контейнер конфигурации&rdquo; и затем &ldquo;Конфигурация&rdquo;</p>
-<p>Разворачиваем <code>DisplaySpecifiers</code> и ищем <code>CN=409</code> (для англ версии, так как 409 это код США, если у Вас многоязычная система или на русском, нужно вносить правки в другие коды)</p>
-<p>Находим справа элемент <code>CN=user-Display</code> и открываем его</p>
-<p>Ищем строку <code>createDialog</code> и вносим правку - <code>%&lt;sn&gt; %&lt;givenName&gt;</code></p>
-<p><img src="/img/002/002-2.JPG" alt=""></p>
-<p>Сохраняем изменения и теперь пользователи будут создаваться по шаблону Фамилия Имя</p>
-<p>Note. Подробнее можно прочитать по ссылке <a href="https://docs.microsoft.com/ru-RU/troubleshoot/windows-server/identity/change-display-names-ad-users" target="_blank">KB250455</a></p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Переименование NetBIOS имени домена</title>
-			<link>https://shapkin.me/posts/rename-netbios-domain-name/</link>
-			<pubDate>Fri, 02 Oct 2015 15:48:00 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/rename-netbios-domain-name/</guid>
-			<description>Нужно настроить доверительные отношения между двумя доменами. Физически сети расположены в разных местах, между ними поднят vpn канал.
-Оба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.
-Домены такого вида: aa.bbbb.ru и aa.ru
-Итак, для настройки доверия необходимо сделать следующее:
-Ставим, если отсутствует, RSAT, теперь создаем в DNS новую зону, к примеру aa1.ru Далее команды в cmd:
-rendom /list
-Открываем Domainlist.xml файл (он будет сохранен в директории, в который мы находимся) и вносим правки, в моем случае только NetBIOS в forestroot.</description>
-			<content type="html"><![CDATA[<p>Нужно настроить доверительные отношения между двумя доменами.
-Физически сети расположены в разных местах, между ними поднят vpn канал.</p>
-<p>Оба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.</p>
-<p>Домены такого вида: <code>aa.bbbb.ru</code> и <code>aa.ru</code></p>
-<p>Итак, для настройки доверия необходимо сделать следующее:</p>
-<p>Ставим, если отсутствует, <a href="https://docs.microsoft.com/ru-ru/windows-server/remote/remote-server-administration-tools" target="_blank">RSAT</a>, теперь создаем в DNS новую зону, к примеру <code>aa1.ru</code>
-Далее команды в cmd:</p>
-<p><code>rendom /list</code></p>
-<p>Открываем <code>Domainlist.xml</code> файл (он будет сохранен в директории, в который мы находимся)
-и вносим правки, в моем случае только NetBIOS в forestroot.</p>
-<p><img src="/img/001/001-1.JPG" alt=""></p>
-<p><code>rendom /upload</code></p>
-<p><code>rendom /prepare</code></p>
-<p><code>rendom /execute</code></p>
-<p>После выполнения execute сервер и все его реплики автоматически перезагрузятся. Перезагружаем второй раз.</p>
-<p><code>rendom /end</code></p>
-<p>На этом заканчивается этап переименовывания NetBIOS имени домена.</p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Access to Owa</title>
-			<link>https://shapkin.me/posts/access-to-owa/</link>
-			<pubDate>Fri, 02 Oct 2015 08:56:37 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/access-to-owa/</guid>
-			<description>Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).
-Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает&amp;hellip; и почта ходит, более того, я юзера залочил в ad - все равно работает через web</description>
-			<content type="html"><![CDATA[<p>Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).</p>
-<p>Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в  AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым.
-4 раза менял пароль и под всеми пускает&hellip; и почта ходит, более того, я юзера залочил в ad - все равно работает через web</p>
-<p>Видимо на серваке токен не удаляется.
-Разные браузеры, кэши чистил.</p>
-<p>вот комментарии по теме
-<a href="http://forum.ixbt.com/topic.cgi?id=7:43934" target="_blank">http://forum.ixbt.com/topic.cgi?id=7:43934</a></p>
-<p>Проблема связана с exchange 2013, про другие не знаю.</p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Удаление пустых строк при просмотре файла</title>
-			<link>https://shapkin.me/posts/remove-blank-lines/</link>
-			<pubDate>Wed, 11 Mar 2015 07:57:30 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/remove-blank-lines/</guid>
-			<description>sed &amp;lsquo;/^$/d&amp;rsquo; file.txt
-или с выводом в новый файл
-sed &amp;lsquo;/^$/d&amp;rsquo; file.txt &amp;gt; newfile.txt</description>
-			<content type="html"><![CDATA[<p>sed &lsquo;/^$/d&rsquo; file.txt</p>
-<p>или с выводом в новый файл</p>
-<p>sed &lsquo;/^$/d&rsquo; file.txt &gt; newfile.txt</p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Реструктуризация директорий</title>
-			<link>https://shapkin.me/posts/directory-restructuring/</link>
-			<pubDate>Fri, 27 Feb 2015 12:58:08 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/directory-restructuring/</guid>
-			<description>Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:
-/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):
-CentOS #!/bin/bash path=&amp;#34;/root/sort/&amp;#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&amp;#34;$(stat -c &amp;#34;%y %n&amp;#34; $i | awk &amp;#39;{ print $1 }&amp;#39; | sed s%-%/%g)&amp;#34; if ! [ -d &amp;#34;$date&amp;#34; ]; then mkdir -pv &amp;#34;$path$date&amp;#34; fi mv -v $i $path$date done FreeNAS #!</description>
-			<content type="html"><![CDATA[<p>Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:</p>
-<pre tabindex="0"><code>/root_dir/year/
-              /month/
-                    /day
-/dir/2012/
-         /02/
-            /10
-            /13
-            /27
-/dir/2012/
-         /05/
-            /12
-            /23
-            /30
-</code></pre><p>Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):</p>
-<h3 id="centos">CentOS</h3>
-<pre tabindex="0"><code>#!/bin/bash
-path=&#34;/root/sort/&#34;
-dirs=`find $path -maxdepth 1 -type f`
-for i in $dirs
-do
-	date=&#34;$(stat -c &#34;%y %n&#34; $i | awk &#39;{ print $1 }&#39; | sed s%-%/%g)&#34;
-	if ! [ -d &#34;$date&#34; ]; then
-		mkdir -pv &#34;$path$date&#34;
-	fi
-	mv -v $i $path$date
-done
-</code></pre><h3 id="freenas">FreeNAS</h3>
-<pre tabindex="0"><code>#!/bin/bash
-path=&#34;/root/sort/&#34;
-dirs=`find $path -maxdepth 1 -type f`
-for i in $dirs
-do
-	date=&#34;$(stat -f %Sm -t %Y/%m/%d $i)&#34;
-	if ! [ -d &#34;$date&#34; ]; then
-		mkdir -pv &#34;$path$date&#34;
-	fi
-	mv $i $path$date
-done
-</code></pre><p>Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>cat /tmp/file.log<span class="k">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">do</span>
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl"><span class="k">done</span>
-</span></span></code></pre></div>]]></content>
-		</item>
-		
-		<item>
-			<title>Скрипт мониторинга сервера по ping</title>
-			<link>https://shapkin.me/posts/check-servers-by-ping/</link>
-			<pubDate>Wed, 06 Feb 2013 01:01:00 +0300</pubDate>
-			
-			<guid>https://shapkin.me/posts/check-servers-by-ping/</guid>
-			<description>Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&amp;rsquo;a или nagios&amp;rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).
-Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.
-Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.
-Вот и в моей жизни настал такой момент. Итак, ниже код скрипта с простыми пояснениями:</description>
-			<content type="html"><![CDATA[<p>Пожалуй в жизни каждого спеца, наступает период, когда надо либо ставить какого-либо монстра мониторинга, по типу zabbix&rsquo;a или nagios&rsquo;a, ну или системы попроще, но ничуть не хуже, местами превосходящие (munin, cacti и др.).</p>
-<p>Все дело вкуса, либо подумывать о собственных скриптах, ну или уже готовых решениях.</p>
-<p>Чаще всего это именно shell скрипты, ввиду простоты их написания и гибкости, при поставленных задачах.</p>
-<p>Вот и в моей жизни настал такой момент.
-Итак, ниже код скрипта с простыми пояснениями:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="nv">ping</span><span class="o">=</span><span class="s2">&#34;ping -c 4 -s 1 -W 1&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">mailcmd</span><span class="o">=</span><span class="k">$(</span>which mail<span class="k">)</span>
-</span></span><span class="line"><span class="cl"><span class="nv">mailaddr</span><span class="o">=</span><span class="s2">&#34;yourmailaddress@mail.com&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">HOSTS</span><span class="o">=</span><span class="s2">&#34;domain.com n1.domain.com n2.domain.com&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/ping.</span><span class="nv">$$</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">send_mail<span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$mailcmd</span> -s <span class="s2">&#34;Проверка сервера </span><span class="nv">$hst</span><span class="s2">&#34;</span> <span class="nv">$mailaddr</span> &lt; <span class="nv">$msg</span>
-</span></span><span class="line"><span class="cl">           <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> hst in <span class="nv">$HOSTS</span>
-</span></span><span class="line"><span class="cl">   <span class="k">do</span>
-</span></span><span class="line"><span class="cl">     <span class="nv">count</span><span class="o">=</span><span class="k">$(</span><span class="nv">$ping</span> <span class="nv">$hst</span><span class="p">|</span>grep <span class="s2">&#34;received&#34;</span><span class="p">|</span>awk -F<span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{ print $2 }&#39;</span><span class="p">|</span>awk <span class="s1">&#39;{ print $1 }&#39;</span><span class="k">)</span> 
-</span></span><span class="line"><span class="cl">       <span class="k">if</span> <span class="o">[[</span> <span class="nv">$count</span> -eq <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">         <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date <span class="s1">&#39;+%d %b %H:%M:%S&#39;</span><span class="k">)</span><span class="s2">: Сервер </span><span class="nv">$hst</span><span class="s2"> не пингуется! &#34;</span> &gt;&gt; <span class="nv">$msg</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">       <span class="k">fi</span>
-</span></span><span class="line"><span class="cl">   <span class="k">done</span>
-</span></span><span class="line"><span class="cl">send_mail
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sleep <span class="m">1</span>
-</span></span><span class="line"><span class="cl">rm -f <span class="nv">$msg</span>
-</span></span></code></pre></div><h3 id="алгоритм-работы-следующий">Алгоритм работы следующий:</h3>
-<p>Берем список доменов и попеременно пингуем каждый из них. 
-Если хоть один не пингуется - заносим информацию об этом во временный файл и, после того, как все проверки отработали - отсылаем письмо.</p>
-<h4 id="теперь-рассмотрим-конкретнее">Теперь рассмотрим конкретнее:</h4>
-<p><code>ping -c</code> указываем кол-во пакетов <code>-s</code> указываем размер пакета <code>-W</code> указываем лимит для timeout&rsquo;а HOSTS Тут перечисляем все необходимые нам сервера, домены и/или айпишники.</p>
-<p><code>msg</code>  Обозначаем место сохранения временного лога, соответственно лог будет лежать в той же директории, откуда запускается скрипт.</p>
-<h4 id="проверка">Проверка</h4>
-<h4 id="самое-главное-начинается">Самое главное начинается.</h4>
-<p>Цикл for перебирает наши сервера по списку и подставляет по очереди в скрипт, где идет пинг по заданным параметрам, затем грепаем по выражению <code>received</code> (нас же интересуют потери пакетов) и после передаем найденную строку на парсинг awk&rsquo;у, который сперва выбирает 2-ое выражение(received), а потом из него же - 1-ое(4).</p>
-<pre tabindex="0"><code>4 packets transmitted, 4 received, 0% packet loss, time 3208ms
-</code></pre><p>Перед тем, как начать выборку, мы указали, что выражения разделены запятыми <code>awk -F','</code>.</p>
-<p>Теперь мы проверяем, что кол-во пакетов (результат всей выборки будет заноситься в переменную count) не равно 0, ну а если такое случится - заносим данные в лог.</p>
-<p>После того, как все сервера прогоняются, мы получаем окончательно сформированный лог, который и отсылается нам на почту, в случае надобности.</p>
-<p>Соответственно, если все сервера пингуются и поле received не равно 0, письмо не приходит, а значит все работает как часы(не факт конечно, но мы сейчас исключительно про сетевую доступность наших машин).</p>
-<p>Ну и после отправки письма, делаем паузу в 1 секунду и удаляем наш лог.   Этот скрипт безусловно не претендует на уникальность, но от лишних забот избавляет.</p>
 ]]></content>
 		</item>
 		

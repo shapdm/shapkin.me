@@ -1,94 +1,151 @@
 <!DOCTYPE html>
 <html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
+<meta name="description" content="">
+<link rel="author" type="text/plain" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#494f5c">
+<meta name="msapplication-TileColor" content="#494f5c">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c">
-<meta itemprop="name" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus">
-<meta itemprop="description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
+  <meta itemprop="name" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus">
+  <meta itemprop="description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
 Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:"><meta itemprop="datePublished" content="2025-03-26T18:20:02+03:00" />
-<meta itemprop="dateModified" content="2025-03-26T18:20:02+03:00" />
-<meta itemprop="wordCount" content="557">
-<meta itemprop="keywords" content="bash,docker,grafana,prometheus," /><meta property="og:title" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus" />
-<meta property="og:description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
+Общая логика работы Система состоит из нескольких компонентов:">
+  <meta itemprop="datePublished" content="2025-03-26T18:20:02+03:00">
+  <meta itemprop="dateModified" content="2025-03-26T18:20:02+03:00">
+  <meta itemprop="wordCount" content="557">
+  <meta itemprop="keywords" content="Bash,Docker,Grafana,Prometheus"><meta property="og:url" content="http://localhost:1313/posts/domain-expiration-days-grafana/">
+  <meta property="og:site_name" content="Заметки на полях">
+  <meta property="og:title" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus">
+  <meta property="og:description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
 Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://shapkin.me/posts/domain-expiration-days-grafana/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2025-03-26T18:20:02+03:00" />
-<meta property="article:modified_time" content="2025-03-26T18:20:02+03:00" />
+Общая логика работы Система состоит из нескольких компонентов:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-26T18:20:02+03:00">
+    <meta property="article:modified_time" content="2025-03-26T18:20:02+03:00">
+    <meta property="article:tag" content="Bash">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Grafana">
+    <meta property="article:tag" content="Prometheus">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus"/>
-<meta name="twitter:description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus">
+  <meta name="twitter:description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
 Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:"/>
+Общая логика работы Система состоит из нескольких компонентов:">
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
-
-	<title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
-	<link rel="stylesheet" href="https://shapkin.me/css/style.min.037b6ee8f8c1baab6a3d0a9da11c3ff18a7552471f16c59fd98538d5ce99208b.css" integrity="sha256-A3tu6PjBuqtqPQqdoRw/8Yp1UkcfFsWf2YU41c6ZIIs=" crossorigin="anonymous">
-	
-	
-	
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FVRWQ0NKFQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FVRWQ0NKFQ');
-</script>
-	
-</head>
-
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus",
+    "name": "Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus",
+    "description": "В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.\nУстановку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.\nОбщая логика работы Система состоит из нескольких компонентов:\n",
+    "keywords": ["bash", "docker", "grafana", "prometheus"],
+    "articleBody": "В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.\nУстановку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.\nОбщая логика работы Система состоит из нескольких компонентов:\nBash-скрипт (check_domains.sh): Проверяет срок действия доменов через whois и отправляет данные в Pushgateway.\nPushgateway: Промежуточный сервис для отправки метрик в Prometheus.\nPrometheus: Собирает метрики из Pushgateway.\nGrafana: Визуализирует данные в виде графиков и панелей.\nРаботает это так:\nСкрипт запускается по расписанию через cron. Он получает дату истечения домена через whois, вычисляет количество дней до истечения и отправляет эти данные в Pushgateway. Prometheus периодически собирает данные из Pushgateway. В Grafana создаем dashboard для отображения данных в подходящем виде.\nДля установки Pushgateway нужно прописать в docker-compose файле:\npushgateway: image: prom/pushgateway container_name: pushgateway network_mode: host ports: - \"9091:9091\" # Порт Pushgateway Также, нужно сообщить Prometheus откуда брать данные, для этого в prometheus.yml пропишем:\n- job_name: \"pushgateway\" honor_labels: true static_configs: - targets: ['prometheus:9091'] Код скрипта check_domains.sh #!/bin/bash set -euo pipefail LOG_FILE=\"/var/log/check-domains.log\" PUSHGATEWAY_URL=\"http://localhost:9091\" DOMAINS=(\"aaa.ru\" \"bbb.ru\") # Проверка наличия необходимых утилит for cmd in whois curl; do command -v \"$cmd\" \u003e/dev/null || { echo \"Error: $cmd is not installed.\" | tee -a \"$LOG_FILE\"; exit 1; } done # Функция для получения и отправки данных process_domain() { local domain=$1 # Получение даты истечения через whois expiration_date=$(whois \"$domain\" | grep -i \"expiry date\" | awk '{print $4}' | head -n 1) if [[ -z \"$expiration_date\" ]]; then echo \"$(date '+%Y-%m-%d %H:%M:%S') Error: Could not retrieve expiration date for $domain\" | tee -a \"$LOG_FILE\" return 1 fi # Преобразование даты в формат Unix timestamp expiration_timestamp=$(date -d \"$(echo \"$expiration_date\" | sed 's/\\.[0-9]*Z//; s/T/ /')\" +%s 2\u003e\u003e\"$LOG_FILE\") current_timestamp=$(date +%s) # Вычисление количества дней до истечения days_remaining=$(( (expiration_timestamp - current_timestamp) / 86400 )) # Отправка метрик в Pushgateway metric_name=\"domain_expiration_days\" push_url=\"$PUSHGATEWAY_URL/metrics/job/domain_expiration/instance/$domain\" metric_data=\"$metric_name{domain=\\\"$domain\\\"} $days_remaining\" echo \"$(date '+%Y-%m-%d %H:%M:%S') Pushing data for $domain: $days_remaining days remaining\" | tee -a \"$LOG_FILE\" echo \"$metric_data\" | curl -X POST \"$push_url\" --data-binary @- 2\u003e\u003e\"$LOG_FILE\" } # Основной цикл for domain in \"${DOMAINS[@]}\"; do echo \"$(date '+%Y-%m-%d %H:%M:%S') Processing domain: $domain\" | tee -a \"$LOG_FILE\" process_domain \"$domain\" || continue # Пропуск домена в случае ошибки done Файл crontab для настройки расписания запуска скрипта: # Запускать скрипт каждый день в 00:00 0 0 * * * /usr/local/bin/check_domains.sh \u003e /var/log/cron.log 2\u003e\u00261 Файл docker-compose.yml services: pushgateway: image: prom/pushgateway container_name: pushgateway network_mode: host ports: - \"9091:9091\" # Порт Pushgateway check-domains: build: context: . dockerfile: Dockerfile container_name: check-domains hostname: check-domains restart: always environment: - PUSHGATEWAY_URL=http://localhost:9091/metrics/job/domain_expiration depends_on: - pushgateway network_mode: host volumes: - ./logs:/var/log # Монтируем папку для логов Файл Dockerfile # Используем базовый образ Alpine Linux FROM alpine:latest # Устанавливаем необходимые пакеты RUN apk add --no-cache \\ bash \\ curl \\ whois \\ dcron # Копируем скрипт в контейнер COPY check_domains.sh /usr/local/bin/check_domains.sh # Делаем скрипт исполняемым RUN chmod +x /usr/local/bin/check_domains.sh # Копируем cron-задачу COPY crontab /etc/cron.d/crontab # Даем права на выполнение cron-задачи RUN chmod 0644 /etc/cron.d/crontab # Создаем лог-файл для cron RUN touch /var/log/cron.log # Запускаем cron и логируем вывод CMD touch /var/log/cron.log \u0026\u0026 crond \u0026\u0026 tail -f /var/log/cron.log Настройка dashboard в Grafana:\nДобавляем Prometheus как источник данных. Создаем панель с запросом: domain_expiration_days{domain=\"aaa.ru\"} Настраиваем отображения данных в подходящем виде. ",
+    "wordCount" : "557",
+    "inLanguage": "ru",
+    "datePublished": "2025-03-26T18:20:02+03:00",
+    "dateModified": "2025-03-26T18:20:02+03:00",
+    "author":{
+        "@type": "Person",
+        "name":  null ,},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/posts/domain-expiration-days-grafana/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Заметки на полях",
+      "description": "",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
+    }
+}
+</script><title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="http://localhost:1313/css/style.min.65788784967ef394e528967eed8c63658368c6c4d417053ce77fd6c5ba25d364.css" integrity="sha256-ZXiHhJZ+85TlKJZ+7YxjZYNoxsTUFwU853/Wxbol02Q=" crossorigin="anonymous">
+	</head>
 <body id="page">
-	
-	<header id="site-header" class="animated slideInUp">
+	<header id="site-header">
 		<div class="hdr-wrapper section-inner">
 			<div class="hdr-left">
 				<div class="site-branding">
-					<a href="https://shapkin.me/">Заметки на полях</a>
+					<a href="http://localhost:1313/">Заметки на полях</a>
 				</div>
-				<nav class="site-nav hide-in-mobile">
-					
-				<a href="https://shapkin.me/posts/">Посты</a>
-				<a href="https://shapkin.me/about/">Обо мне</a>
-				</nav>
+				<nav class="site-nav hide-in-mobile"><a href="http://localhost:1313/posts/">Посты</a><a href="http://localhost:1313/projects/">Проекты</a><a href="http://localhost:1313/about/">Обо мне</a></nav>
 			</div>
 			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/shapdm" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://qna.habr.com/user/WopeN" target="_blank" rel="noopener me" title="Habr"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 7.025 4 L 8.658 4 C 9.877 4 10.298 4.029 10.326 4.113 C 10.345 4.179 10.354 5.482 10.354 7.01 L 10.346 9.793 L 10.822 9.371 C 11.479 8.79 12.034 8.584 13.084 8.547 C 13.778 8.528 14.057 8.556 14.544 8.725 C 15.604 9.081 16.354 9.812 16.748 10.891 C 16.898 11.312 16.918 11.754 16.945 15.176 L 16.975 19 L 13.637 19 L 13.637 15.879 C 13.637 12.804 13.627 12.766 13.42 12.391 C 13.13 11.894 12.811 11.669 12.314 11.613 C 11.461 11.52 10.871 11.81 10.534 12.503 C 10.374 12.823 10.355 13.159 10.346 15.859 C 10.336 17.509 10.316 18.889 10.316 18.926 C 10.308 18.973 9.566 19 8.666 19 L 7.026 19 L 7.026 11.5 L 7.025 4 Z"/></svg></a></span><button id="menu-btn" class="hdr-btn" title="Меню"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+				<span class="hdr-links hide-in-mobile"><a href="https://github.com/shapdm" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path
+      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+   </path>
+</svg></a><a href="https://career.habr.com/shapdm" target="_blank" rel="noopener me" title="Habr"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 7.025 4 L 8.658 4 C 9.877 4 10.298 4.029 10.326 4.113 C 10.345 4.179 10.354 5.482 10.354 7.01 L 10.346 9.793 L 10.822 9.371 C 11.479 8.79 12.034 8.584 13.084 8.547 C 13.778 8.528 14.057 8.556 14.544 8.725 C 15.604 9.081 16.354 9.812 16.748 10.891 C 16.898 11.312 16.918 11.754 16.945 15.176 L 16.975 19 L 13.637 19 L 13.637 15.879 C 13.637 12.804 13.627 12.766 13.42 12.391 C 13.13 11.894 12.811 11.669 12.314 11.613 C 11.461 11.52 10.871 11.81 10.534 12.503 C 10.374 12.823 10.355 13.159 10.346 15.859 C 10.336 17.509 10.316 18.889 10.316 18.926 C 10.308 18.973 9.566 19 8.666 19 L 7.026 19 L 7.026 11.5 L 7.025 4 Z"/></svg></a></span><button id="menu-btn" class="hdr-btn" title="Меню"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+   </svg></button>
 			</div>
 		</div>
 	</header>
 	<div id="mobile-menu" class="animated fast">
 		<ul>
-			<li><a href="https://shapkin.me/posts/">Посты</a></li>
-			<li><a href="https://shapkin.me/about/">Обо мне</a></li>
+			<li><a href="http://localhost:1313/posts/">Посты</a></li>
+			<li><a href="http://localhost:1313/projects/">Проекты</a></li>
+			<li><a href="http://localhost:1313/about/">Обо мне</a></li>
 		</ul>
 	</div>
 
 
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
+	<main class="site-main section-inner animated fadeIn faster"><article class="thin">
 			<header class="post-header">
-				<div class="post-meta"><span>26 Mar 2025</span></div>
+				<div class="post-date"><span>26 Mar 2025</span></div>
 				<h1>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</h1>
 			</header>
+			<div class="post-description">
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+      <line x1="7" y1="7" x2="7" y2="7"></line>
+   </svg><span class="tag"><a href="http://localhost:1313/tags/bash">bash</a></span><span class="tag"><a href="http://localhost:1313/tags/docker">docker</a></span><span class="tag"><a href="http://localhost:1313/tags/grafana">grafana</a></span><span class="tag"><a href="http://localhost:1313/tags/prometheus">prometheus</a></span></p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="16" y1="13" x2="8" y2="13"></line>
+      <line x1="16" y1="17" x2="8" y2="17"></line>
+      <polyline points="10 9 9 9 8 9"></polyline>
+   </svg>557&nbsp 557 слов(а) </p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="16" y1="2" x2="16" y2="6"></line>
+      <line x1="8" y1="2" x2="8" y2="6"></line>
+      <line x1="3" y1="10" x2="21" y2="10"></line>
+   </svg>26-03-2025 18:20 &#43;0300
+</p></div>
+			<hr class="post-end">
 			<div class="content">
-				<p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
+				 <p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
 Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.</p>
 <p>Установку и настройку <code>prometheus</code> и <code>grafana</code> в этом посте рассматривать не будем, предполагается, что они уже установлены.</p>
-<h3 id="общая-логика-работы">Общая логика работы<a href="#общая-логика-работы" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h3 id="общая-логика-работы">Общая логика работы<a href="#%d0%be%d0%b1%d1%89%d0%b0%d1%8f-%d0%bb%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <p>Система состоит из нескольких компонентов:</p>
 <p><strong>Bash-скрипт (check_domains.sh)</strong>: Проверяет срок действия доменов через whois и отправляет данные в Pushgateway.<br>
 <strong>Pushgateway</strong>: Промежуточный сервис для отправки метрик в Prometheus.<br>
@@ -111,7 +168,11 @@ Prometheus периодически собирает данные из Pushgatew
 </span></span><span class="line"><span class="cl">    honor_labels: <span class="nb">true</span>
 </span></span><span class="line"><span class="cl">    static_configs:
 </span></span><span class="line"><span class="cl">	  - targets: <span class="o">[</span><span class="s1">&#39;prometheus:9091&#39;</span><span class="o">]</span>
-</span></span></code></pre></div><h3 id="код-скрипта-check_domainssh">Код скрипта check_domains.sh<a href="#код-скрипта-check_domainssh" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+</span></span></code></pre></div><h3 id="код-скрипта-check_domainssh">Код скрипта check_domains.sh<a href="#%d0%ba%d0%be%d0%b4-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%b0-check_domainssh" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> -euo pipefail
@@ -157,10 +218,18 @@ Prometheus периодически собирает данные из Pushgatew
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date <span class="s1">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span class="k">)</span><span class="s2"> Processing domain: </span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">    process_domain <span class="s2">&#34;</span><span class="nv">$domain</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="k">continue</span>  <span class="c1"># Пропуск домена в случае ошибки</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
-</span></span></code></pre></div><h3 id="файл-crontab-для-настройки-расписания-запуска-скрипта">Файл crontab для настройки расписания запуска скрипта:<a href="#файл-crontab-для-настройки-расписания-запуска-скрипта" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+</span></span></code></pre></div><h3 id="файл-crontab-для-настройки-расписания-запуска-скрипта">Файл crontab для настройки расписания запуска скрипта:<a href="#%d1%84%d0%b0%d0%b9%d0%bb-crontab-%d0%b4%d0%bb%d1%8f-%d0%bd%d0%b0%d1%81%d1%82%d1%80%d0%be%d0%b9%d0%ba%d0%b8-%d1%80%d0%b0%d1%81%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d1%8f-%d0%b7%d0%b0%d0%bf%d1%83%d1%81%d0%ba%d0%b0-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%b0" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <pre tabindex="0"><code># Запускать скрипт каждый день в 00:00
 0 0 * * * /usr/local/bin/check_domains.sh &gt; /var/log/cron.log 2&gt;&amp;1
-</code></pre><h3 id="файл-docker-composeyml">Файл docker-compose.yml<a href="#файл-docker-composeyml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+</code></pre><h3 id="файл-docker-composeyml">Файл docker-compose.yml<a href="#%d1%84%d0%b0%d0%b9%d0%bb-docker-composeyml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">services:
 </span></span><span class="line"><span class="cl">  pushgateway:
 </span></span><span class="line"><span class="cl">    image: prom/pushgateway
@@ -183,7 +252,11 @@ Prometheus периодически собирает данные из Pushgatew
 </span></span><span class="line"><span class="cl">    network_mode: host
 </span></span><span class="line"><span class="cl">    volumes:
 </span></span><span class="line"><span class="cl">      - ./logs:/var/log <span class="c1"># Монтируем папку для логов</span>
-</span></span></code></pre></div><h3 id="файл-dockerfile">Файл Dockerfile<a href="#файл-dockerfile" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+</span></span></code></pre></div><h3 id="файл-dockerfile">Файл Dockerfile<a href="#%d1%84%d0%b0%d0%b9%d0%bb-dockerfile" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Используем базовый образ Alpine Linux</span>
 </span></span><span class="line"><span class="cl">FROM alpine:latest
 </span></span><span class="line"><span class="cl">
@@ -220,6 +293,7 @@ Prometheus периодически собирает данные из Pushgatew
 </ol>
 
 			</div>
+			
 
 <div class="related-posts thin">
 	<h2>Похожие посты</h2>
@@ -234,63 +308,30 @@ Prometheus периодически собирает данные из Pushgatew
 	</ul>
 </div>
 
-			<hr class="post-end">
-			<footer class="post-info">
-				<p>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://shapkin.me/tags/bash">bash</a></span><span class="tag"><a href="https://shapkin.me/tags/docker">docker</a></span><span class="tag"><a href="https://shapkin.me/tags/grafana">grafana</a></span><span class="tag"><a href="https://shapkin.me/tags/prometheus">prometheus</a></span>
-				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>557 слов(а)</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>26-03-2025 18:20 &#43;0300</p>
-			</footer>
 		</article>
 		<div class="post-nav thin">
-			<a class="next-post" href="https://shapkin.me/posts/build-openvpn-with-xor/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Вперед</span><br><span>Сборка OpenVPN с патчем XOR в Docker</span>
+			<a class="next-post" href="http://localhost:1313/posts/build-openvpn-with-xor-debian/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+   </svg>&nbsp;Вперед</span><br><span>Сборка OpenVPN с патчем XOR в Docker для Debian</span>
 			</a>
-			<a class="prev-post" href="https://shapkin.me/posts/customizing-vim/">
-				<span class="post-nav-label">Назад&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Настройка Vim</span>
+			<a class="prev-post" href="http://localhost:1313/posts/customizing-vim/">
+				<span class="post-nav-label">Назад&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+   </svg></span><br><span>Настройка Vim</span>
 			</a>
 		</div>
-		<div id="comments" class="thin">
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "https-shapkin-me" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
+		<div id="comments" class="thin"></div>
 	</main>
-
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-	<form method="get" id="search-google" action="http://www.google.com/search" target="_blank">
-	<input type="hidden" name="sitesearch" value="https://shapkin.me/" />
-	<input type="text" name="q" maxlength="255" value="" placeholder="Поиск Google" class="form-control" />
-</form>
-
-		<p>&copy; 2025 <a href="https://shapkin.me/">ShDm</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://shapkin.me/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
-
-
-
-	<script src="https://shapkin.me/js/bundle.min.580988ed2982bcbb74a1773c7abea97b43e4c43b9324e10cda0813ec6ec4bb67.js" integrity="sha256-WAmI7SmCvLt0oXc8er6pe0PkxDuTJOEM2ggT7G7Eu2c=" crossorigin="anonymous"></script>
-	
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+<p>
+	&copy; 2025 <a href="http://localhost:1313/">Заметки на полях</a>
+	&#183;  &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+	&#183; Theme <a href="https://github.com/1bl4z3r/hermit-V2" target="_blank" rel="noopener">Hermit-V2</a></p></footer>
+<script async src="http://localhost:1313/js/bundle.min.c7c384e4d29d192bbac6811ae4660bb01767194a5bea56baca77e8260f93ea16.js" integrity="sha256-x8OE5NKdGSu6xoEa5GYLsBdnGUpb6la6ynfoJg+T6hY=" crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>owa on Заметки на полях</title>
-    <link>https://shapkin.me/tags/owa/</link>
-    <description>Recent content in owa on Заметки на полях</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Owa on Заметки на полях</title>
+    <link>http://localhost:1313/tags/owa/</link>
+    <description>Recent content in Owa on Заметки на полях</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 02 Oct 2015 08:56:37 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/owa/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Oct 2015 08:56:37 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/owa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Access to Owa</title>
-      <link>https://shapkin.me/posts/access-to-owa/</link>
+      <link>http://localhost:1313/posts/access-to-owa/</link>
       <pubDate>Fri, 02 Oct 2015 08:56:37 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/access-to-owa/</guid>
-      <description>Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).
-Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает&amp;hellip; и почта ходит, более того, я юзера залочил в ad - все равно работает через web</description>
+      <guid>http://localhost:1313/posts/access-to-owa/</guid>
+      <description>&lt;p&gt;Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).&lt;/p&gt;&#xA;&lt;p&gt;Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в  AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым.&#xA;4 раза менял пароль и под всеми пускает&amp;hellip; и почта ходит, более того, я юзера залочил в ad - все равно работает через web&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

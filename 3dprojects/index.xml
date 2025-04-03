@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3dprojects on Заметки на полях</title>
+    <link>http://localhost:1313/3dprojects/</link>
+    <description>Recent content in 3dprojects on Заметки на полях</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 02 Apr 2025 20:24:52 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/3dprojects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Маска Krampus</title>
+      <link>http://localhost:1313/3dprojects/krampus/</link>
+      <pubDate>Wed, 02 Apr 2025 20:24:52 +0300</pubDate>
+      <guid>http://localhost:1313/3dprojects/krampus/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Полноразмерная маска, которая одевается на голову, напечатана на 3D принтере под заказ.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/007/001.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>windows server on Заметки на полях</title>
-    <link>https://shapkin.me/tags/windows-server/</link>
-    <description>Recent content in windows server on Заметки на полях</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Windows Server on Заметки на полях</title>
+    <link>http://localhost:1313/tags/windows-server/</link>
+    <description>Recent content in Windows Server on Заметки на полях</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 02 Oct 2015 15:48:00 +0300</lastBuildDate><atom:link href="https://shapkin.me/tags/windows-server/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Oct 2015 15:48:00 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/windows-server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Переименование NetBIOS имени домена</title>
-      <link>https://shapkin.me/posts/rename-netbios-domain-name/</link>
+      <link>http://localhost:1313/posts/rename-netbios-domain-name/</link>
       <pubDate>Fri, 02 Oct 2015 15:48:00 +0300</pubDate>
-      
-      <guid>https://shapkin.me/posts/rename-netbios-domain-name/</guid>
-      <description>Нужно настроить доверительные отношения между двумя доменами. Физически сети расположены в разных местах, между ними поднят vpn канал.
-Оба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.
-Домены такого вида: aa.bbbb.ru и aa.ru
-Итак, для настройки доверия необходимо сделать следующее:
-Ставим, если отсутствует, RSAT, теперь создаем в DNS новую зону, к примеру aa1.ru Далее команды в cmd:
-rendom /list
-Открываем Domainlist.xml файл (он будет сохранен в директории, в который мы находимся) и вносим правки, в моем случае только NetBIOS в forestroot.</description>
+      <guid>http://localhost:1313/posts/rename-netbios-domain-name/</guid>
+      <description>&lt;p&gt;Нужно настроить доверительные отношения между двумя доменами.&#xA;Физически сети расположены в разных местах, между ними поднят vpn канал.&lt;/p&gt;&#xA;&lt;p&gt;Оба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.&lt;/p&gt;&#xA;&lt;p&gt;Домены такого вида: &lt;code&gt;aa.bbbb.ru&lt;/code&gt; и &lt;code&gt;aa.ru&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Итак, для настройки доверия необходимо сделать следующее:&lt;/p&gt;&#xA;&lt;p&gt;Ставим, если отсутствует, &lt;a href=&#34;https://docs.microsoft.com/ru-ru/windows-server/remote/remote-server-administration-tools&#34; target=&#34;_blank&#34;&gt;RSAT&lt;/a&gt;, теперь создаем в DNS новую зону, к примеру &lt;code&gt;aa1.ru&lt;/code&gt;&#xA;Далее команды в cmd:&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;rendom /list&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Открываем &lt;code&gt;Domainlist.xml&lt;/code&gt; файл (он будет сохранен в директории, в который мы находимся)&#xA;и вносим правки, в моем случае только NetBIOS в forestroot.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
