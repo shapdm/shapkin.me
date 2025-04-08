@@ -231,9 +231,9 @@
 </span></span><span class="line"><span class="cl">	dh <span class="nv">$@</span>
 </span></span></code></pre></div><p>Теперь запускаем и ждем выполнения, процесс может быть долгим, все зависит от характеристик оборудования, на котором запускается сборка.
 Сперва соберем наш образ:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t openvpn-build .
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t openvpn-build-debian .
 </span></span></code></pre></div><p>После успешной сборки запускаем контейнер, внутри которого уже соберется deb пакет:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/release:/release -t openvpn openvpn-build
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --rm --name openvpn-release-debian -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/release:/release openvpn-build-debian
 </span></span></code></pre></div><p>Если ошибок в конце нет, значит все прошло успешно и собранный deb пакет должен находиться в папке <code>release</code>, а контейнер будет удален, так как мы запустили сборку с флагом <code>--rm</code>.</p>
 <p>Информацию о собранном пакете можем проверить командой:</p>
 <pre tabindex="0"><code>apt info ./release/openvpn_2.6.13_amd64.deb
