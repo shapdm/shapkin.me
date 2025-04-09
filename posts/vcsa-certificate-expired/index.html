@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Ошибка аутентификации и 503 Service Unavailable в VCSA? Разбираемся с просроченными сертификатами и их обновлением в VMware vCenter Server Appliance.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,20 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="VMware VCSA Certificates Expired">
-  <meta itemprop="description" content="Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:
-503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)
-Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:
-2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&gt; ExpectedThumbprint: --&gt; ExpectedPeerName: vcsa.domain.com --&gt; The remote host certificate has these problems: --&gt; --&gt; * certificate has expired) --&gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context] Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:">
+  <meta itemprop="description" content="Ошибка аутентификации и 503 Service Unavailable в VCSA? Разбираемся с просроченными сертификатами и их обновлением в VMware vCenter Server Appliance.">
   <meta itemprop="datePublished" content="2022-10-24T22:55:36+03:00">
   <meta itemprop="dateModified" content="2022-10-24T22:55:36+03:00">
   <meta itemprop="wordCount" content="343">
   <meta itemprop="keywords" content="Vmware,Vcsa,Certificates"><meta property="og:url" content="https://shapkin.me/posts/vcsa-certificate-expired/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="VMware VCSA Certificates Expired">
-  <meta property="og:description" content="Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:
-503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)
-Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:
-2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&gt; ExpectedThumbprint: --&gt; ExpectedPeerName: vcsa.domain.com --&gt; The remote host certificate has these problems: --&gt; --&gt; * certificate has expired) --&gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context] Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:">
+  <meta property="og:description" content="Ошибка аутентификации и 503 Service Unavailable в VCSA? Разбираемся с просроченными сертификатами и их обновлением в VMware vCenter Server Appliance.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -40,10 +34,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="VMware VCSA Certificates Expired">
-  <meta name="twitter:description" content="Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:
-503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)
-Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:
-2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --&gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --&gt; ExpectedThumbprint: --&gt; ExpectedPeerName: vcsa.domain.com --&gt; The remote host certificate has these problems: --&gt; --&gt; * certificate has expired) --&gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context] Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:">
+  <meta name="twitter:description" content="Ошибка аутентификации и 503 Service Unavailable в VCSA? Разбираемся с просроченными сертификатами и их обновлением в VMware vCenter Server Appliance.">
 
 <script type="application/ld+json">
 {
@@ -51,7 +42,7 @@
     "@type": "BlogPosting",
     "headline": "VMware VCSA Certificates Expired",
     "name": "VMware VCSA Certificates Expired",
-    "description": "Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:\n503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)\nПервым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:\n2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server \u0026lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443\u0026gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --\u0026gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --\u0026gt; ExpectedThumbprint: --\u0026gt; ExpectedPeerName: vcsa.domain.com --\u0026gt; The remote host certificate has these problems: --\u0026gt; --\u0026gt; * certificate has expired) --\u0026gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context] Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:\n",
+    "description": "Ошибка аутентификации и 503 Service Unavailable в VCSA? Разбираемся с просроченными сертификатами и их обновлением в VMware vCenter Server Appliance.",
     "keywords": ["vmware", "vcsa", "certificates"],
     "articleBody": "Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора. После перезагрузки в web интерфейсе постоянно висела 503 ошибка:\n503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)\nПервым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:\n2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters: --\u003e PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B --\u003e ExpectedThumbprint: --\u003e ExpectedPeerName: vcsa.domain.com --\u003e The remote host certificate has these problems: --\u003e --\u003e * certificate has expired) --\u003e [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context] Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:\nДействителен с\tThu, 22 Oct 2020 16:17:37 GMT Действителен по\tSun, 23 Oct 2022 04:17:37 GMT Запускаем команду в shell (для linux версии) для получения списка сроков действия всех сертификатов:\nfor store in $(/usr/lib/vmware-vmafd/bin/vecs-cli store list | grep -v TRUSTED_ROOT_CRLS); do echo \"[*] Store :\" $store; /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store $store --text | grep -ie \"Alias\" -ie \"Not After\";done; [*] Store : MACHINE_SSL_CERT Alias :\t__MACHINE_CERT Not After : Oct 23 04:17:37 2022 GMT [*] Store : TRUSTED_ROOTS Alias :\t520b4889e71ea0ba9aa2fa5c9ca93131188bbcf5 Not After : Oct 17 16:17:36 2030 GMT [*] Store : machine Alias :\tmachine Not After : Oct 22 16:08:37 2022 GMT [*] Store : vsphere-webclient Alias :\tvsphere-webclient Not After : Oct 22 16:08:38 2022 GMT [*] Store : vpxd Alias :\tvpxd Not After : Oct 22 16:08:39 2022 GMT [*] Store : vpxd-extension Alias :\tvpxd-extension Not After : Oct 22 16:08:39 2022 GMT [*] Store : APPLMGMT_PASSWORD [*] Store : data-encipherment Alias :\tdata-encipherment Not After : Oct 22 16:11:21 2022 GMT [*] Store : SMS Alias :\tsms_self_signed Not After : Oct 22 16:24:58 2030 GMT Решение проблемы: запускаем менеджер сертификатов /usr/lib/vmware-vmca/bin/certificate-manager выбираем нужный нам пункт вводим логин от локального администратора (дефолтное значение будет указано в скобках) вводим пароль от этого пользователя далее отвечаем на вопросы для генерации нового сертификата ждем выполнения процесса, пока не отобразится сообщение “Status : 100% Completed [All tasks completed successfully]” Источники: https://kb.vmware.com/s/article/82332\nhttps://kb.vmware.com/s/article/2112283\n",
     "wordCount" : "343",
@@ -116,7 +107,7 @@
 				<div class="post-date"><span>24 Oct 2022</span></div>
 				<h1>VMware VCSA Certificates Expired</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Ошибка аутентификации и 503 Service Unavailable в VCSA? Разбираемся с просроченными сертификатами и их обновлением в VMware vCenter Server Appliance.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

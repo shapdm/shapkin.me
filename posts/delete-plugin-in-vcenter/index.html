@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Как полностью удалить плагин из vCenter? Руководство по использованию Managed Object Browser для деинсталляции расширений.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,20 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Удаление плагина в vCenter">
-  <meta itemprop="description" content="Появилась необходимость удалить неиспользуемый плагин в vCenter.
-Для этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob
-Жмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.
-Обновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -&gt; Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.">
+  <meta itemprop="description" content="Как полностью удалить плагин из vCenter? Руководство по использованию Managed Object Browser для деинсталляции расширений.">
   <meta itemprop="datePublished" content="2015-11-02T18:53:22+03:00">
   <meta itemprop="dateModified" content="2015-11-02T18:53:22+03:00">
   <meta itemprop="wordCount" content="74">
   <meta itemprop="keywords" content="Vmware,Vcsa"><meta property="og:url" content="https://shapkin.me/posts/delete-plugin-in-vcenter/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Удаление плагина в vCenter">
-  <meta property="og:description" content="Появилась необходимость удалить неиспользуемый плагин в vCenter.
-Для этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob
-Жмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.
-Обновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -&gt; Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.">
+  <meta property="og:description" content="Как полностью удалить плагин из vCenter? Руководство по использованию Managed Object Browser для деинсталляции расширений.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -39,10 +33,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Удаление плагина в vCenter">
-  <meta name="twitter:description" content="Появилась необходимость удалить неиспользуемый плагин в vCenter.
-Для этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob
-Жмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.
-Обновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -&gt; Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.">
+  <meta name="twitter:description" content="Как полностью удалить плагин из vCenter? Руководство по использованию Managed Object Browser для деинсталляции расширений.">
 
 <script type="application/ld+json">
 {
@@ -50,7 +41,7 @@
     "@type": "BlogPosting",
     "headline": "Удаление плагина в vCenter",
     "name": "Удаление плагина в vCenter",
-    "description": "Появилась необходимость удалить неиспользуемый плагин в vCenter.\nДля этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob\nЖмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.\nОбновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -\u0026gt; Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.\n",
+    "description": "Как полностью удалить плагин из vCenter? Руководство по использованию Managed Object Browser для деинсталляции расширений.",
     "keywords": ["vmware", "vcsa"],
     "articleBody": "Появилась необходимость удалить неиспользуемый плагин в vCenter.\nДля этого в браузере вбиваем адрес следующего вида https://vcenter_ip/mob\nЖмем Content Жмем ExtensionManager Выбираем плагин, который нужно удалить. Копируем его название. Жмем UnregisterExtension. Откроется новое окно. Вставляем название плагина в поле Value и жмем Invoke Method. Закрываем окно.\nОбновляем страницу и проверяем, что плагин удален. Проверяем список плагинов в vSphere Client -\u003e Plug-in Manager Если плагин все еще будет в списке - перезапустите клиент.\nВзято отсюда: http://kb.vmware.com/selfservice/microsites/search.do?language=en_US\u0026cmd=displayKC\u0026externalId=1025360\n",
     "wordCount" : "74",
@@ -115,7 +106,7 @@
 				<div class="post-date"><span>2 Nov 2015</span></div>
 				<h1>Удаление плагина в vCenter</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Как полностью удалить плагин из vCenter? Руководство по использованию Managed Object Browser для деинсталляции расширений.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

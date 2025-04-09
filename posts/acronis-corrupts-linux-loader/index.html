@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Решение проблемы с повреждённым загрузчиком Debian после восстановления из образа Acronis True Image.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,18 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Acronis ломает загрузчик">
-  <meta itemprop="description" content="Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.
-Восстановливаем загрузчик таким образом:
-1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).">
+  <meta itemprop="description" content="Решение проблемы с повреждённым загрузчиком Debian после восстановления из образа Acronis True Image.">
   <meta itemprop="datePublished" content="2020-09-22T10:42:35+03:00">
   <meta itemprop="dateModified" content="2020-09-22T10:42:35+03:00">
   <meta itemprop="wordCount" content="112">
   <meta itemprop="keywords" content="Linux,Acronis"><meta property="og:url" content="https://shapkin.me/posts/acronis-corrupts-linux-loader/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Acronis ломает загрузчик">
-  <meta property="og:description" content="Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.
-Восстановливаем загрузчик таким образом:
-1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).">
+  <meta property="og:description" content="Решение проблемы с повреждённым загрузчиком Debian после восстановления из образа Acronis True Image.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -37,9 +33,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Acronis ломает загрузчик">
-  <meta name="twitter:description" content="Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.
-Восстановливаем загрузчик таким образом:
-1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).">
+  <meta name="twitter:description" content="Решение проблемы с повреждённым загрузчиком Debian после восстановления из образа Acronis True Image.">
 
 <script type="application/ld+json">
 {
@@ -47,7 +41,7 @@
     "@type": "BlogPosting",
     "headline": "Acronis ломает загрузчик",
     "name": "Acronis ломает загрузчик",
-    "description": "Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.\nВосстановливаем загрузчик таким образом:\n1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).\n",
+    "description": "Решение проблемы с повреждённым загрузчиком Debian после восстановления из образа Acronis True Image.",
     "keywords": ["linux", "acronis"],
     "articleBody": "Столкнулся с проблемой, подготовил систему с debian на борту и снял образ средствами Acronis True Image Home. Раскатал образ, а система не грузится, так как сектора не совпадают.\nВосстановливаем загрузчик таким образом:\n1. sudo mount /dev/sd*** /mnt 2. sudo mount /dev/sd** /mnt/boot/efi 3. for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done 4. sudo chroot /mnt 5. grub-install /dev/sd* 6. update-grub Обращаю внимание, что sd* = диск | sd** = efi партиция | sd*** = системная партиция Для определения партиций можно воспользоваться утилитой GParted (я грузился с GParted liveusb).\nP.S. Заметка с 2017 валялась в черновиках и наконец-то увидела свет, возможно еще актуальна :)\nhttps://kb.acronis.com/content/4974\nhttps://kb.acronis.com/content/1686\n",
     "wordCount" : "112",
@@ -112,7 +106,7 @@
 				<div class="post-date"><span>22 Sep 2020</span></div>
 				<h1>Acronis ломает загрузчик</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Решение проблемы с повреждённым загрузчиком Debian после восстановления из образа Acronis True Image.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

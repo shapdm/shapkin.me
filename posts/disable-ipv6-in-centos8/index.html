@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Инструкция по отключению IPv6 в CentOS 8 через загрузчик GRUB2 с проверкой изменений после перезагрузки.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,24 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Отключение IPv6 в CentOS 8">
-  <meta itemprop="description" content="Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.
-Открываем /etc/default/grub и добавляем новой строкой следующее:
-GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34; Сохраняем и закрываем файл.
-Теперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:
-/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:
-grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.">
+  <meta itemprop="description" content="Инструкция по отключению IPv6 в CentOS 8 через загрузчик GRUB2 с проверкой изменений после перезагрузки.">
   <meta itemprop="datePublished" content="2021-02-03T17:44:25+03:00">
   <meta itemprop="dateModified" content="2021-02-03T17:44:25+03:00">
   <meta itemprop="wordCount" content="109">
   <meta itemprop="keywords" content="Linux,Ipv6"><meta property="og:url" content="https://shapkin.me/posts/disable-ipv6-in-centos8/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Отключение IPv6 в CentOS 8">
-  <meta property="og:description" content="Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.
-Открываем /etc/default/grub и добавляем новой строкой следующее:
-GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34; Сохраняем и закрываем файл.
-Теперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:
-/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:
-grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.">
+  <meta property="og:description" content="Инструкция по отключению IPv6 в CentOS 8 через загрузчик GRUB2 с проверкой изменений после перезагрузки.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -43,12 +33,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Отключение IPv6 в CentOS 8">
-  <meta name="twitter:description" content="Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.
-Открываем /etc/default/grub и добавляем новой строкой следующее:
-GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34; Сохраняем и закрываем файл.
-Теперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:
-/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:
-grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.">
+  <meta name="twitter:description" content="Инструкция по отключению IPv6 в CentOS 8 через загрузчик GRUB2 с проверкой изменений после перезагрузки.">
 
 <script type="application/ld+json">
 {
@@ -56,7 +41,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
     "@type": "BlogPosting",
     "headline": "Отключение IPv6 в CentOS 8",
     "name": "Отключение IPv6 в CentOS 8",
-    "description": "Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.\nОткрываем /etc/default/grub и добавляем новой строкой следующее:\nGRUB_CMDLINE_LINUX=\u0026#34;$GRUB_CMDLINE_LINUX ipv6.disable=1\u0026#34; Сохраняем и закрываем файл.\nТеперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:\n/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:\ngrub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.\n",
+    "description": "Инструкция по отключению IPv6 в CentOS 8 через загрузчик GRUB2 с проверкой изменений после перезагрузки.",
     "keywords": ["linux", "ipv6"],
     "articleBody": "Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.\nОткрываем /etc/default/grub и добавляем новой строкой следующее:\nGRUB_CMDLINE_LINUX=\"$GRUB_CMDLINE_LINUX ipv6.disable=1\" Сохраняем и закрываем файл.\nТеперь следует обновить конфиг grub.cfg, выполняем команду ls -la /etc/grub*.cfg и видим пути до 2х файлов:\n/boot/grub2/grub.cfg /boot/efi/EFI/centos/grub.cfg Следующие 2 команды перегенерируют новые конфиги с учетом наших изменений:\ngrub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg Теперь остается перезагрузить наш сервер и проверить, что поддержка ipv6 действительно отключена для интерфейсов.\nP.S. На этапе перегенерации конфигов я столкнулся с такой ошибкой: Для решения было достаточно пересоздать grubenv командой grub2-editenv create\nОтмечу, что все действия производились на свежеустановленной ОС.\n",
     "wordCount" : "109",
@@ -121,7 +106,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg grub2-mkconfig -o /boot/efi/EFI/centos/gr
 				<div class="post-date"><span>3 Feb 2021</span></div>
 				<h1>Отключение IPv6 в CentOS 8</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Инструкция по отключению IPv6 в CentOS 8 через загрузчик GRUB2 с проверкой изменений после перезагрузки.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

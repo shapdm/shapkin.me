@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Одинаковые NetBIOS-имена доменов? Руководство по переименованию через rendom.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,26 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Переименование NetBIOS имени домена">
-  <meta itemprop="description" content="Нужно настроить доверительные отношения между двумя доменами. Физически сети расположены в разных местах, между ними поднят vpn канал.
-Оба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.
-Домены такого вида: aa.bbbb.ru и aa.ru
-Итак, для настройки доверия необходимо сделать следующее:
-Ставим, если отсутствует, RSAT, теперь создаем в DNS новую зону, к примеру aa1.ru Далее команды в cmd:
-rendom /list
-Открываем Domainlist.xml файл (он будет сохранен в директории, в который мы находимся) и вносим правки, в моем случае только NetBIOS в forestroot.">
+  <meta itemprop="description" content="Одинаковые NetBIOS-имена доменов? Руководство по переименованию через rendom.">
   <meta itemprop="datePublished" content="2015-10-02T15:48:00+03:00">
   <meta itemprop="dateModified" content="2015-10-02T15:48:00+03:00">
   <meta itemprop="wordCount" content="111">
   <meta itemprop="keywords" content="Netbios,Windows Server"><meta property="og:url" content="https://shapkin.me/posts/rename-netbios-domain-name/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Переименование NetBIOS имени домена">
-  <meta property="og:description" content="Нужно настроить доверительные отношения между двумя доменами. Физически сети расположены в разных местах, между ними поднят vpn канал.
-Оба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.
-Домены такого вида: aa.bbbb.ru и aa.ru
-Итак, для настройки доверия необходимо сделать следующее:
-Ставим, если отсутствует, RSAT, теперь создаем в DNS новую зону, к примеру aa1.ru Далее команды в cmd:
-rendom /list
-Открываем Domainlist.xml файл (он будет сохранен в директории, в который мы находимся) и вносим правки, в моем случае только NetBIOS в forestroot.">
+  <meta property="og:description" content="Одинаковые NetBIOS-имена доменов? Руководство по переименованию через rendom.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -45,13 +33,7 @@ rendom /list
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Переименование NetBIOS имени домена">
-  <meta name="twitter:description" content="Нужно настроить доверительные отношения между двумя доменами. Физически сети расположены в разных местах, между ними поднят vpn канал.
-Оба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.
-Домены такого вида: aa.bbbb.ru и aa.ru
-Итак, для настройки доверия необходимо сделать следующее:
-Ставим, если отсутствует, RSAT, теперь создаем в DNS новую зону, к примеру aa1.ru Далее команды в cmd:
-rendom /list
-Открываем Domainlist.xml файл (он будет сохранен в директории, в который мы находимся) и вносим правки, в моем случае только NetBIOS в forestroot.">
+  <meta name="twitter:description" content="Одинаковые NetBIOS-имена доменов? Руководство по переименованию через rendom.">
 
 <script type="application/ld+json">
 {
@@ -59,7 +41,7 @@ rendom /list
     "@type": "BlogPosting",
     "headline": "Переименование NetBIOS имени домена",
     "name": "Переименование NetBIOS имени домена",
-    "description": "Нужно настроить доверительные отношения между двумя доменами. Физически сети расположены в разных местах, между ними поднят vpn канал.\nОба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.\nДомены такого вида: aa.bbbb.ru и aa.ru\nИтак, для настройки доверия необходимо сделать следующее:\nСтавим, если отсутствует, RSAT, теперь создаем в DNS новую зону, к примеру aa1.ru Далее команды в cmd:\nrendom /list\nОткрываем Domainlist.xml файл (он будет сохранен в директории, в который мы находимся) и вносим правки, в моем случае только NetBIOS в forestroot.\n",
+    "description": "Одинаковые NetBIOS-имена доменов? Руководство по переименованию через rendom.",
     "keywords": ["netbios", "windows server"],
     "articleBody": "Нужно настроить доверительные отношения между двумя доменами. Физически сети расположены в разных местах, между ними поднят vpn канал.\nОба домена имеют одинаковые NetBIOS имена, что является огромной проблемой.\nДомены такого вида: aa.bbbb.ru и aa.ru\nИтак, для настройки доверия необходимо сделать следующее:\nСтавим, если отсутствует, RSAT, теперь создаем в DNS новую зону, к примеру aa1.ru Далее команды в cmd:\nrendom /list\nОткрываем Domainlist.xml файл (он будет сохранен в директории, в который мы находимся) и вносим правки, в моем случае только NetBIOS в forestroot.\nrendom /upload\nrendom /prepare\nrendom /execute\nПосле выполнения execute сервер и все его реплики автоматически перезагрузятся. Перезагружаем второй раз.\nrendom /end\nНа этом заканчивается этап переименовывания NetBIOS имени домена.\n",
     "wordCount" : "111",
@@ -124,7 +106,7 @@ rendom /list
 				<div class="post-date"><span>2 Oct 2015</span></div>
 				<h1>Переименование NetBIOS имени домена</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Одинаковые NetBIOS-имена доменов? Руководство по переименованию через rendom.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Как заблокировать исходящий трафик в Windows с помощью PowerShell для тестирования веб-сервисов в браузере.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,16 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Блокировка исходящего трафика в Windows">
-  <meta itemprop="description" content="Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
-Решение: Блокировка исходящего трафика для браузера">
+  <meta itemprop="description" content="Как заблокировать исходящий трафик в Windows с помощью PowerShell для тестирования веб-сервисов в браузере.">
   <meta itemprop="datePublished" content="2022-09-12T12:18:47+03:00">
   <meta itemprop="dateModified" content="2022-09-12T12:18:47+03:00">
   <meta itemprop="wordCount" content="139">
   <meta itemprop="keywords" content="Windows,Powershell"><meta property="og:url" content="https://shapkin.me/posts/block-traffic-by-powershell/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Блокировка исходящего трафика в Windows">
-  <meta property="og:description" content="Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
-Решение: Блокировка исходящего трафика для браузера">
+  <meta property="og:description" content="Как заблокировать исходящий трафик в Windows с помощью PowerShell для тестирования веб-сервисов в браузере.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -35,8 +33,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Блокировка исходящего трафика в Windows">
-  <meta name="twitter:description" content="Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.
-Решение: Блокировка исходящего трафика для браузера">
+  <meta name="twitter:description" content="Как заблокировать исходящий трафик в Windows с помощью PowerShell для тестирования веб-сервисов в браузере.">
 
 <script type="application/ld+json">
 {
@@ -44,7 +41,7 @@
     "@type": "BlogPosting",
     "headline": "Блокировка исходящего трафика в Windows",
     "name": "Блокировка исходящего трафика в Windows",
-    "description": "Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.\nРешение: Блокировка исходящего трафика для браузера\n",
+    "description": "Как заблокировать исходящий трафик в Windows с помощью PowerShell для тестирования веб-сервисов в браузере.",
     "keywords": ["windows", "powershell"],
     "articleBody": "Задача: Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.\nРешение: Блокировка исходящего трафика для браузера\nNew-NetFirewallRule -Program \"C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe\" -Action Block -Profile Any -DisplayName \"block traffic\" -RemoteAddress Internet -Direction Outbound Блокировка всего исходящего трафика\nNew-NetFirewallRule -Action Block -Profile Any -DisplayName \"block traffic\" -RemoteAddress Internet -Direction Outbound Удаление правила\nRemove-NetFirewallRule -DisplayName \"block traffic\" Включение и отключение правила\nDisable-NetFirewallRule -DisplayName 'block traffic' Enable-NetFirewallRule -DisplayName 'block traffic' Написал скрипт для удобства пользования\nWrite-Host Write-Host \"Список доступных действий\" -BackgroundColor White -ForegroundColor Red Write-Host Write-Host \"1. Создать блокирующее правило\" -ForegroundColor Green Write-Host \"2. Удалить блокирующее правило\" -ForegroundColor Green Write-Host \"3. Завершить\" -ForegroundColor Green Write-Host $choice = Read-Host \"Выберете пункт из списка\" Switch($choice){ 1{New-NetFirewallRule -Action Block -Profile Any -DisplayName \"block traffic\" -RemoteAddress Internet -Direction Outbound} 2{Remove-NetFirewallRule -DisplayName \"block traffic\"} 3{Write-Host \"Завершить\"; exit} default {Write-Host \"Некорректный ввод, попробуйте снова\" -ForegroundColor Red} } ",
     "wordCount" : "139",
@@ -109,7 +106,7 @@
 				<div class="post-date"><span>12 Sep 2022</span></div>
 				<h1>Блокировка исходящего трафика в Windows</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Как заблокировать исходящий трафик в Windows с помощью PowerShell для тестирования веб-сервисов в браузере.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

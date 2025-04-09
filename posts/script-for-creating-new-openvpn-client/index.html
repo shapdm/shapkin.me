@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Как быстро создавать конфиги для клиентов OpenVPN? Готовый скрипт для генерации inline-конфигураций с TLS-ключами и сертификатами.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,20 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Скрипт генерации клиентского конфига OpenVPN">
-  <meta itemprop="description" content="Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
-После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
-Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
-Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.">
+  <meta itemprop="description" content="Как быстро создавать конфиги для клиентов OpenVPN? Готовый скрипт для генерации inline-конфигураций с TLS-ключами и сертификатами.">
   <meta itemprop="datePublished" content="2023-03-01T12:52:01+03:00">
   <meta itemprop="dateModified" content="2023-03-01T12:52:01+03:00">
   <meta itemprop="wordCount" content="147">
   <meta itemprop="keywords" content="Openvpn,Bash"><meta property="og:url" content="https://shapkin.me/posts/script-for-creating-new-openvpn-client/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Скрипт генерации клиентского конфига OpenVPN">
-  <meta property="og:description" content="Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
-После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
-Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
-Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.">
+  <meta property="og:description" content="Как быстро создавать конфиги для клиентов OpenVPN? Готовый скрипт для генерации inline-конфигураций с TLS-ключами и сертификатами.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -39,10 +33,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Скрипт генерации клиентского конфига OpenVPN">
-  <meta name="twitter:description" content="Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.
-После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.
-Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/
-Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.">
+  <meta name="twitter:description" content="Как быстро создавать конфиги для клиентов OpenVPN? Готовый скрипт для генерации inline-конфигураций с TLS-ключами и сертификатами.">
 
 <script type="application/ld+json">
 {
@@ -50,7 +41,7 @@
     "@type": "BlogPosting",
     "headline": "Скрипт генерации клиентского конфига OpenVPN",
     "name": "Скрипт генерации клиентского конфига OpenVPN",
-    "description": "Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.\nПосле установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.\nСоздаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/\nУказываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.\n",
+    "description": "Как быстро создавать конфиги для клиентов OpenVPN? Готовый скрипт для генерации inline-конфигураций с TLS-ключами и сертификатами.",
     "keywords": ["openvpn", "bash"],
     "articleBody": "Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.\nПосле установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.\nСоздаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/\nУказываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ. При запуске скрипта указываем имя клиента, далее скрипт генерирует клиентский конфигурационный файл с уникальными данными и сохраняет его в указанную директорию с заданным именем.\n#!/bin/sh read -p \"Enter client name: \" clientname if [ -n \"$clientname\" ] then /etc/openvpn/easyrsa/easyrsa build-client-full $clientname nopass cp /etc/openvpn/user_config.sample /etc/openvpn/user_configs/$clientname.ovpn echo \"\\n$(cat /etc/openvpn/easyrsa/pki/issued/$clientname.crt)\\n\" \u003e\u003e /etc/openvpn/user_configs/$clientname.ovpn echo \"\\n$(cat /etc/openvpn/easyrsa/pki/private/$clientname.key)\\n\" \u003e\u003e /etc/openvpn/user_configs/$clientname.ovpn echo \"+--------------------------------------------------------+\" echo \"| |\" echo \"| Find your new ovpn config in /etc/openvpn/user_configs |\" echo \"| |\" echo \"+--------------------------------------------------------+\" else echo \"Client name cannot be empty\" fi ",
     "wordCount" : "147",
@@ -115,7 +106,7 @@
 				<div class="post-date"><span>1 Mar 2023</span></div>
 				<h1>Скрипт генерации клиентского конфига OpenVPN</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Как быстро создавать конфиги для клиентов OpenVPN? Готовый скрипт для генерации inline-конфигураций с TLS-ключами и сертификатами.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

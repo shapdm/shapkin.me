@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Разбираем проблему: OWA (Outlook Web Access) продолжает пускать пользователя под старыми паролями даже после смены в AD и блокировки учётной записи.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,16 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Access to Owa">
-  <meta itemprop="description" content="Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).
-Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает… и почта ходит, более того, я юзера залочил в ad - все равно работает через web">
+  <meta itemprop="description" content="Разбираем проблему: OWA (Outlook Web Access) продолжает пускать пользователя под старыми паролями даже после смены в AD и блокировки учётной записи.">
   <meta itemprop="datePublished" content="2015-10-02T08:56:37+03:00">
   <meta itemprop="dateModified" content="2015-10-02T08:56:37+03:00">
   <meta itemprop="wordCount" content="100">
   <meta itemprop="keywords" content="Windows,Owa,Exchange"><meta property="og:url" content="https://shapkin.me/posts/access-to-owa/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Access to Owa">
-  <meta property="og:description" content="Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).
-Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает… и почта ходит, более того, я юзера залочил в ad - все равно работает через web">
+  <meta property="og:description" content="Разбираем проблему: OWA (Outlook Web Access) продолжает пускать пользователя под старыми паролями даже после смены в AD и блокировки учётной записи.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -36,8 +34,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Access to Owa">
-  <meta name="twitter:description" content="Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).
-Суть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает… и почта ходит, более того, я юзера залочил в ad - все равно работает через web">
+  <meta name="twitter:description" content="Разбираем проблему: OWA (Outlook Web Access) продолжает пускать пользователя под старыми паролями даже после смены в AD и блокировки учётной записи.">
 
 <script type="application/ld+json">
 {
@@ -45,7 +42,7 @@
     "@type": "BlogPosting",
     "headline": "Access to Owa",
     "name": "Access to Owa",
-    "description": "Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).\nСуть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает\u0026hellip; и почта ходит, более того, я юзера залочил в ad - все равно работает через web\n",
+    "description": "Разбираем проблему: OWA (Outlook Web Access) продолжает пускать пользователя под старыми паролями даже после смены в AD и блокировки учётной записи.",
     "keywords": ["windows", "owa", "exchange"],
     "articleBody": "Вот как бывает(статья из черновика, с проблемой столкнулся зимой 2014).\nСуть в том, что есть owa (веб морда для почты outlook), я меняю пароль юзеру в AD, на десктопном аутлуке меня не пускает, просит новый пароль (после ввода все в норме), а в браузере меня пускает и под старым и под новым. 4 раза менял пароль и под всеми пускает… и почта ходит, более того, я юзера залочил в ad - все равно работает через web\nВидимо на серваке токен не удаляется. Разные браузеры, кэши чистил.\nвот комментарии по теме http://forum.ixbt.com/topic.cgi?id=7:43934\nПроблема связана с exchange 2013, про другие не знаю.\n",
     "wordCount" : "100",
@@ -110,7 +107,7 @@
 				<div class="post-date"><span>2 Oct 2015</span></div>
 				<h1>Access to Owa</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Разбираем проблему: OWA (Outlook Web Access) продолжает пускать пользователя под старыми паролями даже после смены в AD и блокировки учётной записи.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

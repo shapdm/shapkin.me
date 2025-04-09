@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,16 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Обновление и миграция Redmine между двумя серверами">
-  <meta itemprop="description" content="Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
-Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).">
+  <meta itemprop="description" content="Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.">
   <meta itemprop="datePublished" content="2020-12-08T19:41:15+03:00">
   <meta itemprop="dateModified" content="2020-12-08T19:41:15+03:00">
   <meta itemprop="wordCount" content="211">
   <meta itemprop="keywords" content="Linux,Redmine"><meta property="og:url" content="https://shapkin.me/posts/redmine-update-and-migrate/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Обновление и миграция Redmine между двумя серверами">
-  <meta property="og:description" content="Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
-Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).">
+  <meta property="og:description" content="Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -35,8 +33,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Обновление и миграция Redmine между двумя серверами">
-  <meta name="twitter:description" content="Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.
-Старый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).">
+  <meta name="twitter:description" content="Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.">
 
 <script type="application/ld+json">
 {
@@ -44,7 +41,7 @@
     "@type": "BlogPosting",
     "headline": "Обновление и миграция Redmine между двумя серверами",
     "name": "Обновление и миграция Redmine между двумя серверами",
-    "description": "Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.\nСтарый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).\n",
+    "description": "Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.",
     "keywords": ["linux", "redmine"],
     "articleBody": "Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.\nСтарый сервер с Redmine CentOS 7 mysql 5.5 ruby 2.0 / rail 4.2 thin (gem сервер приложения) Новый сервер с Redmine CentOS 8 mariadb 10 ruby 2.6.5 / rails 5.2 thin (gem сервер приложения) Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).\nУстановка нужной версии Redmine по инструкциям с сайта https://redmine.org/ На старом redmine я отключаю все задачи cron для сервиса, в том числе и для получения почты (Подробнее о настройке по ссылке) Останавливаю сервис thin systemctl stop thin Удаляю установленные плагины, точнее чистим записи в базе, если для установки плагина требуется миграция (Подробнее про удаление по ссылке) Далее снимаем дамп с БД mysqldump -u root -p redmine \u003e redmine.sql (В моем случае используется mysql) Переносим на новый сервер scp redmine.sql root@192.168.1.1:/tmp Теперь выполняем команды на новом сервер cp /tmp/redmine.sql /path/to/redmine/ Восстанавливаем дамп mysql -u root -p redmine \u003c redmine.sql Теперь обязательный пункт, это совершить миграцию базы, чтобы применились изменения, иначе будет ошибка 500 при переходе в проекты rake db:migrate RAILS_ENV=production Дополнительно перезапускаем сервис thin Устанавливаем плагины Перенастраиваем адреса для проксирования, если есть пограничный сервер (в моем случае в роли обратного прокси выступает nginx) ",
     "wordCount" : "211",
@@ -109,7 +106,7 @@
 				<div class="post-date"><span>8 Dec 2020</span></div>
 				<h1>Обновление и миграция Redmine между двумя серверами</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Как отслеживать сроки окончания доменов? Автоматизация проверок через whois, Prometheus и Grafana с отправкой метрик через Pushgateway.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,18 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus">
-  <meta itemprop="description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
-Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:">
+  <meta itemprop="description" content="Как отслеживать сроки окончания доменов? Автоматизация проверок через whois, Prometheus и Grafana с отправкой метрик через Pushgateway.">
   <meta itemprop="datePublished" content="2025-03-26T18:20:02+03:00">
   <meta itemprop="dateModified" content="2025-03-26T18:20:02+03:00">
   <meta itemprop="wordCount" content="557">
   <meta itemprop="keywords" content="Bash,Docker,Grafana,Prometheus"><meta property="og:url" content="https://shapkin.me/posts/domain-expiration-days-grafana/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus">
-  <meta property="og:description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
-Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:">
+  <meta property="og:description" content="Как отслеживать сроки окончания доменов? Автоматизация проверок через whois, Prometheus и Grafana с отправкой метрик через Pushgateway.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -39,9 +35,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus">
-  <meta name="twitter:description" content="В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.
-Установку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.
-Общая логика работы Система состоит из нескольких компонентов:">
+  <meta name="twitter:description" content="Как отслеживать сроки окончания доменов? Автоматизация проверок через whois, Prometheus и Grafana с отправкой метрик через Pushgateway.">
 
 <script type="application/ld+json">
 {
@@ -49,7 +43,7 @@
     "@type": "BlogPosting",
     "headline": "Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus",
     "name": "Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus",
-    "description": "В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.\nУстановку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.\nОбщая логика работы Система состоит из нескольких компонентов:\n",
+    "description": "Как отслеживать сроки окончания доменов? Автоматизация проверок через whois, Prometheus и Grafana с отправкой метрик через Pushgateway.",
     "keywords": ["bash", "docker", "grafana", "prometheus"],
     "articleBody": "В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена. Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.\nУстановку и настройку prometheus и grafana в этом посте рассматривать не будем, предполагается, что они уже установлены.\nОбщая логика работы Система состоит из нескольких компонентов:\nBash-скрипт (check_domains.sh): Проверяет срок действия доменов через whois и отправляет данные в Pushgateway.\nPushgateway: Промежуточный сервис для отправки метрик в Prometheus.\nPrometheus: Собирает метрики из Pushgateway.\nGrafana: Визуализирует данные в виде графиков и панелей.\nРаботает это так:\nСкрипт запускается по расписанию через cron. Он получает дату истечения домена через whois, вычисляет количество дней до истечения и отправляет эти данные в Pushgateway. Prometheus периодически собирает данные из Pushgateway. В Grafana создаем dashboard для отображения данных в подходящем виде.\nДля установки Pushgateway нужно прописать в docker-compose файле:\npushgateway: image: prom/pushgateway container_name: pushgateway network_mode: host ports: - \"9091:9091\" # Порт Pushgateway Также, нужно сообщить Prometheus откуда брать данные, для этого в prometheus.yml пропишем:\n- job_name: \"pushgateway\" honor_labels: true static_configs: - targets: ['prometheus:9091'] Код скрипта check_domains.sh #!/bin/bash set -euo pipefail LOG_FILE=\"/var/log/check-domains.log\" PUSHGATEWAY_URL=\"http://localhost:9091\" DOMAINS=(\"aaa.ru\" \"bbb.ru\") # Проверка наличия необходимых утилит for cmd in whois curl; do command -v \"$cmd\" \u003e/dev/null || { echo \"Error: $cmd is not installed.\" | tee -a \"$LOG_FILE\"; exit 1; } done # Функция для получения и отправки данных process_domain() { local domain=$1 # Получение даты истечения через whois expiration_date=$(whois \"$domain\" | grep -i \"expiry date\" | awk '{print $4}' | head -n 1) if [[ -z \"$expiration_date\" ]]; then echo \"$(date '+%Y-%m-%d %H:%M:%S') Error: Could not retrieve expiration date for $domain\" | tee -a \"$LOG_FILE\" return 1 fi # Преобразование даты в формат Unix timestamp expiration_timestamp=$(date -d \"$(echo \"$expiration_date\" | sed 's/\\.[0-9]*Z//; s/T/ /')\" +%s 2\u003e\u003e\"$LOG_FILE\") current_timestamp=$(date +%s) # Вычисление количества дней до истечения days_remaining=$(( (expiration_timestamp - current_timestamp) / 86400 )) # Отправка метрик в Pushgateway metric_name=\"domain_expiration_days\" push_url=\"$PUSHGATEWAY_URL/metrics/job/domain_expiration/instance/$domain\" metric_data=\"$metric_name{domain=\\\"$domain\\\"} $days_remaining\" echo \"$(date '+%Y-%m-%d %H:%M:%S') Pushing data for $domain: $days_remaining days remaining\" | tee -a \"$LOG_FILE\" echo \"$metric_data\" | curl -X POST \"$push_url\" --data-binary @- 2\u003e\u003e\"$LOG_FILE\" } # Основной цикл for domain in \"${DOMAINS[@]}\"; do echo \"$(date '+%Y-%m-%d %H:%M:%S') Processing domain: $domain\" | tee -a \"$LOG_FILE\" process_domain \"$domain\" || continue # Пропуск домена в случае ошибки done Файл crontab для настройки расписания запуска скрипта: # Запускать скрипт каждый день в 00:00 0 0 * * * /usr/local/bin/check_domains.sh \u003e /var/log/cron.log 2\u003e\u00261 Файл docker-compose.yml services: pushgateway: image: prom/pushgateway container_name: pushgateway network_mode: host ports: - \"9091:9091\" # Порт Pushgateway check-domains: build: context: . dockerfile: Dockerfile container_name: check-domains hostname: check-domains restart: always environment: - PUSHGATEWAY_URL=http://localhost:9091/metrics/job/domain_expiration depends_on: - pushgateway network_mode: host volumes: - ./logs:/var/log # Монтируем папку для логов Файл Dockerfile # Используем базовый образ Alpine Linux FROM alpine:latest # Устанавливаем необходимые пакеты RUN apk add --no-cache \\ bash \\ curl \\ whois \\ dcron # Копируем скрипт в контейнер COPY check_domains.sh /usr/local/bin/check_domains.sh # Делаем скрипт исполняемым RUN chmod +x /usr/local/bin/check_domains.sh # Копируем cron-задачу COPY crontab /etc/cron.d/crontab # Даем права на выполнение cron-задачи RUN chmod 0644 /etc/cron.d/crontab # Создаем лог-файл для cron RUN touch /var/log/cron.log # Запускаем cron и логируем вывод CMD touch /var/log/cron.log \u0026\u0026 crond \u0026\u0026 tail -f /var/log/cron.log Настройка dashboard в Grafana:\nДобавляем Prometheus как источник данных. Создаем панель с запросом: domain_expiration_days{domain=\"aaa.ru\"} Настраиваем отображения данных в подходящем виде. ",
     "wordCount" : "557",
@@ -114,7 +108,7 @@
 				<div class="post-date"><span>26 Mar 2025</span></div>
 				<h1>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Как отслеживать сроки окончания доменов? Автоматизация проверок через whois, Prometheus и Grafana с отправкой метрик через Pushgateway.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

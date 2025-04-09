@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="OpenVPN не подключается? Как обновить просроченный CRL-файл (список отозванных сертификатов) и изменить срок его действия в easyrsa.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,18 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Openvpn Certificate Verify Failed">
-  <meta itemprop="description" content="Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
-В логе openvpn.log обнаружил следующее:
-WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.">
+  <meta itemprop="description" content="OpenVPN не подключается? Как обновить просроченный CRL-файл (список отозванных сертификатов) и изменить срок его действия в easyrsa.">
   <meta itemprop="datePublished" content="2021-01-25T16:39:22+03:00">
   <meta itemprop="dateModified" content="2021-01-25T16:39:22+03:00">
   <meta itemprop="wordCount" content="212">
   <meta itemprop="keywords" content="Linux,Openvpn,Certificates"><meta property="og:url" content="https://shapkin.me/posts/openvpn-certificate-verify-failed/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Openvpn Certificate Verify Failed">
-  <meta property="og:description" content="Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
-В логе openvpn.log обнаружил следующее:
-WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.">
+  <meta property="og:description" content="OpenVPN не подключается? Как обновить просроченный CRL-файл (список отозванных сертификатов) и изменить срок его действия в easyrsa.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -38,9 +34,7 @@ WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, er
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Openvpn Certificate Verify Failed">
-  <meta name="twitter:description" content="Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.
-В логе openvpn.log обнаружил следующее:
-WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -&gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.">
+  <meta name="twitter:description" content="OpenVPN не подключается? Как обновить просроченный CRL-файл (список отозванных сертификатов) и изменить срок его действия в easyrsa.">
 
 <script type="application/ld+json">
 {
@@ -48,7 +42,7 @@ WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, er
     "@type": "BlogPosting",
     "headline": "Openvpn Certificate Verify Failed",
     "name": "Openvpn Certificate Verify Failed",
-    "description": "Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.\nВ логе openvpn.log обнаружил следующее:\nWARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -\u0026gt; incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.\n",
+    "description": "OpenVPN не подключается? Как обновить просроченный CRL-файл (список отозванных сертификатов) и изменить срок его действия в easyrsa.",
     "keywords": ["linux", "openvpn", "certificates"],
     "articleBody": "Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.\nВ логе openvpn.log обнаружил следующее:\nWARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed TLS_ERROR: BIO read tls_read_plaintext error TLS Error: TLS object -\u003e incoming plaintext read error TLS Error: TLS handshake failed Fatal TLS error (check_tls_errors_co), restarting Ключевое, на что нужно обратить внимание, это WARNING: Failed to stat CRL file, not (re)loading CRL.\nЗаходим в директорию с easyrsa и там выполняем команду:\nopenssl crl -inform PEM -in pki/crl.pem -text -noout\nПроверяем дату действия списка отозванных сертификатов, в моем случае он закончился сутки назад:\nLast Update: Jul 28 21:28:59 2020 GMT Next Update: Jan 24 21:28:59 2021 GMT Это значит, что прошло 180 дней с момента последнего запуска по генерации списка отозванных сертификатов и срок действия его - как раз 180 дней.\nЧтобы исправить ситуацию, необходимо выполнить команду\n./easyrsa gen-crl и скопировать новый crl.pem по пути, который указан в Вашем опенвпн сервер конфиге. Но я решил также и увеличить срок действия списка до 720 дней, для этого нужно открыть файл vars и увеличить значение для EASYRSA_CRL_DAYS. Проверяем:\nopenssl crl -inform PEM -in pki/crl.pem -text -noout\nLast Update: Jan 25 10:30:58 2021 GMT Next Update: Jan 15 10:30:58 2023 GMT ",
     "wordCount" : "212",
@@ -113,7 +107,7 @@ WARNING: Failed to stat CRL file, not (re)loading CRL. VERIFY ERROR: depth=0, er
 				<div class="post-date"><span>25 Jan 2021</span></div>
 				<h1>Openvpn Certificate Verify Failed</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>OpenVPN не подключается? Как обновить просроченный CRL-файл (список отозванных сертификатов) и изменить срок его действия в easyrsa.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

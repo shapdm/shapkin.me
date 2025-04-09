@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Как рассортировать файлы по дате в Linux? Готовые решения для CentOS и FreeNAS с обработкой через find.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,18 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Реструктуризация директорий">
-  <meta itemprop="description" content="Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:
-/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):
-CentOS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&#34;$(stat -c &#34;%y %n&#34; $i | awk &#39;{ print $1 }&#39; | sed s%-%/%g)&#34; if ! [ -d &#34;$date&#34; ]; then mkdir -pv &#34;$path$date&#34; fi mv -v $i $path$date done FreeNAS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&#34;$(stat -f %Sm -t %Y/%m/%d $i)&#34; if ! [ -d &#34;$date&#34; ]; then mkdir -pv &#34;$path$date&#34; fi mv $i $path$date done Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:">
+  <meta itemprop="description" content="Как рассортировать файлы по дате в Linux? Готовые решения для CentOS и FreeNAS с обработкой через find.">
   <meta itemprop="datePublished" content="2015-02-27T12:58:08+03:00">
   <meta itemprop="dateModified" content="2015-02-27T12:58:08+03:00">
   <meta itemprop="wordCount" content="147">
   <meta itemprop="keywords" content="Linux,Bash"><meta property="og:url" content="https://shapkin.me/posts/directory-restructuring/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Реструктуризация директорий">
-  <meta property="og:description" content="Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:
-/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):
-CentOS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&#34;$(stat -c &#34;%y %n&#34; $i | awk &#39;{ print $1 }&#39; | sed s%-%/%g)&#34; if ! [ -d &#34;$date&#34; ]; then mkdir -pv &#34;$path$date&#34; fi mv -v $i $path$date done FreeNAS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&#34;$(stat -f %Sm -t %Y/%m/%d $i)&#34; if ! [ -d &#34;$date&#34; ]; then mkdir -pv &#34;$path$date&#34; fi mv $i $path$date done Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:">
+  <meta property="og:description" content="Как рассортировать файлы по дате в Linux? Готовые решения для CentOS и FreeNAS с обработкой через find.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -37,9 +33,7 @@ CentOS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Реструктуризация директорий">
-  <meta name="twitter:description" content="Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:
-/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):
-CentOS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&#34;$(stat -c &#34;%y %n&#34; $i | awk &#39;{ print $1 }&#39; | sed s%-%/%g)&#34; if ! [ -d &#34;$date&#34; ]; then mkdir -pv &#34;$path$date&#34; fi mv -v $i $path$date done FreeNAS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=&#34;$(stat -f %Sm -t %Y/%m/%d $i)&#34; if ! [ -d &#34;$date&#34; ]; then mkdir -pv &#34;$path$date&#34; fi mv $i $path$date done Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:">
+  <meta name="twitter:description" content="Как рассортировать файлы по дате в Linux? Готовые решения для CentOS и FreeNAS с обработкой через find.">
 
 <script type="application/ld+json">
 {
@@ -47,7 +41,7 @@ CentOS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type
     "@type": "BlogPosting",
     "headline": "Реструктуризация директорий",
     "name": "Реструктуризация директорий",
-    "description": "Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:\n/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):\nCentOS #!/bin/bash path=\u0026#34;/root/sort/\u0026#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=\u0026#34;$(stat -c \u0026#34;%y %n\u0026#34; $i | awk \u0026#39;{ print $1 }\u0026#39; | sed s%-%/%g)\u0026#34; if ! [ -d \u0026#34;$date\u0026#34; ]; then mkdir -pv \u0026#34;$path$date\u0026#34; fi mv -v $i $path$date done FreeNAS #!/bin/bash path=\u0026#34;/root/sort/\u0026#34; dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=\u0026#34;$(stat -f %Sm -t %Y/%m/%d $i)\u0026#34; if ! [ -d \u0026#34;$date\u0026#34; ]; then mkdir -pv \u0026#34;$path$date\u0026#34; fi mv $i $path$date done Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:\n",
+    "description": "Как рассортировать файлы по дате в Linux? Готовые решения для CentOS и FreeNAS с обработкой через find.",
     "keywords": ["linux", "bash"],
     "articleBody": "Есть огромная куча файлов(для директорий -type d), которые нужно перенести в директории по дате, т.е.:\n/root_dir/year/ /month/ /day /dir/2012/ /02/ /10 /13 /27 /dir/2012/ /05/ /12 /23 /30 Для этого используем такой скрипт(скрипт писался под CentOS и изменялся под FreeNAS):\nCentOS #!/bin/bash path=\"/root/sort/\" dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=\"$(stat -c \"%y %n\" $i | awk '{ print $1 }' | sed s%-%/%g)\" if ! [ -d \"$date\" ]; then mkdir -pv \"$path$date\" fi mv -v $i $path$date done FreeNAS #!/bin/bash path=\"/root/sort/\" dirs=`find $path -maxdepth 1 -type f` for i in $dirs do date=\"$(stat -f %Sm -t %Y/%m/%d $i)\" if ! [ -d \"$date\" ]; then mkdir -pv \"$path$date\" fi mv $i $path$date done Из за большого объема данных переписал скрипт, find запускался отдельно и сохранял данные в файл, содержимое которого выводил вот так:\nfor i in $(cat /tmp/file.log) do ... done ",
     "wordCount" : "147",
@@ -112,7 +106,7 @@ CentOS #!/bin/bash path=&#34;/root/sort/&#34; dirs=`find $path -maxdepth 1 -type
 				<div class="post-date"><span>27 Feb 2015</span></div>
 				<h1>Реструктуризация директорий</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Как рассортировать файлы по дате в Linux? Готовые решения для CentOS и FreeNAS с обработкой через find.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

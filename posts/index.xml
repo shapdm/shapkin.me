@@ -15,7 +15,7 @@
 			<title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
 			<link>https://shapkin.me/posts/build-openvpn-with-xor-debian/</link>
 			<pubDate>Thu, 27 Mar 2025 18:31:58 +0300</pubDate><guid>https://shapkin.me/posts/build-openvpn-with-xor-debian/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.<br>
+			<description><![CDATA[Пошаговое руководство по сборке OpenVPN с патчем XOR в Docker-контейнере на Debian.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Этим постом я открою цикл статей по сборке OpenVPN с патчем XOR, установке и настройке сервера OpenVPN.<br>
 Полный список статей спрятан под спойлер.</p>
 
 <details>
@@ -265,7 +265,7 @@ Description: OpenVPN with XOR
 			<title>Как настроить мониторинг срока действия доменов с помощью Grafana и Prometheus</title>
 			<link>https://shapkin.me/posts/domain-expiration-days-grafana/</link>
 			<pubDate>Wed, 26 Mar 2025 18:20:02 +0300</pubDate><guid>https://shapkin.me/posts/domain-expiration-days-grafana/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
+			<description><![CDATA[Как отслеживать сроки окончания доменов? Автоматизация проверок через whois, Prometheus и Grafana с отправкой метрик через Pushgateway.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>В этой статье я расскажу, как добавить в систему мониторинга на базе Grafana и Prometheus проверку срока действия домена.
 Мы будем использовать простой Bash-скрипт для проверки даты истечения доменов, Pushgateway для передачи данных в Prometheus и Grafana для визуализации результатов, а все сервисы будут упакованы в docker контейнеры.</p>
 <p>Установку и настройку <code>prometheus</code> и <code>grafana</code> в этом посте рассматривать не будем, предполагается, что они уже установлены.</p>
 <h3 id="общая-логика-работы">Общая логика работы<a href="#%d0%be%d0%b1%d1%89%d0%b0%d1%8f-%d0%bb%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -425,7 +425,7 @@ Prometheus периодически собирает данные из Pushgatew
 			<title>Настройка Vim</title>
 			<link>https://shapkin.me/posts/customizing-vim/</link>
 			<pubDate>Fri, 30 Jun 2023 13:12:24 +0300</pubDate><guid>https://shapkin.me/posts/customizing-vim/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim.
+			<description><![CDATA[Как настроить Vim для комфортной работы? Готовый .vimrc с подсветкой синтаксиса, правильными табами и нумерацией строк.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Когда мне надо отредактировать или просто просмотреть какой-либо файл на linux сервере я использую текстовой редактор vim.
 Для удобства пользования, можно создать файл .vimrc в домашней директории пользователя и указать там нужные настройки.</p>
 <p>За несколько лет использования редактора, я пришел к следующему набору:</p>
 <ol>
@@ -467,7 +467,7 @@ Prometheus периодически собирает данные из Pushgatew
 			<title>Проблемы с дисковой производительностью на ESXi</title>
 			<link>https://shapkin.me/posts/vmware-lsi-mr3/</link>
 			<pubDate>Fri, 24 Mar 2023 11:16:33 +0300</pubDate><guid>https://shapkin.me/posts/vmware-lsi-mr3/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.
+			<description><![CDATA[Почему ESXi 6 тормозит при нагрузке? Объяснение ошибок lsi_mr3 (VIRT_RESET) и инструкция по обновлению драйвера/прошивки RAID-контроллера.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Летом 2022 коллеги начали массово жаловаться на нестабильность работы стендов.
 В процессе изучения была обнаружена проблема с производительностью дисковой подсистемы, которая проявляется только при большой нагрузке.</p>
 <p>В логах на хостах были такие записи:</p>
 <pre tabindex="0"><code>2022-06-27T17:37:29.743Z cpu1:36774)lsi_mr3: mfi_TaskMgmt:254: Processing taskMgmt virt reset for device: vmhba2:C2:T0:L0
@@ -490,7 +490,7 @@ Prometheus периодически собирает данные из Pushgatew
 			<title>Скрипт генерации клиентского конфига OpenVPN</title>
 			<link>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</link>
 			<pubDate>Wed, 01 Mar 2023 12:52:01 +0300</pubDate><guid>https://shapkin.me/posts/script-for-creating-new-openvpn-client/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.</p>
+			<description><![CDATA[Как быстро создавать конфиги для клиентов OpenVPN? Готовый скрипт для генерации inline-конфигураций с TLS-ключами и сертификатами.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Скрипт для упрощения генерации новых клиентов OpenVPN и создания готового inline конфига.</p>
 <p>После установки и настройки openvpn сервера, создаем дополнительную директорию (если требуется), либо меняем путь на подходящий, куда будут сохраняться пользовательские конфигурации.</p>
 <p>Создаем шаблон для клиентской конфигурации и сохраняем его, например в новую директорию /etc/openvpn/user_configs/</p>
 <p>Указываем в файле необходимые директивы для работы сервиса, а также постоянные данные, например корневой сертификат и tls ключ.
@@ -519,7 +519,7 @@ Prometheus периодически собирает данные из Pushgatew
 			<title>VMware VCSA Certificates Expired</title>
 			<link>https://shapkin.me/posts/vcsa-certificate-expired/</link>
 			<pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate><guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.
+			<description><![CDATA[Ошибка аутентификации и 503 Service Unavailable в VCSA? Разбираемся с просроченными сертификатами и их обновлением в VMware vCenter Server Appliance.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.
 После перезагрузки в web интерфейсе постоянно висела 503 ошибка:</p>
 <blockquote>
 <p>503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)</p></blockquote>
@@ -589,7 +589,7 @@ Alias :	sms_self_signed
 			<title>Блокировка исходящего трафика в Windows</title>
 			<link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
 			<pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate><guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<h2 id="задача">Задача:<a href="#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d0%b0" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+			<description><![CDATA[Как заблокировать исходящий трафик в Windows с помощью PowerShell для тестирования веб-сервисов в браузере.]]></description><content type="text/html" mode="escaped"><![CDATA[<h2 id="задача">Задача:<a href="#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d0%b0" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -634,7 +634,7 @@ Alias :	sms_self_signed
 			<title>Отключение IPv6 в CentOS 8</title>
 			<link>https://shapkin.me/posts/disable-ipv6-in-centos8/</link>
 			<pubDate>Wed, 03 Feb 2021 17:44:25 +0300</pubDate><guid>https://shapkin.me/posts/disable-ipv6-in-centos8/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.</p>
+			<description><![CDATA[Инструкция по отключению IPv6 в CentOS 8 через загрузчик GRUB2 с проверкой изменений после перезагрузки.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Есть несколько способов по отключению ipv6 в linux, через ядро, через настройки сетевого интерфейса, я же предпочитаю отключать в загрузчике GRUB.</p>
 <p>Открываем <code>/etc/default/grub</code> и добавляем новой строкой следующее:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">GRUB_CMDLINE_LINUX=&#34;$GRUB_CMDLINE_LINUX ipv6.disable=1&#34;
 </span></span></code></pre></div><p>Сохраняем и закрываем файл.</p>
@@ -662,7 +662,7 @@ Alias :	sms_self_signed
 			<title>Openvpn Certificate Verify Failed</title>
 			<link>https://shapkin.me/posts/openvpn-certificate-verify-failed/</link>
 			<pubDate>Mon, 25 Jan 2021 16:39:22 +0300</pubDate><guid>https://shapkin.me/posts/openvpn-certificate-verify-failed/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.</p>
+			<description><![CDATA[OpenVPN не подключается? Как обновить просроченный CRL-файл (список отозванных сертификатов) и изменить срок его действия в easyrsa.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Столкнулся с проблемой, удаленные клиенты не могут подключиться по OpenVPN.</p>
 <p>В логе openvpn.log обнаружил следующее:</p>
 <pre tabindex="0"><code>    WARNING: Failed to stat CRL file, not (re)loading CRL.
     VERIFY ERROR: depth=0, error=CRL has expired: CN=client, serial=292462498369187844598607062130070224235
@@ -695,7 +695,7 @@ Next Update: Jan 15 10:30:58 2023 GMT
 			<title>Обновление и миграция Redmine между двумя серверами</title>
 			<link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
 			<pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate><guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
-			<description><![CDATA[&lt;no value&gt;]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.</p>
+			<description><![CDATA[Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.</p>
 <h3 id="старый-сервер-с-redmine">Старый сервер с Redmine<a href="#%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Пошаговое руководство по изменению порядка отображения имени пользователей в Active Directory с формата &#39;Имя Фамилия&#39; на &#39;Фамилия Имя&#39; через оснастку ADSI Edit.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,16 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Меняем порядок вывода DisplayName в Active Directory">
-  <meta itemprop="description" content="Проблема: При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.
-В итоге приходится вручную менять местами эти значения (возможно не все так делают).">
+  <meta itemprop="description" content="Пошаговое руководство по изменению порядка отображения имени пользователей в Active Directory с формата &#39;Имя Фамилия&#39; на &#39;Фамилия Имя&#39; через оснастку ADSI Edit.">
   <meta itemprop="datePublished" content="2015-10-05T13:47:41+03:00">
   <meta itemprop="dateModified" content="2015-10-05T13:47:41+03:00">
   <meta itemprop="wordCount" content="131">
   <meta itemprop="keywords" content="Windows,Active Directory"><meta property="og:url" content="https://shapkin.me/posts/change-order-of-dispaying-name-in-ad/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Меняем порядок вывода DisplayName в Active Directory">
-  <meta property="og:description" content="Проблема: При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.
-В итоге приходится вручную менять местами эти значения (возможно не все так делают).">
+  <meta property="og:description" content="Пошаговое руководство по изменению порядка отображения имени пользователей в Active Directory с формата &#39;Имя Фамилия&#39; на &#39;Фамилия Имя&#39; через оснастку ADSI Edit.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -35,8 +33,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Меняем порядок вывода DisplayName в Active Directory">
-  <meta name="twitter:description" content="Проблема: При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.
-В итоге приходится вручную менять местами эти значения (возможно не все так делают).">
+  <meta name="twitter:description" content="Пошаговое руководство по изменению порядка отображения имени пользователей в Active Directory с формата &#39;Имя Фамилия&#39; на &#39;Фамилия Имя&#39; через оснастку ADSI Edit.">
 
 <script type="application/ld+json">
 {
@@ -44,7 +41,7 @@
     "@type": "BlogPosting",
     "headline": "Меняем порядок вывода DisplayName в Active Directory",
     "name": "Меняем порядок вывода DisplayName в Active Directory",
-    "description": "Проблема: При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.\nВ итоге приходится вручную менять местами эти значения (возможно не все так делают).\n",
+    "description": "Пошаговое руководство по изменению порядка отображения имени пользователей в Active Directory с формата 'Имя Фамилия' на 'Фамилия Имя' через оснастку ADSI Edit.",
     "keywords": ["windows", "active directory"],
     "articleBody": "Проблема: При создании нового юзера в AD все сталкиваются с тем, что по-умолчанию поле с именем формируется в виде Имя Фамилия.\nВ итоге приходится вручную менять местами эти значения (возможно не все так делают).\nЕсли оставлять в таком виде, то в будущем будет проблематично найти сотрудника по его фамилии.\nРешение: Запускаем оснастку ADSI Edit Нажимаем Connect to, далее меняем Контекст именования на Конфигурация Разворачиваем “Контейнер конфигурации” и затем “Конфигурация”\nРазворачиваем DisplaySpecifiers и ищем CN=409 (для англ версии, так как 409 это код США, если у Вас многоязычная система или на русском, нужно вносить правки в другие коды)\nНаходим справа элемент CN=user-Display и открываем его\nИщем строку createDialog и вносим правку - % %\nСохраняем изменения и теперь пользователи будут создаваться по шаблону Фамилия Имя\nNote. Подробнее можно прочитать по ссылке KB250455\n",
     "wordCount" : "131",
@@ -109,7 +106,7 @@
 				<div class="post-date"><span>5 Oct 2015</span></div>
 				<h1>Меняем порядок вывода DisplayName в Active Directory</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Пошаговое руководство по изменению порядка отображения имени пользователей в Active Directory с формата &#39;Имя Фамилия&#39; на &#39;Фамилия Имя&#39; через оснастку ADSI Edit.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>

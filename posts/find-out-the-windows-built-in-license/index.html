@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="">
-<meta name="description" content="">
+<meta name="description" content="Где найти ключ активации Windows? Инструкция по извлечению лицензионного ключа из BIOS и системного реестра.">
 <link rel="author" type="text/plain" href="/humans.txt">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,18 +15,14 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
 
   <meta itemprop="name" content="Поиск ключа лицензии Windows">
-  <meta itemprop="description" content="На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
-Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
-Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):">
+  <meta itemprop="description" content="Где найти ключ активации Windows? Инструкция по извлечению лицензионного ключа из BIOS и системного реестра.">
   <meta itemprop="datePublished" content="2015-12-10T08:46:09+03:00">
   <meta itemprop="dateModified" content="2015-12-10T08:46:09+03:00">
   <meta itemprop="wordCount" content="283">
   <meta itemprop="keywords" content="Powershell,Windows"><meta property="og:url" content="https://shapkin.me/posts/find-out-the-windows-built-in-license/">
   <meta property="og:site_name" content="Заметки на полях">
   <meta property="og:title" content="Поиск ключа лицензии Windows">
-  <meta property="og:description" content="На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
-Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
-Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):">
+  <meta property="og:description" content="Где найти ключ активации Windows? Инструкция по извлечению лицензионного ключа из BIOS и системного реестра.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -37,9 +33,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Поиск ключа лицензии Windows">
-  <meta name="twitter:description" content="На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.
-Встал вопрос с активацией. Нашел способы, как узнать ключ системы.
-Получаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):">
+  <meta name="twitter:description" content="Где найти ключ активации Windows? Инструкция по извлечению лицензионного ключа из BIOS и системного реестра.">
 
 <script type="application/ld+json">
 {
@@ -47,7 +41,7 @@
     "@type": "BlogPosting",
     "headline": "Поиск ключа лицензии Windows",
     "name": "Поиск ключа лицензии Windows",
-    "description": "На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.\nВстал вопрос с активацией. Нашел способы, как узнать ключ системы.\nПолучаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):\n",
+    "description": "Где найти ключ активации Windows? Инструкция по извлечению лицензионного ключа из BIOS и системного реестра.",
     "keywords": ["powershell", "windows"],
     "articleBody": "На новом ноутбуке стояла Windows 8.1, обновили до 10. После установки необходимого софта и обновлений, склонировал образ на другие идентичные ноутбуки.\nВстал вопрос с активацией. Нашел способы, как узнать ключ системы.\nПолучаем OEM ключ из UEFI Если у нас предустановлена система и нам нужен ее ключ, то тут достаточно одной команды в командной строке (!):\nwmic path softwarelicensingservice get OA3xOriginalProductKey\nПолучаем ключ установленной системы Используем PowerShell скрипт (простой команды в данном случае, к сожалению, не предусмотрено).\nСохраняем текст в filename.ps1\nfunction Get-WindowsKey { param ($targets = \".\") $hklm = 2147483650 $regPath = \"Software\\Microsoft\\Windows NT\\CurrentVersion\" $regValue = \"DigitalProductId\" Foreach ($target in $targets) { $productKey = $null $win32os = $null $wmi = [WMIClass]\"\\\\$target\\root\\default:stdRegProv\" $data = $wmi.GetBinaryValue($hklm,$regPath,$regValue) $binArray = ($data.uValue)[52..66] $charsArray = \"B\",\"C\",\"D\",\"F\",\"G\",\"H\",\"J\",\"K\",\"M\",\"P\",\"Q\",\"R\",\"T\",\"V\",\"W\",\"X\",\"Y\",\"2\",\"3\",\"4\",\"6\",\"7\",\"8\",\"9\" ## decrypt base24 encoded binary data For ($i = 24; $i -ge 0; $i--) { $k = 0 For ($j = 14; $j -ge 0; $j--) { $k = $k * 256 -bxor $binArray[$j] $binArray[$j] = [math]::truncate($k / 24) $k = $k % 24 } $productKey = $charsArray[$k] + $productKey If (($i % 5 -eq 0) -and ($i -ne 0)) { $productKey = \"-\" + $productKey } } $win32os = Get-WmiObject Win32_OperatingSystem -computer $target $obj = New-Object Object $obj | Add-Member Noteproperty Computer -value $target $obj | Add-Member Noteproperty Caption -value $win32os.Caption $obj | Add-Member Noteproperty CSDVersion -value $win32os.CSDVersion $obj | Add-Member Noteproperty OSArch -value $win32os.OSArchitecture $obj | Add-Member Noteproperty BuildNumber -value $win32os.BuildNumber $obj | Add-Member Noteproperty RegisteredTo -value $win32os.RegisteredUser $obj | Add-Member Noteproperty ProductID -value $win32os.SerialNumber $obj | Add-Member Noteproperty ProductKey -value $productkey $obj } } Открываем PowerShell с правами админа. Выполняем команду Set-ExecutionPolicy RemoteSigned (и подтверждаем ее выполнение - Y) Далее выполняем команду Import-Module path/to/filename.ps1 Вводим Get-WindowsKey и смотрим наш ProductKey.\n",
     "wordCount" : "283",
@@ -112,7 +106,7 @@
 				<div class="post-date"><span>10 Dec 2015</span></div>
 				<h1>Поиск ключа лицензии Windows</h1>
 			</header>
-			<div class="post-description">
+			<div class="post-description"><p>Где найти ключ активации Windows? Инструкция по извлечению лицензионного ключа из BIOS и системного реестра.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
