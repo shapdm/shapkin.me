@@ -7,9 +7,32 @@
 		<generator>Hugo -- 0.145.0</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Mon, 31 Mar 2025 18:24:40 +0300</lastBuildDate>
+		<lastBuildDate>Mon, 14 Apr 2025 16:04:31 +0300</lastBuildDate>
 		<atom:link href="https://shapkin.me/posts/index.xml" rel="self" type="application/rss+xml" />
 		
+		
+		<item>
+			<title>Создаем горячую клавишу в Excel</title>
+			<link>https://shapkin.me/posts/excel-hotkey/</link>
+			<pubDate>Mon, 14 Apr 2025 16:04:31 +0300</pubDate><guid>https://shapkin.me/posts/excel-hotkey/</guid>
+			<description><![CDATA[Горячие клавиши для заливки цветом в Excel: настройка макросов через редактор VBA.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Работая с таблицами в Excel бывает часто надо выделять какие-то строки или ячейки в один и тот же цвет и удобнее было бы иметь для этого горячую клавишу.</p>
+<p>Запускаем Excel, переходим во вкладку &ldquo;Вид&rdquo; -&gt; &ldquo;Макросы&rdquo; -&gt; &ldquo;Запись макроса&rdquo;, там указываем название, например &ldquo;Заливка желтым&rdquo;, указываем желаемую комбинацию клавиш, я указал &ldquo;Ctrl + Shift + Y&rdquo; для заливки желтым и &ldquo;Ctrl + Shift + U&rdquo; для очистки заливки.</p>
+<p><strong>Обязательно выбираем &ldquo;Сохранить в &quot; -&gt; &ldquo;Личная книга макросов&rdquo;</strong></p>
+<p><img src="/img/009/009-1.png" alt=""></p>
+<p><img src="/img/009/009-2.png" alt=""></p>
+<p>Теперь открываем вкладку &ldquo;Разработчик&rdquo; и &ldquo;Visual Basic&rdquo;, выбираем нашу <code>PERSONAL.XLDB</code>, жмем insert и выбираем module, вставляем код для заливки и очистки:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb.net" data-lang="vb.net"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">FillYellow</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Selection</span><span class="p">.</span><span class="n">Interior</span><span class="p">.</span><span class="n">Color</span> <span class="o">=</span> <span class="n">RGB</span><span class="p">(</span><span class="n">255</span><span class="p">,</span> <span class="n">255</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span> <span class="c">&#39; Жёлтый цвет
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">End</span> <span class="k">Sub</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">ClearFill</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Selection</span><span class="p">.</span><span class="n">Interior</span><span class="p">.</span><span class="n">ColorIndex</span> <span class="o">=</span> <span class="n">xlNone</span> <span class="c">&#39; Убрать заливку
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">End</span> <span class="k">Sub</span>
+</span></span></code></pre></div><p>Теперь можно пользоваться заданной горячей клавишей для заливки в любом Excel документе.</p>
+<blockquote>
+<p>&#x1f4dd; Файл с личной книгой макросов находится по пути: <code>%appdata%\Microsoft\Excel\XLSTART</code></p></blockquote>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Сборка OpenVPN с патчем XOR в Docker для Debian</title>
@@ -688,51 +711,6 @@ Alias :	sms_self_signed
 <pre><code>Last Update: Jan 25 10:30:58 2021 GMT
 Next Update: Jan 15 10:30:58 2023 GMT
 </code></pre>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Обновление и миграция Redmine между двумя серверами</title>
-			<link>https://shapkin.me/posts/redmine-update-and-migrate/</link>
-			<pubDate>Tue, 08 Dec 2020 19:41:15 +0300</pubDate><guid>https://shapkin.me/posts/redmine-update-and-migrate/</guid>
-			<description><![CDATA[Как перенести Redmine на новый сервер с обновлением? Подробное руководство по резервному копированию, восстановлению и настройке после миграции.]]></description><content type="text/html" mode="escaped"><![CDATA[<p>Пришла пора обновить redmine с 3.4* версии до последней стабильной 4.1.1, при этом с переносом на другой сервер.</p>
-<h3 id="старый-сервер-с-redmine">Старый сервер с Redmine<a href="#%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<ul>
-<li>CentOS 7</li>
-<li>mysql 5.5</li>
-<li>ruby 2.0 / rail 4.2</li>
-<li>thin (gem сервер приложения)</li>
-</ul>
-<h3 id="новый-сервер-с-redmine">Новый сервер с Redmine<a href="#%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80-%d1%81-redmine" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<ul>
-<li>CentOS 8</li>
-<li>mariadb 10</li>
-<li>ruby 2.6.5 / rails 5.2</li>
-<li>thin (gem сервер приложения)</li>
-</ul>
-<p>Ниже опишу шаги, которые необходимо произвести, чтобы миграция прошла без проблем (в моем случае отработало без ошибок).</p>
-<ol>
-<li>Установка нужной версии Redmine по инструкциям с сайта <a href="https://redmine.org/" target="_blank">https://redmine.org/</a></li>
-<li>На старом redmine я отключаю все задачи cron для сервиса, в том числе и для получения почты (Подробнее о настройке по ссылке)</li>
-<li>Останавливаю сервис thin systemctl stop thin</li>
-<li>Удаляю установленные плагины, точнее чистим записи в базе, если для установки плагина требуется миграция (Подробнее про удаление по ссылке)</li>
-<li>Далее снимаем дамп с БД mysqldump -u root -p redmine &gt; redmine.sql (В моем случае используется mysql)</li>
-<li>Переносим на новый сервер scp redmine.sql <a href="mailto:root@192.168.1.1">root@192.168.1.1</a>:/tmp</li>
-<li>Теперь выполняем команды на новом сервер cp /tmp/redmine.sql /path/to/redmine/</li>
-<li>Восстанавливаем дамп mysql -u root -p redmine &lt; redmine.sql</li>
-<li>Теперь обязательный пункт, это совершить миграцию базы, чтобы применились изменения, иначе будет ошибка 500 при переходе в проекты rake db:migrate RAILS_ENV=production</li>
-<li>Дополнительно перезапускаем сервис thin</li>
-<li>Устанавливаем плагины</li>
-<li>Перенастраиваем адреса для проксирования, если есть пограничный сервер (в моем случае в роли обратного прокси выступает nginx)</li>
-</ol>
 ]]></content>
 		</item>
 		

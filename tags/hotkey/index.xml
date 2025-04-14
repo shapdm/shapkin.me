@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hotkey on Заметки на полях</title>
+    <link>https://shapkin.me/tags/hotkey/</link>
+    <description>Recent content in Hotkey on Заметки на полях</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 14 Apr 2025 16:04:31 +0300</lastBuildDate>
+    <atom:link href="https://shapkin.me/tags/hotkey/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Создаем горячую клавишу в Excel</title>
+      <link>https://shapkin.me/posts/excel-hotkey/</link>
+      <pubDate>Mon, 14 Apr 2025 16:04:31 +0300</pubDate>
+      <guid>https://shapkin.me/posts/excel-hotkey/</guid>
+      <description>&lt;p&gt;Работая с таблицами в Excel бывает часто надо выделять какие-то строки или ячейки в один и тот же цвет и удобнее было бы иметь для этого горячую клавишу.&lt;/p&gt;&#xA;&lt;p&gt;Запускаем Excel, переходим во вкладку &amp;ldquo;Вид&amp;rdquo; -&amp;gt; &amp;ldquo;Макросы&amp;rdquo; -&amp;gt; &amp;ldquo;Запись макроса&amp;rdquo;, там указываем название, например &amp;ldquo;Заливка желтым&amp;rdquo;, указываем желаемую комбинацию клавиш, я указал &amp;ldquo;Ctrl + Shift + Y&amp;rdquo; для заливки желтым и &amp;ldquo;Ctrl + Shift + U&amp;rdquo; для очистки заливки.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Обязательно выбираем &amp;ldquo;Сохранить в &amp;quot; -&amp;gt; &amp;ldquo;Личная книга макросов&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

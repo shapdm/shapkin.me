@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 07 Apr 2025 17:04:44 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 14 Apr 2025 16:04:31 +0300</lastBuildDate>
     <atom:link href="https://shapkin.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Создаем горячую клавишу в Excel</title>
+      <link>https://shapkin.me/posts/excel-hotkey/</link>
+      <pubDate>Mon, 14 Apr 2025 16:04:31 +0300</pubDate>
+      <guid>https://shapkin.me/posts/excel-hotkey/</guid>
+      <description>&lt;p&gt;Работая с таблицами в Excel бывает часто надо выделять какие-то строки или ячейки в один и тот же цвет и удобнее было бы иметь для этого горячую клавишу.&lt;/p&gt;&#xA;&lt;p&gt;Запускаем Excel, переходим во вкладку &amp;ldquo;Вид&amp;rdquo; -&amp;gt; &amp;ldquo;Макросы&amp;rdquo; -&amp;gt; &amp;ldquo;Запись макроса&amp;rdquo;, там указываем название, например &amp;ldquo;Заливка желтым&amp;rdquo;, указываем желаемую комбинацию клавиш, я указал &amp;ldquo;Ctrl + Shift + Y&amp;rdquo; для заливки желтым и &amp;ldquo;Ctrl + Shift + U&amp;rdquo; для очистки заливки.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Обязательно выбираем &amp;ldquo;Сохранить в &amp;quot; -&amp;gt; &amp;ldquo;Личная книга макросов&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Литофания</title>
       <link>https://shapkin.me/projects/lithophane/</link>
@@ -71,13 +78,6 @@
       <pubDate>Mon, 24 Oct 2022 22:55:36 +0300</pubDate>
       <guid>https://shapkin.me/posts/vcsa-certificate-expired/</guid>
       <description>&lt;p&gt;Внезапно VCSA 6.7 перестал авторизовывать, как доменного пользователя, так и локального администратора.&#xA;После перезагрузки в web интерфейсе постоянно висела 503 ошибка:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;503 Service Unavailable (Failed to connect to endpoint: [N7Vmacore4Http20NamedPipeServiceSpecE:0x00007f3d18008430] _serverNamespace = / action = Allow _pipeName =/var/run/vmware/vpxd-webserver-pipe)&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Первым делом иду в логи, а именно /var/log/vmware/vpxd/vpxd.log и нахожу там следующие строки:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2022-10-24T14:37:37.776Z error vpxd[04614] [Originator@6876 sub=vmomi.soapStub[6630]] Resetting stub adapter for server &amp;lt;cs p:00007f9628783750, TCP:vcsa.domain.com:443&amp;gt; : service state request failed: N7Vmacore3Ssl18SSLVerifyExceptionE(SSL Exception: Verification parameters:&#xA;--&amp;gt; PeerThumbprint: BA:E3:25:18:AB:62:50:74:62:A9:19:CF:DB:1C:85:FF:FA:77:E7:5B&#xA;--&amp;gt; ExpectedThumbprint: &#xA;--&amp;gt; ExpectedPeerName: vcsa.domain.com&#xA;--&amp;gt; The remote host certificate has these problems:&#xA;--&amp;gt; &#xA;--&amp;gt; * certificate has expired)&#xA;--&amp;gt; [context]zKq7AVECAAAAAPb1/gANdnB4ZAAA4AArbGlidm1hY29yZS5zbwAAWCUbAP6dGACeQCIAaXEiABtFIgDTSSIAOaIjAHFvIwA6ciMAnVYrAdRzAGxpYnB0aHJlYWQuc28uMAACrY4ObGliYy5zby42AA==[/context]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Открываю браузер и проверяю информацию по сертификату, действительно срок действия истек:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Блокировка исходящего трафика в Windows</title>
-      <link>https://shapkin.me/posts/block-traffic-by-powershell/</link>
-      <pubDate>Mon, 12 Sep 2022 12:18:47 +0300</pubDate>
-      <guid>https://shapkin.me/posts/block-traffic-by-powershell/</guid>
-      <description>&lt;h2 id=&#34;задача&#34;&gt;Задача:&lt;a href=&#34;#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d0%b0&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Блокировать исходящий трафик, для тестирования функционала веб сервиса в браузере.&lt;/p&gt;&#xA;&lt;h2 id=&#34;решение&#34;&gt;Решение:&lt;a href=&#34;#%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d0%b5&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Блокировка исходящего трафика для браузера&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
